@@ -8,6 +8,10 @@ redirect_from:
   - /about.html
 ---
 
+I am natural from small city called Pedralva, in Minas Gerais, Brazil. 
+
+I got a Computer Science degree from the Universidade Federal de Itajubá, in Itajubá, Minas Gerais. 
+
 Professional Experience
 ======
 
