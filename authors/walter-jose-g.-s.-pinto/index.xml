@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Walter José G. S. Pinto | Luiz Otavio V. B. Oliveira</title>
+    <link>/authors/walter-jose-g.-s.-pinto/</link>
+      <atom:link href="/authors/walter-jose-g.-s.-pinto/index.xml" rel="self" type="application/rss+xml" />
+    <description>Walter José G. S. Pinto</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 01 Jan 2017 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>Walter José G. S. Pinto</title>
+      <link>/authors/walter-jose-g.-s.-pinto/</link>
+    </image>
+    
+    <item>
+      <title>RECIPE: A Grammar-Based Framework for Automatically Evolving Classification Pipelines</title>
+      <link>/publication/desa-2017-recipe/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>/publication/desa-2017-recipe/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

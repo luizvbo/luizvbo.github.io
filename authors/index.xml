@@ -5,12 +5,140 @@
     <link>/authors/</link>
       <atom:link href="/authors/index.xml" rel="self" type="application/rss+xml" />
     <description>Authors</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 01 Jul 2018 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Authors</title>
       <link>/authors/</link>
     </image>
+    
+    <item>
+      <title>Felipe Casadei</title>
+      <link>/authors/felipe-casadei/</link>
+      <pubDate>Sun, 01 Jul 2018 00:00:00 +0000</pubDate>
+      <guid>/authors/felipe-casadei/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Gisele L. Pappa</title>
+      <link>/authors/gisele-l.-pappa/</link>
+      <pubDate>Sun, 01 Jul 2018 00:00:00 +0000</pubDate>
+      <guid>/authors/gisele-l.-pappa/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Joao Francisco B. S. Martins</title>
+      <link>/authors/joao-francisco-b.-s.-martins/</link>
+      <pubDate>Sun, 01 Jul 2018 00:00:00 +0000</pubDate>
+      <guid>/authors/joao-francisco-b.-s.-martins/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Luis F. Miranda</title>
+      <link>/authors/luis-f.-miranda/</link>
+      <pubDate>Sun, 01 Jul 2018 00:00:00 +0000</pubDate>
+      <guid>/authors/luis-f.-miranda/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Luiz Otavio V. B. Oliveira</title>
+      <link>/authors/luiz-otavio-v.-b.-oliveira/</link>
+      <pubDate>Sun, 01 Jul 2018 00:00:00 +0000</pubDate>
+      <guid>/authors/luiz-otavio-v.-b.-oliveira/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Alex G. C. de Sá</title>
+      <link>/authors/alex-g.-c.-de-sa/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>/authors/alex-g.-c.-de-sa/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Fernando E. B. Otero</title>
+      <link>/authors/fernando-e.-b.-otero/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>/authors/fernando-e.-b.-otero/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Joao F. B. S. Martins</title>
+      <link>/authors/joao-f.-b.-s.-martins/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>/authors/joao-f.-b.-s.-martins/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Walter José G. S. Pinto</title>
+      <link>/authors/walter-jose-g.-s.-pinto/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>/authors/walter-jose-g.-s.-pinto/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>L. O. V. B. Oliveira</title>
+      <link>/authors/l.-o.-v.-b.-oliveira/</link>
+      <pubDate>Thu, 01 Sep 2016 00:00:00 +0000</pubDate>
+      <guid>/authors/l.-o.-v.-b.-oliveira/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ricardo H. C. Takahashi</title>
+      <link>/authors/ricardo-h.-c.-takahashi/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>/authors/ricardo-h.-c.-takahashi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Julio Albinati</title>
+      <link>/authors/julio-albinati/</link>
+      <pubDate>Thu, 01 Jan 2015 00:00:00 +0000</pubDate>
+      <guid>/authors/julio-albinati/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Gisele Lobo Pappa</title>
+      <link>/authors/gisele-lobo-pappa/</link>
+      <pubDate>Tue, 01 Jan 2013 00:00:00 +0000</pubDate>
+      <guid>/authors/gisele-lobo-pappa/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Isabela Neves Drummond</title>
+      <link>/authors/isabela-neves-drummond/</link>
+      <pubDate>Tue, 01 Jan 2013 00:00:00 +0000</pubDate>
+      <guid>/authors/isabela-neves-drummond/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Dante Augusto Couto Barone</title>
+      <link>/authors/dante-augusto-couto-barone/</link>
+      <pubDate>Sun, 01 Jan 2012 00:00:00 +0000</pubDate>
+      <guid>/authors/dante-augusto-couto-barone/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Rodrigo Luiz Mendes Mota</title>
+      <link>/authors/rodrigo-luiz-mendes-mota/</link>
+      <pubDate>Sun, 01 Jan 2012 00:00:00 +0000</pubDate>
+      <guid>/authors/rodrigo-luiz-mendes-mota/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title></title>

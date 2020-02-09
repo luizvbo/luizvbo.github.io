@@ -5,12 +5,148 @@
     <link>/</link>
       <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <description>Luiz Otavio V. B. Oliveira</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 01 Jul 2018 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Luiz Otavio V. B. Oliveira</title>
       <link>/</link>
     </image>
+    
+    <item>
+      <title>Analysing Symbolic Regression Benchmarks under a Meta-Learning Approach</title>
+      <link>/publication/oliveira-2018-analysing/</link>
+      <pubDate>Sun, 01 Jul 2018 00:00:00 +0000</pubDate>
+      <guid>/publication/oliveira-2018-analysing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Solving the Exponential Growth of Symbolic Regression Trees in Geometric Semantic Genetic Programming</title>
+      <link>/publication/martins-2018-solving/</link>
+      <pubDate>Sun, 01 Jul 2018 00:00:00 +0000</pubDate>
+      <guid>/publication/martins-2018-solving/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A Generic Framework for Building Dispersion Operators in the Semantic Space</title>
+      <link>/publication/oliveira-2017-generic/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>/publication/oliveira-2017-generic/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>How Noisy Data Affects Geometric Semantic Genetic Programming</title>
+      <link>/publication/miranda-2017-hownoisy/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>/publication/miranda-2017-hownoisy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>RECIPE: A Grammar-Based Framework for Automatically Evolving Classification Pipelines</title>
+      <link>/publication/desa-2017-recipe/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>/publication/desa-2017-recipe/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Strategies for Improving the Distribution of Random Function Outputs in GSGP</title>
+      <link>/publication/oliveira-2017-strategies/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>/publication/oliveira-2017-strategies/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Improving Search in Geometric Semantic Genetic Programming</title>
+      <link>/publication/oliveira-2016-improving/</link>
+      <pubDate>Thu, 01 Sep 2016 00:00:00 +0000</pubDate>
+      <guid>/publication/oliveira-2016-improving/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A Dispersion Operator for Geometric Semantic Genetic Programming</title>
+      <link>/publication/oliveira-2016-dispersion/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>/publication/oliveira-2016-dispersion/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Reducing Dimensionality to Improve Search in Semantic Genetic Programming</title>
+      <link>/publication/oliveira-2016-reducing/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>/publication/oliveira-2016-reducing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Revisiting the Sequential Symbolic Regression Genetic Programming</title>
+      <link>/publication/oliveira-2016-revisiting/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>/publication/oliveira-2016-revisiting/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sequential Symbolic Regression with Genetic Programming</title>
+      <link>/publication/oliveira-2015-sequential/</link>
+      <pubDate>Thu, 01 Jan 2015 00:00:00 +0000</pubDate>
+      <guid>/publication/oliveira-2015-sequential/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The Effect of Distinct Geometric Semantic Crossover Operators in Regression Problems</title>
+      <link>/publication/albinati-2015-effect/</link>
+      <pubDate>Thu, 01 Jan 2015 00:00:00 +0000</pubDate>
+      <guid>/publication/albinati-2015-effect/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A new representation for instance-based clonal selection algorithms</title>
+      <link>/publication/oliveira-2013-new/</link>
+      <pubDate>Tue, 01 Jan 2013 00:00:00 +0000</pubDate>
+      <guid>/publication/oliveira-2013-new/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CSCDR: Um Classificador Baseado em Seleção Clonal com Redução de Células de Memória.</title>
+      <link>/publication/oliveira-2012-cscdr/</link>
+      <pubDate>Sat, 01 Sep 2012 00:00:00 +0000</pubDate>
+      <guid>/publication/oliveira-2012-cscdr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Clonal selection classifier with data reduction: Classification as an optimization task</title>
+      <link>/publication/oliveira-2012-clonal/</link>
+      <pubDate>Sun, 01 Jan 2012 00:00:00 +0000</pubDate>
+      <guid>/publication/oliveira-2012-clonal/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Real-Valued Negative Selection (RNS) for MR Brain Image Classification</title>
+      <link>/publication/oliveira-2011-real/</link>
+      <pubDate>Sat, 01 Jan 2011 00:00:00 +0000</pubDate>
+      <guid>/publication/oliveira-2011-real/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Real-Valued Negative Selection (RNS) for Classification Task</title>
+      <link>/publication/oliveira-2010-real/</link>
+      <pubDate>Fri, 01 Jan 2010 00:00:00 +0000</pubDate>
+      <guid>/publication/oliveira-2010-real/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>

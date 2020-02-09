@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>6 | Luiz Otavio V. B. Oliveira</title>
+    <link>/publication_types/6/</link>
+      <atom:link href="/publication_types/6/index.xml" rel="self" type="application/rss+xml" />
+    <description>6</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 01 Jan 2017 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>6</title>
+      <link>/publication_types/6/</link>
+    </image>
+    
+    <item>
+      <title>A Generic Framework for Building Dispersion Operators in the Semantic Space</title>
+      <link>/publication/oliveira-2017-generic/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>/publication/oliveira-2017-generic/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sequential Symbolic Regression with Genetic Programming</title>
+      <link>/publication/oliveira-2015-sequential/</link>
+      <pubDate>Thu, 01 Jan 2015 00:00:00 +0000</pubDate>
+      <guid>/publication/oliveira-2015-sequential/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Semantic genetic programming; Crossover; Crossover mask optimization | Luiz Otavio V. B. Oliveira</title>
+    <link>/tags/semantic-genetic-programming-crossover-crossover-mask-optimization/</link>
+      <atom:link href="/tags/semantic-genetic-programming-crossover-crossover-mask-optimization/index.xml" rel="self" type="application/rss+xml" />
+    <description>Semantic genetic programming; Crossover; Crossover mask optimization</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 01 Jan 2015 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>Semantic genetic programming; Crossover; Crossover mask optimization</title>
+      <link>/tags/semantic-genetic-programming-crossover-crossover-mask-optimization/</link>
+    </image>
+    
+    <item>
+      <title>The Effect of Distinct Geometric Semantic Crossover Operators in Regression Problems</title>
+      <link>/publication/albinati-2015-effect/</link>
+      <pubDate>Thu, 01 Jan 2015 00:00:00 +0000</pubDate>
+      <guid>/publication/albinati-2015-effect/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

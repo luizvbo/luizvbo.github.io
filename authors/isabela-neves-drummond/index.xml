@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Isabela Neves Drummond | Luiz Otavio V. B. Oliveira</title>
+    <link>/authors/isabela-neves-drummond/</link>
+      <atom:link href="/authors/isabela-neves-drummond/index.xml" rel="self" type="application/rss+xml" />
+    <description>Isabela Neves Drummond</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 01 Jan 2013 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>Isabela Neves Drummond</title>
+      <link>/authors/isabela-neves-drummond/</link>
+    </image>
+    
+    <item>
+      <title>A new representation for instance-based clonal selection algorithms</title>
+      <link>/publication/oliveira-2013-new/</link>
+      <pubDate>Tue, 01 Jan 2013 00:00:00 +0000</pubDate>
+      <guid>/publication/oliveira-2013-new/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Real-Valued Negative Selection (RNS) for MR Brain Image Classification</title>
+      <link>/publication/oliveira-2011-real/</link>
+      <pubDate>Sat, 01 Jan 2011 00:00:00 +0000</pubDate>
+      <guid>/publication/oliveira-2011-real/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Real-Valued Negative Selection (RNS) for Classification Task</title>
+      <link>/publication/oliveira-2010-real/</link>
+      <pubDate>Fri, 01 Jan 2010 00:00:00 +0000</pubDate>
+      <guid>/publication/oliveira-2010-real/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

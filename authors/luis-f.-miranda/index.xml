@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Luis F. Miranda | Luiz Otavio V. B. Oliveira</title>
+    <link>/authors/luis-f.-miranda/</link>
+      <atom:link href="/authors/luis-f.-miranda/index.xml" rel="self" type="application/rss+xml" />
+    <description>Luis F. Miranda</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 01 Jul 2018 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <title>Luis F. Miranda</title>
+      <link>/authors/luis-f.-miranda/</link>
+    </image>
+    
+    <item>
+      <title>Analysing Symbolic Regression Benchmarks under a Meta-Learning Approach</title>
+      <link>/publication/oliveira-2018-analysing/</link>
+      <pubDate>Sun, 01 Jul 2018 00:00:00 +0000</pubDate>
+      <guid>/publication/oliveira-2018-analysing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Solving the Exponential Growth of Symbolic Regression Trees in Geometric Semantic Genetic Programming</title>
+      <link>/publication/martins-2018-solving/</link>
+      <pubDate>Sun, 01 Jul 2018 00:00:00 +0000</pubDate>
+      <guid>/publication/martins-2018-solving/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>How Noisy Data Affects Geometric Semantic Genetic Programming</title>
+      <link>/publication/miranda-2017-hownoisy/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>/publication/miranda-2017-hownoisy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Reducing Dimensionality to Improve Search in Semantic Genetic Programming</title>
+      <link>/publication/oliveira-2016-reducing/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>/publication/oliveira-2016-reducing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Revisiting the Sequential Symbolic Regression Genetic Programming</title>
+      <link>/publication/oliveira-2016-revisiting/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>/publication/oliveira-2016-revisiting/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
