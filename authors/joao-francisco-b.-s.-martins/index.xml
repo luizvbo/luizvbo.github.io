@@ -2,29 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Joao Francisco B. S. Martins | Luiz Otavio V. B. Oliveira</title>
-    <link>/authors/joao-francisco-b.-s.-martins/</link>
-      <atom:link href="/authors/joao-francisco-b.-s.-martins/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://luizvbo.github.io/authors/joao-francisco-b.-s.-martins/</link>
+      <atom:link href="https://luizvbo.github.io/authors/joao-francisco-b.-s.-martins/index.xml" rel="self" type="application/rss+xml" />
     <description>Joao Francisco B. S. Martins</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 01 Jul 2018 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Joao Francisco B. S. Martins</title>
-      <link>/authors/joao-francisco-b.-s.-martins/</link>
+      <link>https://luizvbo.github.io/authors/joao-francisco-b.-s.-martins/</link>
     </image>
     
     <item>
       <title>Analysing Symbolic Regression Benchmarks under a Meta-Learning Approach</title>
-      <link>/publication/oliveira-2018-analysing/</link>
+      <link>https://luizvbo.github.io/publication/oliveira-2018-analysing/</link>
       <pubDate>Sun, 01 Jul 2018 00:00:00 +0000</pubDate>
-      <guid>/publication/oliveira-2018-analysing/</guid>
+      <guid>https://luizvbo.github.io/publication/oliveira-2018-analysing/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Solving the Exponential Growth of Symbolic Regression Trees in Geometric Semantic Genetic Programming</title>
-      <link>/publication/martins-2018-solving/</link>
+      <link>https://luizvbo.github.io/publication/martins-2018-solving/</link>
       <pubDate>Sun, 01 Jul 2018 00:00:00 +0000</pubDate>
-      <guid>/publication/martins-2018-solving/</guid>
+      <guid>https://luizvbo.github.io/publication/martins-2018-solving/</guid>
       <description></description>
     </item>
     

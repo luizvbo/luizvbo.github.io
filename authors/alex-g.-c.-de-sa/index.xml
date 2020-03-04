@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Alex G. C. de Sá | Luiz Otavio V. B. Oliveira</title>
-    <link>/authors/alex-g.-c.-de-sa/</link>
-      <atom:link href="/authors/alex-g.-c.-de-sa/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://luizvbo.github.io/authors/alex-g.-c.-de-sa/</link>
+      <atom:link href="https://luizvbo.github.io/authors/alex-g.-c.-de-sa/index.xml" rel="self" type="application/rss+xml" />
     <description>Alex G. C. de Sá</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 01 Jan 2017 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Alex G. C. de Sá</title>
-      <link>/authors/alex-g.-c.-de-sa/</link>
+      <link>https://luizvbo.github.io/authors/alex-g.-c.-de-sa/</link>
     </image>
     
     <item>
       <title>RECIPE: A Grammar-Based Framework for Automatically Evolving Classification Pipelines</title>
-      <link>/publication/desa-2017-recipe/</link>
+      <link>https://luizvbo.github.io/publication/desa-2017-recipe/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
-      <guid>/publication/desa-2017-recipe/</guid>
+      <guid>https://luizvbo.github.io/publication/desa-2017-recipe/</guid>
       <description></description>
     </item>
     

@@ -2,29 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Felipe Casadei | Luiz Otavio V. B. Oliveira</title>
-    <link>/authors/felipe-casadei/</link>
-      <atom:link href="/authors/felipe-casadei/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://luizvbo.github.io/authors/felipe-casadei/</link>
+      <atom:link href="https://luizvbo.github.io/authors/felipe-casadei/index.xml" rel="self" type="application/rss+xml" />
     <description>Felipe Casadei</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 01 Jul 2018 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Felipe Casadei</title>
-      <link>/authors/felipe-casadei/</link>
+      <link>https://luizvbo.github.io/authors/felipe-casadei/</link>
     </image>
     
     <item>
       <title>Solving the Exponential Growth of Symbolic Regression Trees in Geometric Semantic Genetic Programming</title>
-      <link>/publication/martins-2018-solving/</link>
+      <link>https://luizvbo.github.io/publication/martins-2018-solving/</link>
       <pubDate>Sun, 01 Jul 2018 00:00:00 +0000</pubDate>
-      <guid>/publication/martins-2018-solving/</guid>
+      <guid>https://luizvbo.github.io/publication/martins-2018-solving/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Strategies for Improving the Distribution of Random Function Outputs in GSGP</title>
-      <link>/publication/oliveira-2017-strategies/</link>
+      <link>https://luizvbo.github.io/publication/oliveira-2017-strategies/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
-      <guid>/publication/oliveira-2017-strategies/</guid>
+      <guid>https://luizvbo.github.io/publication/oliveira-2017-strategies/</guid>
       <description></description>
     </item>
     

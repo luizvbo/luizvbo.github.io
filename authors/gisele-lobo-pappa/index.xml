@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Gisele Lobo Pappa | Luiz Otavio V. B. Oliveira</title>
-    <link>/authors/gisele-lobo-pappa/</link>
-      <atom:link href="/authors/gisele-lobo-pappa/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://luizvbo.github.io/authors/gisele-lobo-pappa/</link>
+      <atom:link href="https://luizvbo.github.io/authors/gisele-lobo-pappa/index.xml" rel="self" type="application/rss+xml" />
     <description>Gisele Lobo Pappa</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 01 Jan 2013 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Gisele Lobo Pappa</title>
-      <link>/authors/gisele-lobo-pappa/</link>
+      <link>https://luizvbo.github.io/authors/gisele-lobo-pappa/</link>
     </image>
     
     <item>
       <title>A new representation for instance-based clonal selection algorithms</title>
-      <link>/publication/oliveira-2013-new/</link>
+      <link>https://luizvbo.github.io/publication/oliveira-2013-new/</link>
       <pubDate>Tue, 01 Jan 2013 00:00:00 +0000</pubDate>
-      <guid>/publication/oliveira-2013-new/</guid>
+      <guid>https://luizvbo.github.io/publication/oliveira-2013-new/</guid>
       <description></description>
     </item>
     

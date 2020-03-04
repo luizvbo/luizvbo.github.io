@@ -2,29 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>7 | Luiz Otavio V. B. Oliveira</title>
-    <link>/publication_types/7/</link>
-      <atom:link href="/publication_types/7/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://luizvbo.github.io/publication_types/7/</link>
+      <atom:link href="https://luizvbo.github.io/publication_types/7/index.xml" rel="self" type="application/rss+xml" />
     <description>7</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 01 Sep 2016 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>7</title>
-      <link>/publication_types/7/</link>
+      <link>https://luizvbo.github.io/publication_types/7/</link>
     </image>
     
     <item>
       <title>Improving Search in Geometric Semantic Genetic Programming</title>
-      <link>/publication/oliveira-2016-improving/</link>
+      <link>https://luizvbo.github.io/publication/oliveira-2016-improving/</link>
       <pubDate>Thu, 01 Sep 2016 00:00:00 +0000</pubDate>
-      <guid>/publication/oliveira-2016-improving/</guid>
+      <guid>https://luizvbo.github.io/publication/oliveira-2016-improving/</guid>
       <description></description>
     </item>
     
     <item>
       <title>CSCDR: Um Classificador Baseado em Seleção Clonal com Redução de Células de Memória.</title>
-      <link>/publication/oliveira-2012-cscdr/</link>
+      <link>https://luizvbo.github.io/publication/oliveira-2012-cscdr/</link>
       <pubDate>Sat, 01 Sep 2012 00:00:00 +0000</pubDate>
-      <guid>/publication/oliveira-2012-cscdr/</guid>
+      <guid>https://luizvbo.github.io/publication/oliveira-2012-cscdr/</guid>
       <description></description>
     </item>
     

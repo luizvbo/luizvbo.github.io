@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ricardo H. C. Takahashi | Luiz Otavio V. B. Oliveira</title>
-    <link>/authors/ricardo-h.-c.-takahashi/</link>
-      <atom:link href="/authors/ricardo-h.-c.-takahashi/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://luizvbo.github.io/authors/ricardo-h.-c.-takahashi/</link>
+      <atom:link href="https://luizvbo.github.io/authors/ricardo-h.-c.-takahashi/index.xml" rel="self" type="application/rss+xml" />
     <description>Ricardo H. C. Takahashi</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 01 Jan 2016 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Ricardo H. C. Takahashi</title>
-      <link>/authors/ricardo-h.-c.-takahashi/</link>
+      <link>https://luizvbo.github.io/authors/ricardo-h.-c.-takahashi/</link>
     </image>
     
     <item>
       <title>Reducing Dimensionality to Improve Search in Semantic Genetic Programming</title>
-      <link>/publication/oliveira-2016-reducing/</link>
+      <link>https://luizvbo.github.io/publication/oliveira-2016-reducing/</link>
       <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
-      <guid>/publication/oliveira-2016-reducing/</guid>
+      <guid>https://luizvbo.github.io/publication/oliveira-2016-reducing/</guid>
       <description></description>
     </item>
     

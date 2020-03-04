@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>L. O. V. B. Oliveira | Luiz Otavio V. B. Oliveira</title>
-    <link>/authors/l.-o.-v.-b.-oliveira/</link>
-      <atom:link href="/authors/l.-o.-v.-b.-oliveira/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://luizvbo.github.io/authors/l.-o.-v.-b.-oliveira/</link>
+      <atom:link href="https://luizvbo.github.io/authors/l.-o.-v.-b.-oliveira/index.xml" rel="self" type="application/rss+xml" />
     <description>L. O. V. B. Oliveira</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 01 Sep 2016 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>L. O. V. B. Oliveira</title>
-      <link>/authors/l.-o.-v.-b.-oliveira/</link>
+      <link>https://luizvbo.github.io/authors/l.-o.-v.-b.-oliveira/</link>
     </image>
     
     <item>
       <title>Improving Search in Geometric Semantic Genetic Programming</title>
-      <link>/publication/oliveira-2016-improving/</link>
+      <link>https://luizvbo.github.io/publication/oliveira-2016-improving/</link>
       <pubDate>Thu, 01 Sep 2016 00:00:00 +0000</pubDate>
-      <guid>/publication/oliveira-2016-improving/</guid>
+      <guid>https://luizvbo.github.io/publication/oliveira-2016-improving/</guid>
       <description></description>
     </item>
     
