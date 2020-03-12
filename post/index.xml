@@ -19,13 +19,11 @@
       <guid>https://luizvbo.github.io/post/coronavirus-visualization/</guid>
       <description>&lt;h1 id=&#34;exploring-covid-19&#34;&gt;Exploring COVID-19&lt;/h1&gt;
 &lt;p&gt;The Johns Hopkins University Center for Systems Science and Engineering (JHU CSSE) maintain a 
-&lt;a href=&#34;https://github.com/CSSEGISandData/COVID-19&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub repository with daily update information about teh Corona Virus&lt;/a&gt;
-. They also provide a 
-&lt;a href=&#34;https://www.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;dashboard to interact with the data&lt;/a&gt;
-.&lt;/p&gt;
-&lt;p&gt;However, even their dashboard doesn&amp;rsquo;t provide the information I would like to see: &lt;strong&gt;The evolution over time of the number of cases/deaths/recoverys per country&lt;/strong&gt;&lt;/p&gt;
+&lt;a href=&#34;https://github.com/CSSEGISandData/COVID-19&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub repository with daily updated information about the Corona Virus&lt;/a&gt;
+. They also provide a dashboard to interact with the data.&lt;/p&gt;
+&lt;p&gt;However, even their dashboard doesn’t provide the information I would like to see: &lt;strong&gt;The evolution over time of the number of cases/deaths/recovery patients per country&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;Thus, the idea of this notebook is to create interactive plots that we can use to monitor the evolution of the disease.&lt;/p&gt;
-&lt;p&gt;You are more than welcome to modify to the notebook to predict the number of cases and do other types of analysis. The notebook can be found in my &lt;strong&gt;
+&lt;p&gt;You are more than welcome to modify the notebook to predict the number of cases and do other types of analysis. The notebook can be found in my &lt;strong&gt;
 &lt;a href=&#34;https://github.com/luizvbo/notebooks/blob/master/corona-plots.ipynb&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub repository&lt;/a&gt;
 &lt;/strong&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;imports&#34;&gt;Imports&lt;/h2&gt;
@@ -179,8 +177,9 @@ df_dict = {
         df.iplot(kind=plot_type, yTitle=title, layout=layout)
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&#34;showing-the-data&#34;&gt;Showing the data&lt;/h2&gt;
-&lt;p&gt;Finally we can show our data and play with it.&lt;/p&gt;
-&lt;p&gt;There are 3 dropdown menus that allow you to select 3 different countries to compare.&lt;/p&gt;
+&lt;p&gt;Finally, we can show our data and play with it.&lt;/p&gt;
+&lt;p&gt;Three dropdown menus allow you to select three different countries to compare.&lt;/p&gt;
+&lt;p&gt;Run your notebook and see the results :D&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Finally, we plot all the cases
 for type_, df in df_dict.items():
     display(Markdown(f&#39;---\n## Number of {type_} cases over time&#39;))

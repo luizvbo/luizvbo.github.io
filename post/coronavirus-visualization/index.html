@@ -28,8 +28,8 @@
   
     
   
-  <meta name="description" content="Exploring COVID-19 The Johns Hopkins University Center for Systems Science and Engineering (JHU CSSE) maintain a GitHub repository with daily update information about teh Corona Virus . They also provide a dashboard to interact with the data .
-However, even their dashboard doesn&rsquo;t provide the information I would like to see: The evolution over time of the number of cases/deaths/recoverys per country
+  <meta name="description" content="Exploring COVID-19 The Johns Hopkins University Center for Systems Science and Engineering (JHU CSSE) maintain a GitHub repository with daily updated information about the Corona Virus . They also provide a dashboard to interact with the data.
+However, even their dashboard doesn’t provide the information I would like to see: The evolution over time of the number of cases/deaths/recovery patients per country.
 Thus, the idea of this notebook is to create interactive plots that we can use to monitor the evolution of the disease.">
 
   
@@ -244,8 +244,8 @@ Thus, the idea of this notebook is to create interactive plots that we can use t
   <meta property="og:site_name" content="Luiz Otavio Vilas Boas Oliveira">
   <meta property="og:url" content="https://luizvbo.github.io/post/coronavirus-visualization/">
   <meta property="og:title" content="Visualizing COVID-19 infection (corona virus) over time | Luiz Otavio Vilas Boas Oliveira">
-  <meta property="og:description" content="Exploring COVID-19 The Johns Hopkins University Center for Systems Science and Engineering (JHU CSSE) maintain a GitHub repository with daily update information about teh Corona Virus . They also provide a dashboard to interact with the data .
-However, even their dashboard doesn&rsquo;t provide the information I would like to see: The evolution over time of the number of cases/deaths/recoverys per country
+  <meta property="og:description" content="Exploring COVID-19 The Johns Hopkins University Center for Systems Science and Engineering (JHU CSSE) maintain a GitHub repository with daily updated information about the Corona Virus . They also provide a dashboard to interact with the data.
+However, even their dashboard doesn’t provide the information I would like to see: The evolution over time of the number of cases/deaths/recovery patients per country.
 Thus, the idea of this notebook is to create interactive plots that we can use to monitor the evolution of the disease."><meta property="og:image" content="https://luizvbo.github.io/post/coronavirus-visualization/featured.png">
   <meta property="twitter:image" content="https://luizvbo.github.io/post/coronavirus-visualization/featured.png"><meta property="og:locale" content="en-us">
   
@@ -302,7 +302,7 @@ Thus, the idea of this notebook is to create interactive plots that we can use t
       "url": "img/https://luizvbo.github.io/"
     }
   },
-  "description": "Exploring COVID-19 The Johns Hopkins University Center for Systems Science and Engineering (JHU CSSE) maintain a GitHub repository with daily update information about teh Corona Virus . They also provide a dashboard to interact with the data .\nHowever, even their dashboard doesn\u0026rsquo;t provide the information I would like to see: The evolution over time of the number of cases/deaths/recoverys per country\nThus, the idea of this notebook is to create interactive plots that we can use to monitor the evolution of the disease."
+  "description": "Exploring COVID-19 The Johns Hopkins University Center for Systems Science and Engineering (JHU CSSE) maintain a GitHub repository with daily updated information about the Corona Virus . They also provide a dashboard to interact with the data.\nHowever, even their dashboard doesn’t provide the information I would like to see: The evolution over time of the number of cases/deaths/recovery patients per country.\nThus, the idea of this notebook is to create interactive plots that we can use to monitor the evolution of the disease."
 }
 </script>
 
@@ -702,13 +702,11 @@ Thus, the idea of this notebook is to create interactive plots that we can use t
     <div class="article-style">
       <h1 id="exploring-covid-19">Exploring COVID-19</h1>
 <p>The Johns Hopkins University Center for Systems Science and Engineering (JHU CSSE) maintain a 
-<a href="https://github.com/CSSEGISandData/COVID-19" target="_blank" rel="noopener">GitHub repository with daily update information about teh Corona Virus</a>
-. They also provide a 
-<a href="https://www.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6" target="_blank" rel="noopener">dashboard to interact with the data</a>
-.</p>
-<p>However, even their dashboard doesn&rsquo;t provide the information I would like to see: <strong>The evolution over time of the number of cases/deaths/recoverys per country</strong></p>
+<a href="https://github.com/CSSEGISandData/COVID-19" target="_blank" rel="noopener">GitHub repository with daily updated information about the Corona Virus</a>
+. They also provide a dashboard to interact with the data.</p>
+<p>However, even their dashboard doesn’t provide the information I would like to see: <strong>The evolution over time of the number of cases/deaths/recovery patients per country</strong>.</p>
 <p>Thus, the idea of this notebook is to create interactive plots that we can use to monitor the evolution of the disease.</p>
-<p>You are more than welcome to modify to the notebook to predict the number of cases and do other types of analysis. The notebook can be found in my <strong>
+<p>You are more than welcome to modify the notebook to predict the number of cases and do other types of analysis. The notebook can be found in my <strong>
 <a href="https://github.com/luizvbo/notebooks/blob/master/corona-plots.ipynb" target="_blank" rel="noopener">GitHub repository</a>
 </strong>.</p>
 <h2 id="imports">Imports</h2>
@@ -862,8 +860,9 @@ df_dict = {
         df.iplot(kind=plot_type, yTitle=title, layout=layout)
 </code></pre>
 <h2 id="showing-the-data">Showing the data</h2>
-<p>Finally we can show our data and play with it.</p>
-<p>There are 3 dropdown menus that allow you to select 3 different countries to compare.</p>
+<p>Finally, we can show our data and play with it.</p>
+<p>Three dropdown menus allow you to select three different countries to compare.</p>
+<p>Run your notebook and see the results :D</p>
 <pre><code class="language-python"># Finally, we plot all the cases
 for type_, df in df_dict.items():
     display(Markdown(f'---\n## Number of {type_} cases over time'))
