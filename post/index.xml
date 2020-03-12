@@ -5,12 +5,190 @@
     <link>https://luizvbo.github.io/post/</link>
       <atom:link href="https://luizvbo.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     <description>Posts</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 04 Mar 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Thu, 12 Mar 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Posts</title>
       <link>https://luizvbo.github.io/post/</link>
     </image>
+    
+    <item>
+      <title>Visualizing COVID-19 infection (corona virus) over time</title>
+      <link>https://luizvbo.github.io/post/coronavirus-visualization/corona-plots/</link>
+      <pubDate>Thu, 12 Mar 2020 00:00:00 +0000</pubDate>
+      <guid>https://luizvbo.github.io/post/coronavirus-visualization/corona-plots/</guid>
+      <description>&lt;h1 id=&#34;exploring-covid-19&#34;&gt;Exploring COVID-19&lt;/h1&gt;
+&lt;p&gt;The Johns Hopkins University Center for Systems Science and Engineering (JHU CSSE) maintain a 
+&lt;a href=&#34;https://github.com/CSSEGISandData/COVID-19&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub repository with daily update information about teh Corona Virus&lt;/a&gt;
+. They also provide a 
+&lt;a href=&#34;https://www.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;dashboard to interact with the data&lt;/a&gt;
+.&lt;/p&gt;
+&lt;p&gt;However, even their dashboard doesn&amp;rsquo;t provide the information I would like to see: &lt;strong&gt;The evolution over time of the number of cases/deaths/recoverys per country&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Thus, the idea of this notebook is to create interactive plots that we can use to monitor the evolution of the disease.&lt;/p&gt;
+&lt;p&gt;You are more than welcome to modify to the notebook to predict the number of cases and do other types of analysis. The notebook can be found in my &lt;strong&gt;
+&lt;a href=&#34;https://github.com/luizvbo/notebooks/blob/master/corona-plots.ipynb&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub repository&lt;/a&gt;
+&lt;/strong&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;imports&#34;&gt;Imports&lt;/h2&gt;
+&lt;p&gt;I am using Pandas + cufflinks to plot our data using Plotly.&lt;/p&gt;
+&lt;p&gt;I am also using ipywidgets to interact with the plots. If you are using Jupyterlab, you may need to refer to the 
+&lt;a href=&#34;https://ipywidgets.readthedocs.io/en/latest/user_install.html#installing-the-jupyterlab-extension&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;installation documention&lt;/a&gt;
+.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pandas as pd
+from IPython.display import Markdown, display
+from ipywidgets import interact
+from ipywidgets.widgets import (
+    Dropdown, SelectionSlider, Checkbox
+)
+from datetime import datetime
+import cufflinks as cf
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;getting-the-data&#34;&gt;Getting the data&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;path_dict = dict(
+    confirmed = (&amp;quot;https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/&amp;quot;
+                 &amp;quot;csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Confirmed.csv&amp;quot;),
+    death = (&amp;quot;https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/&amp;quot;
+             &amp;quot;csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Deaths.csv&amp;quot;),
+    recovered = (&amp;quot;https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/&amp;quot;
+                 &amp;quot;csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Recovered.csv&amp;quot;)
+)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def set_index(df):
+    &amp;quot;&amp;quot;&amp;quot;Set the index for the data frame using the date
+
+    Args:
+        df: Pandas data frame obtained from John Hopkins repo
+    &amp;quot;&amp;quot;&amp;quot;
+    # Set region, country, lat and long as index
+    index = pd.MultiIndex.from_frame(df.iloc[:, :4])
+    # Set the index and transpose
+    df = df.iloc[:, 4:].set_index(index).T
+    # Set date as index
+    return df.set_index(pd.to_datetime(df.index, dayfirst=False))
+
+df_dict = {
+    type_: pd.read_csv(path).pipe(set_index)
+    for type_, path in path_dict.items()
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;making-interative-plots&#34;&gt;Making interative plots&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def interactive_plot(df_input,
+                     df_label,
+                     width=800,
+                     heigth=600):
+    &amp;quot;&amp;quot;&amp;quot;
+    Plot the data using ipywidgets to interact with it
+
+    Args:
+        df_input: Input data frame, prepared by `set_index`
+        df_label: Label of the data frame (death, confirmed, recovered)
+        width: Width of the plot
+        heigth: Heigth of the plot
+    &amp;quot;&amp;quot;&amp;quot;
+    # Add a new column with the total number per day
+    df_input[(None, &#39;Total&#39;, None, None)] = df_input.groupby(level=1, axis=1).sum().sum(axis=1)
+
+    # Get the list of countries
+    country_list = df_input.columns.get_level_values(1).unique().sort_values().tolist()
+    # Move Total to the top and add the No country option
+    country_list = [&#39;No country&#39;, &#39;Total&#39;] + [c for c in country_list if c != &#39;Total&#39;]
+
+    # Get the list of dates for the series
+    date_list = df_input.index.strftime(&#39;%d/%m/%y&#39;)
+
+    # ipywidgets:
+    # We use dropdowns for the countries
+    country_widget_1 = Dropdown(options=country_list, value=&#39;Total&#39;,
+                                description=&#39;Country 1&#39;)
+    country_widget_2 = Dropdown(options=country_list, value=&#39;No country&#39;,
+                                description=&#39;Country 2&#39;)
+    country_widget_3 = Dropdown(options=country_list, value=&#39;No country&#39;,
+                                description=&#39;Country 3&#39;)
+    # Selection slider for the dates (since the date picker has some problems)
+    start_date_widget = SelectionSlider(
+        options=date_list,
+        value=date_list[0],
+        description=&#39;Start date&#39;,
+    )
+    end_date_widget = SelectionSlider(
+        options=date_list,
+        value=date_list[-1],
+        description=&#39;End date&#39;,
+    )
+    # And a checkbox to determine if we want the information per day or cumulative
+    daily_cases_widget = Checkbox(
+        value=False,
+        description=&#39;Show the n. of new cases/day&#39;,
+    )
+
+    # A layout is used for the plotly figure
+    layout = cf.Layout(height=heigth,
+                       width=width,
+                       autosize=False,
+                       xaxis=dict(title=&#39;Date&#39;),
+                       margin=dict(l=60, r=60, b=40,
+                                   t=40, pad=4))
+
+    # We have a function that does the update of the data
+    # using the ipywidgets defined above
+    @interact(country_1=country_widget_1,
+              country_2=country_widget_2,
+              country_3=country_widget_3,
+              start_date=start_date_widget,
+              end_date=end_date_widget,
+              daily_var=daily_cases_widget)
+    def plot_range(country_1, country_2, country_3,
+                   start_date, end_date, daily_var):
+        &amp;quot;&amp;quot;&amp;quot;
+        Update the plot using information from the ipywidgets.
+
+        The plot can compare at maximum three countries at the same
+        time.
+
+        Args:
+            country_1: Country 1 to appear in the plot
+            country_2: Country 1 to appear in the plot
+            country_3: Country 1 to appear in the plot
+            start_date: Plot data from `start_date` on
+            end_date: Plot data until `end_date`
+            daily_var: Determine if we should show the cumulative
+                or the number new cases per day
+        &amp;quot;&amp;quot;&amp;quot;
+        # Limit the data acconding to the countries selected and date range
+        df = (
+            df_input
+            .groupby(level=1, axis=1).sum()
+            .loc[lambda df_: (df_.index &amp;gt;= datetime.strptime(start_date, &#39;%d/%m/%y&#39;)) &amp;amp;
+                             (df_.index &amp;lt;= datetime.strptime(end_date, &#39;%d/%m/%y&#39;)),
+                 lambda df_: (df_.columns.get_level_values(&#39;Country/Region&#39;)
+                              .isin([country_1, country_2, country_3]))]
+        )
+
+        # If daily_var is True, compute the number of new cases per day
+        if daily_var:
+            df = df - df.shift()
+            title = F&#39;Number of new {df_label} cases / day&#39;
+            plot_type = &#39;bar&#39;
+        else:
+            title = F&#39;Number of {df_label} cases (cumulative)&#39;
+            plot_type = &#39;line&#39;
+
+        # Define the title and y axis label
+        layout.title = title
+        layout.yaxis.title = title
+        # Plot the data
+        df.iplot(kind=plot_type, yTitle=title, layout=layout)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;showing-the-data&#34;&gt;Showing the data&lt;/h2&gt;
+&lt;p&gt;Finally we can show our data and play with it.&lt;/p&gt;
+&lt;p&gt;There are 3 dropdown menus that allow you to select 3 different countries to compare.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Finally, we plot all the cases
+for type_, df in df_dict.items():
+    display(Markdown(f&#39;---\n## Number of {type_} cases over time&#39;))
+    interactive_plot(df.rename(columns={&#39;Others&#39;: &#39;Diamond Princess&#39;}), type_)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;./plot_visualization.png&#34; alt=&#34;Visualization example&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Loading Wikipedia articles (EN) with Python</title>
