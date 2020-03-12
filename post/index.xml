@@ -14,9 +14,9 @@
     
     <item>
       <title>Visualizing COVID-19 infection (corona virus) over time</title>
-      <link>https://luizvbo.github.io/post/coronavirus-visualization/corona-plots/</link>
+      <link>https://luizvbo.github.io/post/coronavirus-visualization/</link>
       <pubDate>Thu, 12 Mar 2020 00:00:00 +0000</pubDate>
-      <guid>https://luizvbo.github.io/post/coronavirus-visualization/corona-plots/</guid>
+      <guid>https://luizvbo.github.io/post/coronavirus-visualization/</guid>
       <description>&lt;h1 id=&#34;exploring-covid-19&#34;&gt;Exploring COVID-19&lt;/h1&gt;
 &lt;p&gt;The Johns Hopkins University Center for Systems Science and Engineering (JHU CSSE) maintain a 
 &lt;a href=&#34;https://github.com/CSSEGISandData/COVID-19&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub repository with daily update information about teh Corona Virus&lt;/a&gt;
@@ -186,7 +186,6 @@ for type_, df in df_dict.items():
     display(Markdown(f&#39;---\n## Number of {type_} cases over time&#39;))
     interactive_plot(df.rename(columns={&#39;Others&#39;: &#39;Diamond Princess&#39;}), type_)
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;./plot_visualization.png&#34; alt=&#34;Visualization example&#34;&gt;&lt;/p&gt;
 </description>
     </item>
     
