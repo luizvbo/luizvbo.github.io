@@ -723,6 +723,21 @@ from ipywidgets.widgets import (
 from datetime import datetime
 import cufflinks as cf
 </code></pre>
+<script type="text/javascript">
+window.PlotlyConfig = {MathJaxConfig: 'local'};
+if (window.MathJax) {MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}
+if (typeof require !== 'undefined') {
+require.undef("plotly");
+requirejs.config({
+    paths: {
+        'plotly': ['https://cdn.plot.ly/plotly-latest.min']
+    }
+});
+require(['plotly'], function(Plotly) {
+    window._Plotly = Plotly;
+});
+}
+</script>
 <h2 id="getting-the-data">Getting the data</h2>
 <pre><code class="language-python">path_dict = dict(
     confirmed = (&quot;https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/&quot;
@@ -868,6 +883,15 @@ for type_, df in df_dict.items():
     display(Markdown(f'---\n## Number of {type_} cases over time'))
     interactive_plot(df.rename(columns={'Others': 'Diamond Princess'}), type_)
 </code></pre>
+<hr>
+<h2 id="number-of-confirmed-cases-over-time">Number of confirmed cases over time</h2>
+<p><img src="/img/2020-03-13-corona-new-cases.png" alt="Number of confirmed cases over time"></p>
+<hr>
+<h2 id="number-of-death-cases-over-time">Number of death cases over time</h2>
+<p><img src="/img/2020-03-13-corona-deaths.png" alt="Number of deaths over time"></p>
+<hr>
+<h2 id="number-of-recovered-cases-over-time">Number of recovered cases over time</h2>
+<p><img src="/img/2020-03-13-corona-recovered.png" alt="Number of recovered cases over time"></p>
 
     </div>
 
