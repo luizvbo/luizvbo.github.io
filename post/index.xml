@@ -208,6 +208,9 @@ for type_, df in df_dict.items():
 
 
 
+  
+  
+
 
 
 
@@ -221,10 +224,10 @@ for type_, df in df_dict.items():
 &lt;figure&gt;
 
 
-  &lt;a data-fancybox=&#34;&#34; href=&#34;2020-03-13-corona-new-cases.png%29&#34; &gt;
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://luizvbo.github.io/post/coronavirus-visualization/2020-03-13-corona-new-cases_hu1319c1a3dc2ced85cdad9cee233ab852_51501_2000x2000_fit_lanczos_2.png&#34; &gt;
 
 
-  &lt;img src=&#34;2020-03-13-corona-new-cases.png%29&#34; alt=&#34;&#34;  &gt;
+  &lt;img data-src=&#34;https://luizvbo.github.io/post/coronavirus-visualization/2020-03-13-corona-new-cases_hu1319c1a3dc2ced85cdad9cee233ab852_51501_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;795&#34; height=&#34;788&#34;&gt;
 &lt;/a&gt;
 
 
@@ -239,6 +242,9 @@ for type_, df in df_dict.items():
 
 
 
+  
+  
+
 
 
 
@@ -252,10 +258,10 @@ for type_, df in df_dict.items():
 &lt;figure&gt;
 
 
-  &lt;a data-fancybox=&#34;&#34; href=&#34;2020-03-13-corona-deaths.png%29&#34; &gt;
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://luizvbo.github.io/post/coronavirus-visualization/2020-03-13-corona-deaths_hu5392237da4a556a379b01b53f7f2eb75_44018_2000x2000_fit_lanczos_2.png&#34; &gt;
 
 
-  &lt;img src=&#34;2020-03-13-corona-deaths.png%29&#34; alt=&#34;&#34;  &gt;
+  &lt;img data-src=&#34;https://luizvbo.github.io/post/coronavirus-visualization/2020-03-13-corona-deaths_hu5392237da4a556a379b01b53f7f2eb75_44018_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;798&#34; height=&#34;790&#34;&gt;
 &lt;/a&gt;
 
 
@@ -270,6 +276,9 @@ for type_, df in df_dict.items():
 
 
 
+  
+  
+
 
 
 
@@ -283,10 +292,10 @@ for type_, df in df_dict.items():
 &lt;figure&gt;
 
 
-  &lt;a data-fancybox=&#34;&#34; href=&#34;2020-03-13-corona-recovered.png%29&#34; &gt;
+  &lt;a data-fancybox=&#34;&#34; href=&#34;https://luizvbo.github.io/post/coronavirus-visualization/2020-03-13-corona-recovered_hu87f350c389447fa9e865ca7ac7a1f2b8_51167_2000x2000_fit_lanczos_2.png&#34; &gt;
 
 
-  &lt;img src=&#34;2020-03-13-corona-recovered.png%29&#34; alt=&#34;&#34;  &gt;
+  &lt;img data-src=&#34;https://luizvbo.github.io/post/coronavirus-visualization/2020-03-13-corona-recovered_hu87f350c389447fa9e865ca7ac7a1f2b8_51167_2000x2000_fit_lanczos_2.png&#34; class=&#34;lazyload&#34; alt=&#34;&#34; width=&#34;795&#34; height=&#34;789&#34;&gt;
 &lt;/a&gt;
 
 
