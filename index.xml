@@ -233,7 +233,7 @@ for type_, df in df_dict.items():
 
 &lt;hr&gt;
 &lt;h2 id=&#34;number-of-death-cases-over-time&#34;&gt;Number of death cases over time&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&#34;https://luizvbo.github.io/img/2020-03-13-corona-deaths.png&#34; alt=&#34;Number of deaths over time&#34;&gt;
+&lt;!-- ![Number of deaths over time](/img/2020-03-13-corona-deaths.png) --&gt;
 
 
 
@@ -261,10 +261,10 @@ for type_, df in df_dict.items():
 
 
 &lt;/figure&gt;
-&lt;/p&gt;
+
 &lt;hr&gt;
 &lt;h2 id=&#34;number-of-recovered-cases-over-time&#34;&gt;Number of recovered cases over time&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&#34;https://luizvbo.github.io/img/2020-03-13-corona-recovered.png&#34; alt=&#34;Number of recovered cases over time&#34;&gt;
+&lt;!-- ![Number of recovered cases over time](/img/2020-03-13-corona-recovered.png) --&gt;
 
 
 
@@ -292,7 +292,7 @@ for type_, df in df_dict.items():
 
 
 &lt;/figure&gt;
-&lt;/p&gt;
+
 </description>
     </item>
     
