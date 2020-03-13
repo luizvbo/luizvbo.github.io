@@ -202,7 +202,6 @@ for type_, df in df_dict.items():
 &lt;/code&gt;&lt;/pre&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;number-of-confirmed-cases-over-time&#34;&gt;Number of confirmed cases over time&lt;/h2&gt;
-&lt;!-- ![Number of confirmed cases over time](/img/2020-03-13-corona-new-cases.png) --&gt;
 
 
 
@@ -236,7 +235,6 @@ for type_, df in df_dict.items():
 
 &lt;hr&gt;
 &lt;h2 id=&#34;number-of-death-cases-over-time&#34;&gt;Number of death cases over time&lt;/h2&gt;
-&lt;!-- ![Number of deaths over time](/img/2020-03-13-corona-deaths.png) --&gt;
 
 
 
@@ -270,7 +268,6 @@ for type_, df in df_dict.items():
 
 &lt;hr&gt;
 &lt;h2 id=&#34;number-of-recovered-cases-over-time&#34;&gt;Number of recovered cases over time&lt;/h2&gt;
-&lt;!-- ![Number of recovered cases over time](/img/2020-03-13-corona-recovered.png) --&gt;
 
 
 
