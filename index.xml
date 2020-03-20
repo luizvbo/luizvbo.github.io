@@ -14,6 +14,26 @@
     
     <item>
       <title>Visualizing COVID-19 infection (corona virus) over time</title>
+      <link>https://luizvbo.github.io/post/coronavirus-cases/</link>
+      <pubDate>Thu, 12 Mar 2020 00:00:00 +0000</pubDate>
+      <guid>https://luizvbo.github.io/post/coronavirus-cases/</guid>
+      <description>&lt;h1 id=&#34;exploring-covid-19&#34;&gt;Exploring COVID-19&lt;/h1&gt;
+&lt;p&gt;The Johns Hopkins University Center for Systems Science and Engineering (JHU CSSE) maintain a 
+&lt;a href=&#34;https://github.com/CSSEGISandData/COVID-19&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub repository with daily updated information about the Corona Virus&lt;/a&gt;
+. They also provide a dashboard to interact with the data.&lt;/p&gt;
+&lt;p&gt;However, even their dashboard doesn’t provide the information I would like to see: &lt;strong&gt;The evolution over time of the number of cases/deaths/recovery patients per country&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Thus, the idea of this notebook is to create interactive plots that we can use to monitor the evolution of the disease.&lt;/p&gt;
+&lt;p&gt;You are more than welcome to modify the notebook to predict the number of cases and do other types of analysis. The notebook can be found in my &lt;strong&gt;
+&lt;a href=&#34;https://github.com/luizvbo/notebooks/blob/master/corona-plots.ipynb&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub repository&lt;/a&gt;
+&lt;/strong&gt;.&lt;/p&gt;
+&lt;iframe id=&#34;igraph&#34; scrolling=&#34;no&#34; style=&#34;border:none;&#34;
+        seamless=&#34;seamless&#34; src=&#34;plot_confirmed_cum.html&#34; height=&#34;600px&#34; width=&#34;100%&#34;&gt;
+&lt;/iframe&gt;&#39;
+</description>
+    </item>
+    
+    <item>
+      <title>Visualizing COVID-19 infection (corona virus) over time</title>
       <link>https://luizvbo.github.io/post/coronavirus-visualization/</link>
       <pubDate>Thu, 12 Mar 2020 00:00:00 +0000</pubDate>
       <guid>https://luizvbo.github.io/post/coronavirus-visualization/</guid>
