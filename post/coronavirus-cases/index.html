@@ -28,9 +28,8 @@
   
     
   
-  <meta name="description" content="Exploring COVID-19 The Johns Hopkins University Center for Systems Science and Engineering (JHU CSSE) maintain a GitHub repository with daily updated information about the Corona Virus . They also provide a dashboard to interact with the data.
-However, even their dashboard doesn’t provide the information I would like to see: The evolution over time of the number of cases/deaths/recovery patients per country.
-Thus, the idea of this notebook is to create interactive plots that we can use to monitor the evolution of the disease.">
+  <meta name="description" content="The Data The Johns Hopkins University Center for Systems Science and Engineering (JHU CSSE) maintain a GitHub repository with daily updated information about the Corona Virus . They also provide a dashboard to interact with the data.
+However, even their dashboard doesn’t provide the information I would like to see: The evolution over time of the number of cases/deaths/recovery patients per country. Assuming that others are also interested on this information, I am sharing the plots I made with plotly.">
 
   
   <link rel="alternate" hreflang="en-us" href="https://luizvbo.github.io/post/coronavirus-cases/">
@@ -244,16 +243,15 @@ Thus, the idea of this notebook is to create interactive plots that we can use t
   
   <meta property="og:site_name" content="Luiz Otavio Vilas Boas Oliveira">
   <meta property="og:url" content="https://luizvbo.github.io/post/coronavirus-cases/">
-  <meta property="og:title" content="Visualizing COVID-19 infection (corona virus) over time | Luiz Otavio Vilas Boas Oliveira">
-  <meta property="og:description" content="Exploring COVID-19 The Johns Hopkins University Center for Systems Science and Engineering (JHU CSSE) maintain a GitHub repository with daily updated information about the Corona Virus . They also provide a dashboard to interact with the data.
-However, even their dashboard doesn’t provide the information I would like to see: The evolution over time of the number of cases/deaths/recovery patients per country.
-Thus, the idea of this notebook is to create interactive plots that we can use to monitor the evolution of the disease."><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
+  <meta property="og:title" content="Visualizing COVID-19 cases with Plotly (confirmed cases) | Luiz Otavio Vilas Boas Oliveira">
+  <meta property="og:description" content="The Data The Johns Hopkins University Center for Systems Science and Engineering (JHU CSSE) maintain a GitHub repository with daily updated information about the Corona Virus . They also provide a dashboard to interact with the data.
+However, even their dashboard doesn’t provide the information I would like to see: The evolution over time of the number of cases/deaths/recovery patients per country. Assuming that others are also interested on this information, I am sharing the plots I made with plotly."><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
   <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="en-us">
   
     
-      <meta property="article:published_time" content="2020-03-12T00:00:00&#43;00:00">
+      <meta property="article:published_time" content="2020-03-21T00:00:00&#43;00:00">
     
-    <meta property="article:modified_time" content="2020-03-12T00:00:00&#43;00:00">
+    <meta property="article:modified_time" content="2020-03-21T00:00:00&#43;00:00">
   
 
   
@@ -281,10 +279,10 @@ Thus, the idea of this notebook is to create interactive plots that we can use t
     "@type": "WebPage",
     "@id": "https://luizvbo.github.io/post/coronavirus-cases/"
   },
-  "headline": "Visualizing COVID-19 infection (corona virus) over time",
+  "headline": "Visualizing COVID-19 cases with Plotly (confirmed cases)",
   
-  "datePublished": "2020-03-12T00:00:00Z",
-  "dateModified": "2020-03-12T00:00:00Z",
+  "datePublished": "2020-03-21T00:00:00Z",
+  "dateModified": "2020-03-21T00:00:00Z",
   
   "author": {
     "@type": "Person",
@@ -299,7 +297,7 @@ Thus, the idea of this notebook is to create interactive plots that we can use t
       "url": "img/https://luizvbo.github.io/"
     }
   },
-  "description": "Exploring COVID-19 The Johns Hopkins University Center for Systems Science and Engineering (JHU CSSE) maintain a GitHub repository with daily updated information about the Corona Virus . They also provide a dashboard to interact with the data.\nHowever, even their dashboard doesn’t provide the information I would like to see: The evolution over time of the number of cases/deaths/recovery patients per country.\nThus, the idea of this notebook is to create interactive plots that we can use to monitor the evolution of the disease."
+  "description": "The Data The Johns Hopkins University Center for Systems Science and Engineering (JHU CSSE) maintain a GitHub repository with daily updated information about the Corona Virus . They also provide a dashboard to interact with the data.\nHowever, even their dashboard doesn’t provide the information I would like to see: The evolution over time of the number of cases/deaths/recovery patients per country. Assuming that others are also interested on this information, I am sharing the plots I made with plotly."
 }
 </script>
 
@@ -317,7 +315,7 @@ Thus, the idea of this notebook is to create interactive plots that we can use t
 
 
 
-  <title>Visualizing COVID-19 infection (corona virus) over time | Luiz Otavio Vilas Boas Oliveira</title>
+  <title>Visualizing COVID-19 cases with Plotly (confirmed cases) | Luiz Otavio Vilas Boas Oliveira</title>
 
 </head>
 
@@ -615,7 +613,7 @@ Thus, the idea of this notebook is to create interactive plots that we can use t
   
   
 <div class="article-container pt-3">
-  <h1>Visualizing COVID-19 infection (corona virus) over time</h1>
+  <h1>Visualizing COVID-19 cases with Plotly (confirmed cases)</h1>
 
   
 
@@ -634,7 +632,7 @@ Thus, the idea of this notebook is to create interactive plots that we can use t
     
       
     
-    Mar 12, 2020
+    Mar 21, 2020
   </span>
   
 
@@ -682,17 +680,29 @@ Thus, the idea of this notebook is to create interactive plots that we can use t
   <div class="article-container">
 
     <div class="article-style">
-      <h1 id="exploring-covid-19">Exploring COVID-19</h1>
+      <h1 id="the-data">The Data</h1>
 <p>The Johns Hopkins University Center for Systems Science and Engineering (JHU CSSE) maintain a 
 <a href="https://github.com/CSSEGISandData/COVID-19" target="_blank" rel="noopener">GitHub repository with daily updated information about the Corona Virus</a>
 . They also provide a dashboard to interact with the data.</p>
-<p>However, even their dashboard doesn’t provide the information I would like to see: <strong>The evolution over time of the number of cases/deaths/recovery patients per country</strong>.</p>
-<p>Thus, the idea of this notebook is to create interactive plots that we can use to monitor the evolution of the disease.</p>
+<p>However, even their dashboard doesn’t provide the information I would like to see: <strong>The evolution over time of the number of cases/deaths/recovery patients per country</strong>. Assuming that others are also interested on this information, I am sharing the plots I made with <code>plotly</code>.</p>
 <p>You are more than welcome to modify the notebook to predict the number of cases and do other types of analysis. The notebook can be found in my <strong>
-<a href="https://github.com/luizvbo/notebooks/blob/master/corona-plots.ipynb" target="_blank" rel="noopener">GitHub repository</a>
+<a href="https://github.com/luizvbo/notebooks/blob/master/corona-plots-plotly.ipynb" target="_blank" rel="noopener">GitHub repository</a>
 </strong>.</p>
+<p>The data is split into three plots:</p>
+<ul>
+<li>
+<a href="coronavirus-cases">COVID-19 confirmed cases</a>
+</li>
+<li>
+<a href="coronavirus-deaths">COVID-19 deaths</a>
+</li>
+<li>
+<a href="coronavirus-recovered">COVID-19 recovered cases</a>
+</li>
+</ul>
+<p>Bellow you can see the data for all the <strong>confirmed cases</strong> (total and per day).</p>
 <iframe id="igraph" scrolling="no" style="border:none;"
-        seamless="seamless" src="plot_confirmed_cum.html" height="600px" width="100%">
+        seamless="seamless" src="plot_confirmed.html" height="600px" width="100%">
 </iframe>'
 
     </div>
@@ -716,7 +726,7 @@ Thus, the idea of this notebook is to create interactive plots that we can use t
       
       
       <li>
-        <a href="https://twitter.com/intent/tweet?url=https://luizvbo.github.io/post/coronavirus-cases/&amp;text=Visualizing%20COVID-19%20infection%20%28corona%20virus%29%20over%20time" target="_blank" rel="noopener" class="share-btn-twitter">
+        <a href="https://twitter.com/intent/tweet?url=https://luizvbo.github.io/post/coronavirus-cases/&amp;text=Visualizing%20COVID-19%20cases%20with%20Plotly%20%28confirmed%20cases%29" target="_blank" rel="noopener" class="share-btn-twitter">
           <i class="fab fa-twitter"></i>
         </a>
       </li>
@@ -729,7 +739,7 @@ Thus, the idea of this notebook is to create interactive plots that we can use t
       
       
       <li>
-        <a href="https://www.facebook.com/sharer.php?u=https://luizvbo.github.io/post/coronavirus-cases/&amp;t=Visualizing%20COVID-19%20infection%20%28corona%20virus%29%20over%20time" target="_blank" rel="noopener" class="share-btn-facebook">
+        <a href="https://www.facebook.com/sharer.php?u=https://luizvbo.github.io/post/coronavirus-cases/&amp;t=Visualizing%20COVID-19%20cases%20with%20Plotly%20%28confirmed%20cases%29" target="_blank" rel="noopener" class="share-btn-facebook">
           <i class="fab fa-facebook"></i>
         </a>
       </li>
@@ -742,7 +752,7 @@ Thus, the idea of this notebook is to create interactive plots that we can use t
       
       
       <li>
-        <a href="mailto:?subject=Visualizing%20COVID-19%20infection%20%28corona%20virus%29%20over%20time&amp;body=https://luizvbo.github.io/post/coronavirus-cases/" target="_blank" rel="noopener" class="share-btn-email">
+        <a href="mailto:?subject=Visualizing%20COVID-19%20cases%20with%20Plotly%20%28confirmed%20cases%29&amp;body=https://luizvbo.github.io/post/coronavirus-cases/" target="_blank" rel="noopener" class="share-btn-email">
           <i class="fas fa-envelope"></i>
         </a>
       </li>
@@ -755,7 +765,7 @@ Thus, the idea of this notebook is to create interactive plots that we can use t
       
       
       <li>
-        <a href="https://www.linkedin.com/shareArticle?url=https://luizvbo.github.io/post/coronavirus-cases/&amp;title=Visualizing%20COVID-19%20infection%20%28corona%20virus%29%20over%20time" target="_blank" rel="noopener" class="share-btn-linkedin">
+        <a href="https://www.linkedin.com/shareArticle?url=https://luizvbo.github.io/post/coronavirus-cases/&amp;title=Visualizing%20COVID-19%20cases%20with%20Plotly%20%28confirmed%20cases%29" target="_blank" rel="noopener" class="share-btn-linkedin">
           <i class="fab fa-linkedin-in"></i>
         </a>
       </li>
@@ -768,7 +778,7 @@ Thus, the idea of this notebook is to create interactive plots that we can use t
       
       
       <li>
-        <a href="https://web.whatsapp.com/send?text=Visualizing%20COVID-19%20infection%20%28corona%20virus%29%20over%20time%20https://luizvbo.github.io/post/coronavirus-cases/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+        <a href="https://web.whatsapp.com/send?text=Visualizing%20COVID-19%20cases%20with%20Plotly%20%28confirmed%20cases%29%20https://luizvbo.github.io/post/coronavirus-cases/" target="_blank" rel="noopener" class="share-btn-whatsapp">
           <i class="fab fa-whatsapp"></i>
         </a>
       </li>
@@ -781,7 +791,7 @@ Thus, the idea of this notebook is to create interactive plots that we can use t
       
       
       <li>
-        <a href="https://service.weibo.com/share/share.php?url=https://luizvbo.github.io/post/coronavirus-cases/&amp;title=Visualizing%20COVID-19%20infection%20%28corona%20virus%29%20over%20time" target="_blank" rel="noopener" class="share-btn-weibo">
+        <a href="https://service.weibo.com/share/share.php?url=https://luizvbo.github.io/post/coronavirus-cases/&amp;title=Visualizing%20COVID-19%20cases%20with%20Plotly%20%28confirmed%20cases%29" target="_blank" rel="noopener" class="share-btn-weibo">
           <i class="fab fa-weibo"></i>
         </a>
       </li>
