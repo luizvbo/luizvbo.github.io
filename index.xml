@@ -38,7 +38,7 @@
 &lt;/ul&gt;
 &lt;p&gt;Bellow you can see the data for all the &lt;strong&gt;confirmed cases&lt;/strong&gt; (total and per day).&lt;/p&gt;
 &lt;iframe id=&#34;igraph&#34; scrolling=&#34;no&#34; style=&#34;border:none;&#34;
-        seamless=&#34;seamless&#34; src=&#34;plot-confirmed.html&#34; height=&#34;900px&#34; width=&#34;100%&#34;&gt;
+        seamless=&#34;seamless&#34; src=&#34;plot-confirmed.html&#34; height=&#34;1500px&#34; width=&#34;100%&#34;&gt;
 &lt;/iframe&gt;&#39;
 </description>
     </item>
@@ -69,7 +69,7 @@
 &lt;/ul&gt;
 &lt;p&gt;Bellow you can see the data for the &lt;strong&gt;deaths&lt;/strong&gt; caused by COVID-19 (total and per day).&lt;/p&gt;
 &lt;iframe id=&#34;igraph&#34; scrolling=&#34;no&#34; style=&#34;border:none;&#34;
-        seamless=&#34;seamless&#34; src=&#34;plot-death.html&#34; height=&#34;900px&#34; width=&#34;100%&#34;&gt;
+        seamless=&#34;seamless&#34; src=&#34;plot-death.html&#34; height=&#34;1500px&#34; width=&#34;100%&#34;&gt;
 &lt;/iframe&gt;&#39;
 </description>
     </item>
@@ -100,7 +100,7 @@
 &lt;/ul&gt;
 &lt;p&gt;Bellow you can see the data for all the &lt;strong&gt;recovered cases&lt;/strong&gt; (total and per day).&lt;/p&gt;
 &lt;iframe id=&#34;igraph&#34; scrolling=&#34;no&#34; style=&#34;border:none;&#34;
-        seamless=&#34;seamless&#34; src=&#34;plot-recovered.html&#34; height=&#34;900px&#34; width=&#34;100%&#34;&gt;
+        seamless=&#34;seamless&#34; src=&#34;plot-recovered.html&#34; height=&#34;1500px&#34; width=&#34;100%&#34;&gt;
 &lt;/iframe&gt;&#39;
 </description>
     </item>
