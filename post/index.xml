@@ -37,7 +37,7 @@
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Bellow, you can see the data for all the &lt;strong&gt;confirmed cases&lt;/strong&gt; (total and per day).&lt;/p&gt;
-&lt;p&gt;You can select countries to compare the data. If you are having problems to visualise the plot, you can try the version 
+&lt;p&gt;You can select countries to compare the data. If you are having problems to visualise the plot, you can try the 
 &lt;a href=&#34;../coronavirus-confirmed/plot-confirmed.html&#34;&gt;clean html version from this link&lt;/a&gt;
 &lt;/p&gt;
 &lt;iframe id=&#34;igraph&#34; scrolling=&#34;no&#34; style=&#34;border:none;&#34;
@@ -71,7 +71,7 @@
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Bellow, you can see the data for the &lt;strong&gt;deaths&lt;/strong&gt; caused by COVID-19 (total and per day).&lt;/p&gt;
-&lt;p&gt;You can select countries to compare the data. If you are having problems to visualise the plot, you can try the version 
+&lt;p&gt;You can select countries to compare the data. If you are having problems to visualise the plot, you can try the 
 &lt;a href=&#34;../coronavirus-death/plot-death.html&#34;&gt;clean html version from this link&lt;/a&gt;
 &lt;/p&gt;
 &lt;iframe id=&#34;igraph&#34; scrolling=&#34;no&#34; style=&#34;border:none;&#34;
@@ -105,7 +105,7 @@
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Bellow, you can see the data for all the &lt;strong&gt;recovered cases&lt;/strong&gt; (total and per day).&lt;/p&gt;
-&lt;p&gt;You can select countries to compare the data. If you are having problems to visualise the plot, you can try the version 
+&lt;p&gt;You can select countries to compare the data. If you are having problems to visualise the plot, you can try the 
 &lt;a href=&#34;../coronavirus-recovered/plot-recovered.html&#34;&gt;clean html version from this link&lt;/a&gt;
 &lt;/p&gt;
 &lt;iframe id=&#34;igraph&#34; scrolling=&#34;no&#34; style=&#34;border:none;&#34;
