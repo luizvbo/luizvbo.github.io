@@ -28,8 +28,8 @@
   
     
   
-  <meta name="description" content="The Data The Johns Hopkins University Center for Systems Science and Engineering (JHU CSSE) maintain a GitHub repository with daily updated information about the Corona Virus . They also provide a dashboard to interact with the data.
-However, even their dashboard doesn’t provide the information I would like to see: The evolution over time of the number of cases/deaths/recovery patients per country. Assuming that others are also interested on this information, I am sharing the plots I made with plotly.">
+  <meta name="description" content="I would like to see: The evolution over time of the number of cases/deaths/recovery patients per country. Assuming that others are also interested on this information, I am sharing the plots I made with plotly.
+The Johns Hopkins University Center for Systems Science and Engineering (JHU CSSE) maintain a GitHub repository with daily updated information about the Corona Virus . They also provide a dashboard to interact with the data (however, even their dashboard doesn’t provide the plot I was looking for).">
 
   
   <link rel="alternate" hreflang="en-us" href="https://luizvbo.github.io/post/coronavirus-recovered/">
@@ -243,9 +243,9 @@ However, even their dashboard doesn’t provide the information I would like to 
   
   <meta property="og:site_name" content="Luiz Otavio Vilas Boas Oliveira">
   <meta property="og:url" content="https://luizvbo.github.io/post/coronavirus-recovered/">
-  <meta property="og:title" content="Visualizing COVID-19 cases with Plotly (recovered cases) | Luiz Otavio Vilas Boas Oliveira">
-  <meta property="og:description" content="The Data The Johns Hopkins University Center for Systems Science and Engineering (JHU CSSE) maintain a GitHub repository with daily updated information about the Corona Virus . They also provide a dashboard to interact with the data.
-However, even their dashboard doesn’t provide the information I would like to see: The evolution over time of the number of cases/deaths/recovery patients per country. Assuming that others are also interested on this information, I am sharing the plots I made with plotly."><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
+  <meta property="og:title" content="Visualizing the number of COVID-19 recovered cases with Plotly | Luiz Otavio Vilas Boas Oliveira">
+  <meta property="og:description" content="I would like to see: The evolution over time of the number of cases/deaths/recovery patients per country. Assuming that others are also interested on this information, I am sharing the plots I made with plotly.
+The Johns Hopkins University Center for Systems Science and Engineering (JHU CSSE) maintain a GitHub repository with daily updated information about the Corona Virus . They also provide a dashboard to interact with the data (however, even their dashboard doesn’t provide the plot I was looking for)."><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
   <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="en-us">
   
     
@@ -279,7 +279,7 @@ However, even their dashboard doesn’t provide the information I would like to 
     "@type": "WebPage",
     "@id": "https://luizvbo.github.io/post/coronavirus-recovered/"
   },
-  "headline": "Visualizing COVID-19 cases with Plotly (recovered cases)",
+  "headline": "Visualizing the number of COVID-19 recovered cases with Plotly",
   
   "datePublished": "2020-03-21T00:00:00Z",
   "dateModified": "2020-03-21T00:00:00Z",
@@ -297,7 +297,7 @@ However, even their dashboard doesn’t provide the information I would like to 
       "url": "img/https://luizvbo.github.io/"
     }
   },
-  "description": "The Data The Johns Hopkins University Center for Systems Science and Engineering (JHU CSSE) maintain a GitHub repository with daily updated information about the Corona Virus . They also provide a dashboard to interact with the data.\nHowever, even their dashboard doesn’t provide the information I would like to see: The evolution over time of the number of cases/deaths/recovery patients per country. Assuming that others are also interested on this information, I am sharing the plots I made with plotly."
+  "description": "I would like to see: The evolution over time of the number of cases/deaths/recovery patients per country. Assuming that others are also interested on this information, I am sharing the plots I made with plotly.\nThe Johns Hopkins University Center for Systems Science and Engineering (JHU CSSE) maintain a GitHub repository with daily updated information about the Corona Virus . They also provide a dashboard to interact with the data (however, even their dashboard doesn’t provide the plot I was looking for)."
 }
 </script>
 
@@ -315,7 +315,7 @@ However, even their dashboard doesn’t provide the information I would like to 
 
 
 
-  <title>Visualizing COVID-19 cases with Plotly (recovered cases) | Luiz Otavio Vilas Boas Oliveira</title>
+  <title>Visualizing the number of COVID-19 recovered cases with Plotly | Luiz Otavio Vilas Boas Oliveira</title>
 
 </head>
 
@@ -613,7 +613,7 @@ However, even their dashboard doesn’t provide the information I would like to 
   
   
 <div class="article-container pt-3">
-  <h1>Visualizing COVID-19 cases with Plotly (recovered cases)</h1>
+  <h1>Visualizing the number of COVID-19 recovered cases with Plotly</h1>
 
   
 
@@ -680,29 +680,28 @@ However, even their dashboard doesn’t provide the information I would like to 
   <div class="article-container">
 
     <div class="article-style">
-      <h1 id="the-data">The Data</h1>
+      <p>I would like to see: <strong>The evolution over time of the number of cases/deaths/recovery patients per country</strong>. Assuming that others are also interested on this information, I am sharing the plots I made with <code>plotly</code>.</p>
 <p>The Johns Hopkins University Center for Systems Science and Engineering (JHU CSSE) maintain a 
 <a href="https://github.com/CSSEGISandData/COVID-19" target="_blank" rel="noopener">GitHub repository with daily updated information about the Corona Virus</a>
-. They also provide a dashboard to interact with the data.</p>
-<p>However, even their dashboard doesn’t provide the information I would like to see: <strong>The evolution over time of the number of cases/deaths/recovery patients per country</strong>. Assuming that others are also interested on this information, I am sharing the plots I made with <code>plotly</code>.</p>
+. They also provide a dashboard to interact with the data (however, even their dashboard doesn’t provide the plot I was looking for).</p>
 <p>You are more than welcome to modify the notebook to predict the number of cases and do other types of analysis. The notebook can be found in my <strong>
 <a href="https://github.com/luizvbo/notebooks/blob/master/corona-plots-plotly.ipynb" target="_blank" rel="noopener">GitHub repository</a>
 </strong>.</p>
 <p>The data is split into three plots:</p>
 <ul>
 <li>
-<a href="coronavirus-cases">COVID-19 confirmed cases</a>
+<a href="../coronavirus-confirmed">COVID-19 confirmed cases</a>
 </li>
 <li>
-<a href="coronavirus-deaths">COVID-19 deaths</a>
+<a href="../coronavirus-death">COVID-19 deaths</a>
 </li>
 <li>
-<a href="coronavirus-recovered">COVID-19 recovered cases</a>
+<a href="../coronavirus-recovered">COVID-19 recovered cases</a>
 </li>
 </ul>
 <p>Bellow you can see the data for all the <strong>recovered cases</strong> (total and per day).</p>
 <iframe id="igraph" scrolling="no" style="border:none;"
-        seamless="seamless" src="plot_recovered.html" height="600px" width="100%">
+        seamless="seamless" src="plot-recovered.html" height="900px" width="100%">
 </iframe>'
 
     </div>
@@ -726,7 +725,7 @@ However, even their dashboard doesn’t provide the information I would like to 
       
       
       <li>
-        <a href="https://twitter.com/intent/tweet?url=https://luizvbo.github.io/post/coronavirus-recovered/&amp;text=Visualizing%20COVID-19%20cases%20with%20Plotly%20%28recovered%20cases%29" target="_blank" rel="noopener" class="share-btn-twitter">
+        <a href="https://twitter.com/intent/tweet?url=https://luizvbo.github.io/post/coronavirus-recovered/&amp;text=Visualizing%20the%20number%20of%20COVID-19%20recovered%20cases%20with%20Plotly" target="_blank" rel="noopener" class="share-btn-twitter">
           <i class="fab fa-twitter"></i>
         </a>
       </li>
@@ -739,7 +738,7 @@ However, even their dashboard doesn’t provide the information I would like to 
       
       
       <li>
-        <a href="https://www.facebook.com/sharer.php?u=https://luizvbo.github.io/post/coronavirus-recovered/&amp;t=Visualizing%20COVID-19%20cases%20with%20Plotly%20%28recovered%20cases%29" target="_blank" rel="noopener" class="share-btn-facebook">
+        <a href="https://www.facebook.com/sharer.php?u=https://luizvbo.github.io/post/coronavirus-recovered/&amp;t=Visualizing%20the%20number%20of%20COVID-19%20recovered%20cases%20with%20Plotly" target="_blank" rel="noopener" class="share-btn-facebook">
           <i class="fab fa-facebook"></i>
         </a>
       </li>
@@ -752,7 +751,7 @@ However, even their dashboard doesn’t provide the information I would like to 
       
       
       <li>
-        <a href="mailto:?subject=Visualizing%20COVID-19%20cases%20with%20Plotly%20%28recovered%20cases%29&amp;body=https://luizvbo.github.io/post/coronavirus-recovered/" target="_blank" rel="noopener" class="share-btn-email">
+        <a href="mailto:?subject=Visualizing%20the%20number%20of%20COVID-19%20recovered%20cases%20with%20Plotly&amp;body=https://luizvbo.github.io/post/coronavirus-recovered/" target="_blank" rel="noopener" class="share-btn-email">
           <i class="fas fa-envelope"></i>
         </a>
       </li>
@@ -765,7 +764,7 @@ However, even their dashboard doesn’t provide the information I would like to 
       
       
       <li>
-        <a href="https://www.linkedin.com/shareArticle?url=https://luizvbo.github.io/post/coronavirus-recovered/&amp;title=Visualizing%20COVID-19%20cases%20with%20Plotly%20%28recovered%20cases%29" target="_blank" rel="noopener" class="share-btn-linkedin">
+        <a href="https://www.linkedin.com/shareArticle?url=https://luizvbo.github.io/post/coronavirus-recovered/&amp;title=Visualizing%20the%20number%20of%20COVID-19%20recovered%20cases%20with%20Plotly" target="_blank" rel="noopener" class="share-btn-linkedin">
           <i class="fab fa-linkedin-in"></i>
         </a>
       </li>
@@ -778,7 +777,7 @@ However, even their dashboard doesn’t provide the information I would like to 
       
       
       <li>
-        <a href="https://web.whatsapp.com/send?text=Visualizing%20COVID-19%20cases%20with%20Plotly%20%28recovered%20cases%29%20https://luizvbo.github.io/post/coronavirus-recovered/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+        <a href="https://web.whatsapp.com/send?text=Visualizing%20the%20number%20of%20COVID-19%20recovered%20cases%20with%20Plotly%20https://luizvbo.github.io/post/coronavirus-recovered/" target="_blank" rel="noopener" class="share-btn-whatsapp">
           <i class="fab fa-whatsapp"></i>
         </a>
       </li>
@@ -791,7 +790,7 @@ However, even their dashboard doesn’t provide the information I would like to 
       
       
       <li>
-        <a href="https://service.weibo.com/share/share.php?url=https://luizvbo.github.io/post/coronavirus-recovered/&amp;title=Visualizing%20COVID-19%20cases%20with%20Plotly%20%28recovered%20cases%29" target="_blank" rel="noopener" class="share-btn-weibo">
+        <a href="https://service.weibo.com/share/share.php?url=https://luizvbo.github.io/post/coronavirus-recovered/&amp;title=Visualizing%20the%20number%20of%20COVID-19%20recovered%20cases%20with%20Plotly" target="_blank" rel="noopener" class="share-btn-weibo">
           <i class="fab fa-weibo"></i>
         </a>
       </li>

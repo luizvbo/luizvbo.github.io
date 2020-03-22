@@ -13,97 +13,94 @@
     </image>
     
     <item>
-      <title>Visualizing COVID-19 cases with Plotly (confirmed cases)</title>
-      <link>https://luizvbo.github.io/post/coronavirus-cases/</link>
+      <title>Visualizing the number of COVID-19 confirmed cases with Plotly</title>
+      <link>https://luizvbo.github.io/post/coronavirus-confirmed/</link>
       <pubDate>Sat, 21 Mar 2020 00:00:00 +0000</pubDate>
-      <guid>https://luizvbo.github.io/post/coronavirus-cases/</guid>
-      <description>&lt;h1 id=&#34;the-data&#34;&gt;The Data&lt;/h1&gt;
+      <guid>https://luizvbo.github.io/post/coronavirus-confirmed/</guid>
+      <description>&lt;p&gt;I would like to see: &lt;strong&gt;The evolution over time of the number of cases/deaths/recovery patients per country&lt;/strong&gt;. Assuming that others are also interested on this information, I am sharing the plots I made with &lt;code&gt;plotly&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;The Johns Hopkins University Center for Systems Science and Engineering (JHU CSSE) maintain a 
 &lt;a href=&#34;https://github.com/CSSEGISandData/COVID-19&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub repository with daily updated information about the Corona Virus&lt;/a&gt;
-. They also provide a dashboard to interact with the data.&lt;/p&gt;
-&lt;p&gt;However, even their dashboard doesn’t provide the information I would like to see: &lt;strong&gt;The evolution over time of the number of cases/deaths/recovery patients per country&lt;/strong&gt;. Assuming that others are also interested on this information, I am sharing the plots I made with &lt;code&gt;plotly&lt;/code&gt;.&lt;/p&gt;
+. They also provide a dashboard to interact with the data (however, even their dashboard doesn’t provide the plot I was looking for).&lt;/p&gt;
 &lt;p&gt;You are more than welcome to modify the notebook to predict the number of cases and do other types of analysis. The notebook can be found in my &lt;strong&gt;
 &lt;a href=&#34;https://github.com/luizvbo/notebooks/blob/master/corona-plots-plotly.ipynb&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub repository&lt;/a&gt;
 &lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;The data is split into three plots:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;a href=&#34;coronavirus-cases&#34;&gt;COVID-19 confirmed cases&lt;/a&gt;
+&lt;a href=&#34;../coronavirus-confirmed&#34;&gt;COVID-19 confirmed cases&lt;/a&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;a href=&#34;../coronavirus-deaths&#34;&gt;COVID-19 deaths&lt;/a&gt;
+&lt;a href=&#34;../coronavirus-death&#34;&gt;COVID-19 deaths&lt;/a&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;a href=&#34;coronavirus-recovered&#34;&gt;COVID-19 recovered cases&lt;/a&gt;
+&lt;a href=&#34;../coronavirus-recovered&#34;&gt;COVID-19 recovered cases&lt;/a&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Bellow you can see the data for all the &lt;strong&gt;confirmed cases&lt;/strong&gt; (total and per day).&lt;/p&gt;
 &lt;iframe id=&#34;igraph&#34; scrolling=&#34;no&#34; style=&#34;border:none;&#34;
-        seamless=&#34;seamless&#34; src=&#34;plot_confirmed.html&#34; height=&#34;600px&#34; width=&#34;100%&#34;&gt;
+        seamless=&#34;seamless&#34; src=&#34;plot-confirmed.html&#34; height=&#34;900px&#34; width=&#34;100%&#34;&gt;
 &lt;/iframe&gt;&#39;
 </description>
     </item>
     
     <item>
-      <title>Visualizing COVID-19 cases with Plotly (deaths)</title>
-      <link>https://luizvbo.github.io/post/coronavirus-deaths/</link>
+      <title>Visualizing the number of COVID-19 deaths with Plotly</title>
+      <link>https://luizvbo.github.io/post/coronavirus-death/</link>
       <pubDate>Sat, 21 Mar 2020 00:00:00 +0000</pubDate>
-      <guid>https://luizvbo.github.io/post/coronavirus-deaths/</guid>
-      <description>&lt;h1 id=&#34;the-data&#34;&gt;The Data&lt;/h1&gt;
+      <guid>https://luizvbo.github.io/post/coronavirus-death/</guid>
+      <description>&lt;p&gt;I would like to see: &lt;strong&gt;The evolution over time of the number of cases/deaths/recovery patients per country&lt;/strong&gt;. Assuming that others are also interested on this information, I am sharing the plots I made with &lt;code&gt;plotly&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;The Johns Hopkins University Center for Systems Science and Engineering (JHU CSSE) maintain a 
 &lt;a href=&#34;https://github.com/CSSEGISandData/COVID-19&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub repository with daily updated information about the Corona Virus&lt;/a&gt;
-. They also provide a dashboard to interact with the data.&lt;/p&gt;
-&lt;p&gt;However, even their dashboard doesn’t provide the information I would like to see: &lt;strong&gt;The evolution over time of the number of cases/deaths/recovery patients per country&lt;/strong&gt;. Assuming that others are also interested on this information, I am sharing the plots I made with &lt;code&gt;plotly&lt;/code&gt;.&lt;/p&gt;
+. They also provide a dashboard to interact with the data (however, even their dashboard doesn’t provide the plot I was looking for).&lt;/p&gt;
 &lt;p&gt;You are more than welcome to modify the notebook to predict the number of cases and do other types of analysis. The notebook can be found in my &lt;strong&gt;
 &lt;a href=&#34;https://github.com/luizvbo/notebooks/blob/master/corona-plots-plotly.ipynb&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub repository&lt;/a&gt;
 &lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;The data is split into three plots:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;a href=&#34;coronavirus-cases&#34;&gt;COVID-19 confirmed cases&lt;/a&gt;
+&lt;a href=&#34;../coronavirus-confirmed&#34;&gt;COVID-19 confirmed cases&lt;/a&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;a href=&#34;coronavirus-deaths&#34;&gt;COVID-19 deaths&lt;/a&gt;
+&lt;a href=&#34;../coronavirus-death&#34;&gt;COVID-19 deaths&lt;/a&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;a href=&#34;coronavirus-recovered&#34;&gt;COVID-19 recovered cases&lt;/a&gt;
+&lt;a href=&#34;../coronavirus-recovered&#34;&gt;COVID-19 recovered cases&lt;/a&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Bellow you can see the data for the &lt;strong&gt;deaths&lt;/strong&gt; caused by COVID-19 (total and per day).&lt;/p&gt;
 &lt;iframe id=&#34;igraph&#34; scrolling=&#34;no&#34; style=&#34;border:none;&#34;
-        seamless=&#34;seamless&#34; src=&#34;plot_death.html&#34; height=&#34;600px&#34; width=&#34;100%&#34;&gt;
+        seamless=&#34;seamless&#34; src=&#34;plot-death.html&#34; height=&#34;900px&#34; width=&#34;100%&#34;&gt;
 &lt;/iframe&gt;&#39;
 </description>
     </item>
     
     <item>
-      <title>Visualizing COVID-19 cases with Plotly (recovered cases)</title>
+      <title>Visualizing the number of COVID-19 recovered cases with Plotly</title>
       <link>https://luizvbo.github.io/post/coronavirus-recovered/</link>
       <pubDate>Sat, 21 Mar 2020 00:00:00 +0000</pubDate>
       <guid>https://luizvbo.github.io/post/coronavirus-recovered/</guid>
-      <description>&lt;h1 id=&#34;the-data&#34;&gt;The Data&lt;/h1&gt;
+      <description>&lt;p&gt;I would like to see: &lt;strong&gt;The evolution over time of the number of cases/deaths/recovery patients per country&lt;/strong&gt;. Assuming that others are also interested on this information, I am sharing the plots I made with &lt;code&gt;plotly&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;The Johns Hopkins University Center for Systems Science and Engineering (JHU CSSE) maintain a 
 &lt;a href=&#34;https://github.com/CSSEGISandData/COVID-19&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub repository with daily updated information about the Corona Virus&lt;/a&gt;
-. They also provide a dashboard to interact with the data.&lt;/p&gt;
-&lt;p&gt;However, even their dashboard doesn’t provide the information I would like to see: &lt;strong&gt;The evolution over time of the number of cases/deaths/recovery patients per country&lt;/strong&gt;. Assuming that others are also interested on this information, I am sharing the plots I made with &lt;code&gt;plotly&lt;/code&gt;.&lt;/p&gt;
+. They also provide a dashboard to interact with the data (however, even their dashboard doesn’t provide the plot I was looking for).&lt;/p&gt;
 &lt;p&gt;You are more than welcome to modify the notebook to predict the number of cases and do other types of analysis. The notebook can be found in my &lt;strong&gt;
 &lt;a href=&#34;https://github.com/luizvbo/notebooks/blob/master/corona-plots-plotly.ipynb&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub repository&lt;/a&gt;
 &lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;The data is split into three plots:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;a href=&#34;coronavirus-cases&#34;&gt;COVID-19 confirmed cases&lt;/a&gt;
+&lt;a href=&#34;../coronavirus-confirmed&#34;&gt;COVID-19 confirmed cases&lt;/a&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;a href=&#34;coronavirus-deaths&#34;&gt;COVID-19 deaths&lt;/a&gt;
+&lt;a href=&#34;../coronavirus-death&#34;&gt;COVID-19 deaths&lt;/a&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;a href=&#34;coronavirus-recovered&#34;&gt;COVID-19 recovered cases&lt;/a&gt;
+&lt;a href=&#34;../coronavirus-recovered&#34;&gt;COVID-19 recovered cases&lt;/a&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Bellow you can see the data for all the &lt;strong&gt;recovered cases&lt;/strong&gt; (total and per day).&lt;/p&gt;
 &lt;iframe id=&#34;igraph&#34; scrolling=&#34;no&#34; style=&#34;border:none;&#34;
-        seamless=&#34;seamless&#34; src=&#34;plot_recovered.html&#34; height=&#34;600px&#34; width=&#34;100%&#34;&gt;
+        seamless=&#34;seamless&#34; src=&#34;plot-recovered.html&#34; height=&#34;900px&#34; width=&#34;100%&#34;&gt;
 &lt;/iframe&gt;&#39;
 </description>
     </item>
