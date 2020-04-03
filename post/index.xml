@@ -43,7 +43,12 @@
 &lt;iframe id=&#34;igraph&#34; scrolling=&#34;no&#34; style=&#34;border:none;&#34;
         seamless=&#34;seamless&#34; src=&#34;plot-confirmed.html&#34; height=&#34;800px&#34; width=&#34;100%&#34;&gt;
 &lt;/iframe&gt;&#39;
-</description>
+&lt;h1 id=&#34;data-shifted-to-origin&#34;&gt;Data Shifted to Origin&lt;/h1&gt;
+&lt;p&gt;I have been seeing plots where they compare the number of new cases/deaths among different countries by moving the origin of the plots the day of the first case/death. Thus, I did the same for the plot above: all the data points are shifted in the horizontal axis such that the origin corresponds to first case/death for that country:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;NOTE&lt;/strong&gt;: The data IS NOT normalised by the population size.&lt;/p&gt;
+&lt;iframe id=&#34;igraph&#34; scrolling=&#34;no&#34; style=&#34;border:none;&#34;
+        seamless=&#34;seamless&#34; src=&#34;plot-confirmed-origin.html&#34; height=&#34;800px&#34; width=&#34;100%&#34;&gt;
+&lt;/iframe&gt;&#39;</description>
     </item>
     
     <item>
@@ -77,7 +82,12 @@
 &lt;iframe id=&#34;igraph&#34; scrolling=&#34;no&#34; style=&#34;border:none;&#34;
         seamless=&#34;seamless&#34; src=&#34;plot-death.html&#34; height=&#34;800px&#34; width=&#34;100%&#34;&gt;
 &lt;/iframe&gt;&#39;
-</description>
+&lt;h1 id=&#34;data-shifted-to-origin&#34;&gt;Data Shifted to Origin&lt;/h1&gt;
+&lt;p&gt;I have been seeing plots where they compare the number of new cases/deaths among different countries by moving the origin of the plots the day of the first case/death. Thus, I did the same for the plot above: all the data points are shifted in the horizontal axis such that the origin corresponds to first case/death for that country:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;NOTE&lt;/strong&gt;: The data IS NOT normalised by the population size.&lt;/p&gt;
+&lt;iframe id=&#34;igraph&#34; scrolling=&#34;no&#34; style=&#34;border:none;&#34;
+        seamless=&#34;seamless&#34; src=&#34;plot-death-origin.html&#34; height=&#34;800px&#34; width=&#34;100%&#34;&gt;
+&lt;/iframe&gt;&#39;</description>
     </item>
     
     <item>
