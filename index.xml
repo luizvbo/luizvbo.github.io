@@ -5,12 +5,250 @@
     <link>https://luizvbo.github.io/</link>
       <atom:link href="https://luizvbo.github.io/index.xml" rel="self" type="application/rss+xml" />
     <description>Luiz Otavio Vilas Boas Oliveira</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 21 Mar 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 11 May 2020 00:00:00 +0000</lastBuildDate>
     <image>
       <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
       <title>Luiz Otavio Vilas Boas Oliveira</title>
       <link>https://luizvbo.github.io/</link>
     </image>
+    
+    <item>
+      <title>Predicting COVID-19 Deaths by Similarity</title>
+      <link>https://luizvbo.github.io/post/corona-linear-regression/</link>
+      <pubDate>Mon, 11 May 2020 00:00:00 +0000</pubDate>
+      <guid>https://luizvbo.github.io/post/corona-linear-regression/</guid>
+      <description>&lt;p&gt;I have been seen some discussion about epidemiologic models to predict the number of cases and deaths by COVID-19, which made me give some thought about the subject.&lt;/p&gt;
+&lt;p&gt;Since we have countries in different stages of the pandemic, my hypothesis was that we could use information from countries in advanced stages to predict information for countries at the beginning of the crisis.&lt;/p&gt;
+&lt;p&gt;Considering the number of deaths by COVID-19 registered, we can align the data for all countries, such that the day the first death by COVID-19 was registered for each country coincides with the origin.&lt;/p&gt;
+&lt;p&gt;With the data shifted, we can compute the correlation between each pair of countries and then find those pairs with high correlation. We can fit a linear regression to each of these pairs considering the country with more data as the independent variable and the one with fewer data as the response variable.&lt;/p&gt;
+&lt;p&gt;We can then use the data for the country with more data to predict the number of deaths for the other country. For, instance, for Brazil, the 8 highest correlated countries are Canada, USA, Egypt, Japan, Argentina, UK, Italy and Iran (all of them with correlation &amp;gt; 0.95).&lt;/p&gt;
+&lt;p&gt;I used the data provided by the Johns Hopkins University Center for Systems Science and Engineering (JHU CSSE) in their 
+&lt;a href=&#34;https://github.com/CSSEGISandData/COVID-19&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub repository&lt;/a&gt;
+.&lt;/p&gt;
+&lt;p&gt;The code for this notebook can be downloaded from 
+&lt;a href=&#34;https://github.com/luizvbo/notebooks/blob/master/covid_linear_reg.py&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;
+.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from typing import Tuple, Dict
+import pandas as pd
+import numpy as np
+from sklearn.linear_model import LinearRegression
+from tqdm import tqdm
+from functools import partial
+from glob import glob
+from multiprocessing import Pool
+import matplotlib.pyplot as plt
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# URL to the CSSE repository
+url_covid_death = (&amp;quot;https://raw.githubusercontent.com/CSSEGISandData/COVID-19/&amp;quot;
+                   &amp;quot;master/csse_covid_19_data/csse_covid_19_time_series/&amp;quot;
+                   &amp;quot;time_series_covid19_deaths_global.csv&amp;quot;)
+# URL to the population data from Worldbank
+url_pop = (&amp;quot;http://api.worldbank.org/v2/en/indicator/&amp;quot;
+           &amp;quot;SP.POP.TOTL?downloadformat=csv&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def get_same_origin(df: pd.DataFrame) -&amp;gt; pd.DataFrame:
+    &amp;quot;&amp;quot;&amp;quot;Move first case to the origing
+
+    Args:
+        df (pd.DataFrame): Input data frame, where each column corresponds to
+        one country. It should be the output of the function `set_index`.
+
+    Returns:
+        pd.DataFrame: Data frame with every column shifted up
+    &amp;quot;&amp;quot;&amp;quot;
+    n_days = df.shape[0]
+
+    def _pad_days(s):
+        s = s.astype(float)
+        s_pad = s[s.cumsum() != 0]
+        return np.pad(s_pad, (0, n_days-s_pad.shape[0]),
+                      &#39;constant&#39;, constant_values=np.nan)
+
+    df = (
+        df.apply(_pad_days, raw=True)
+        .reset_index(drop=True)
+    ).dropna(how=&#39;all&#39;)
+
+    return df
+
+
+def set_index(df: pd.DataFrame) -&amp;gt; pd.DataFrame:
+    &amp;quot;&amp;quot;&amp;quot;Set the index for the data frame using the date
+
+    Args:
+        df (pd.DataFrame): Data frame obtained from John Hopkins repo
+
+    Returns:
+        pd.DataFrame: Preprocessed data
+    &amp;quot;&amp;quot;&amp;quot;
+    # Set region, country, lat and long as index
+    index = pd.MultiIndex.from_frame(df.iloc[:, :4])
+    # Set the index and transpose
+    df = df.iloc[:, 4:].set_index(index).T
+    # Set date as index
+    return df.set_index(pd.to_datetime(df.index, dayfirst=False))
+
+
+def compute_lr(country: Tuple[int, str], df_covid: pd.DataFrame,
+               min_diff: int = 7) -&amp;gt; Dict[Tuple[str, str], Dict]:
+    &amp;quot;&amp;quot;&amp;quot;Fit the logistic regression for each pair of countries
+
+    Args:
+        country (Tuple[int, str]): Tuple with the index of the
+            country in the column list and the country
+        df_covid (pd.DataFrame): Data frame containing the data shifted to
+            the origin.
+        min_diff (int, optional): Minimum difference in the number of days to
+            consider the country pair. Defaults to 7.
+
+    Returns:
+        Dict[Tuple[str, str], Dict]: Dictionary where the keys are the pairs
+            of countries and the value is a data dictionary with the data
+            computued.
+    &amp;quot;&amp;quot;&amp;quot;
+    i, col_1 = country
+    results = {}
+
+    for col_2 in df_covid.columns[i+1:]:
+
+        x = df_covid[col_1].dropna().values
+        y = df_covid[col_2].dropna().values
+
+        # Keep the largest array in x
+        if x.shape[0] &amp;lt; y.shape[0]:
+            x, y = y, x
+            x_label, y_label = col_2, col_1
+        else:
+            x_label, y_label = col_1, col_2
+
+        x, y = x.reshape(-1, 1), y.reshape(-1, 1)
+
+        if x.shape[0] - y.shape[0] &amp;gt; min_diff:
+            lr = LinearRegression()
+            # The weights increase linearly from 1 to 2
+            weights = np.linspace(1, 1, y.shape[0])
+            lr.fit(x[:y.shape[0]], y, weights)
+
+            results[(x_label, y_label)] = dict(
+                lr_model=lr,
+                r_score=lr.score(x[:y.shape[0]], y),
+                predicted=lr.predict(x),
+                x=x, y=y,
+            )
+
+    return results
+
+
+def plot_candidates(df_candidates: pd.DataFrame,
+                    nrows: int = 4, ncols: int = 2,
+                    over_days: bool = True,
+                    figsize: Tuple[int, int] = (12, 15)):
+    &amp;quot;&amp;quot;&amp;quot;Plot the regression for pairs of countries
+
+    Args:
+        df_candidates (pd.DataFrame): Data frame with pairs of countries with
+            the linear regression data
+
+        nrows (int, optional): Number of rows to plot. Defaults to 4.
+        ncols (int, optional): NBumber of columns to plot. Defaults to 2.
+        over_days (bool, optional): If True, plot the data over days.
+            Otherwise, plot one country agains the other. Defaults to True.
+        figsize (Tuple[int, int], optional): Size of the resulting fiture.
+            Defaults to (12, 15).
+
+    Returns:
+        [type]: Figure object
+    &amp;quot;&amp;quot;&amp;quot;
+    fig, axs = plt.subplots(nrows, ncols)
+    df_ = df_candidates.head(nrows * ncols)
+    for (i, row), ax in zip(df_.iterrows(), axs.flatten()):
+        if over_days:
+            ax.plot(row[&#39;x&#39;], label=i[0])
+            ax.plot(row[&#39;y&#39;], label=i[1])
+            ax.plot(row[&#39;predicted&#39;], &#39;--&#39;, label=f&amp;quot;{i[1]} (predicted)&amp;quot;)
+            ax.set_xlabel(&amp;quot;Days since the first death by COVID-19&amp;quot;)
+            ax.set_ylabel(&amp;quot;Number of deaths&amp;quot;)
+        else:
+            ax.plot(row[&#39;x&#39;][:row[&#39;y&#39;].shape[0]], row[&#39;y&#39;], label=&#39;True value&#39;)
+            ax.plot(row[&#39;x&#39;], row[&#39;predicted&#39;], &#39;--&#39;, label=&#39;Predicted&#39;)
+            ax.set_xlabel(i[0])
+            ax.set_ylabel(i[1])
+
+        ax.grid(True)
+        ax.legend(title=&amp;quot;$r^2={:.3f}$&amp;quot;.format(row[&#39;r_score&#39;]),
+                  loc=&#39;upper left&#39;)
+
+    fig.set_size_inches(*figsize)
+    return fig
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Getting the population information
+!wget {url_pop} -O pop.zip
+!unzip -o pop.zip -d pop_csv
+# Load the population file
+df_pop_ = pd.read_csv(glob(&#39;pop_csv/API_SP.POP.TOTL*.csv&#39;)[0],  skiprows=4)
+df_pop = df_pop_[[&#39;Country Name&#39;, &#39;2018&#39;]].set_index(&#39;Country Name&#39;)
+# Delete the files downloaded
+!rm -r pop_csv
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;--2020-05-11 22:03:17--  http://api.worldbank.org/v2/en/indicator/SP.POP.TOTL?downloadformat=csv
+Resolving api.worldbank.org (api.worldbank.org)... 34.237.118.134
+Connecting to api.worldbank.org (api.worldbank.org)|34.237.118.134|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 78803 (77K) [application/zip]
+Saving to: ‘pop.zip’
+
+pop.zip             100%[===================&amp;gt;]  76.96K   152KB/s    in 0.5s
+
+2020-05-11 22:03:19 (152 KB/s) - ‘pop.zip’ saved [78803/78803]
+
+Archive:  pop.zip
+  inflating: pop_csv/Metadata_Indicator_API_SP.POP.TOTL_DS2_en_csv_v2_988606.csv
+  inflating: pop_csv/API_SP.POP.TOTL_DS2_en_csv_v2_988606.csv
+  inflating: pop_csv/Metadata_Country_API_SP.POP.TOTL_DS2_en_csv_v2_988606.csv
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Loading the data for the number of Deaths
+df_death = pd.read_csv(url_covid_death)
+
+df = set_index(df_death)
+
+# Groupy territories per country
+df = df.groupby(level=1, axis=1).sum()
+
+# # Drop all-zeros columns
+df = df[df.sum()[lambda s: s &amp;gt; 0].index]
+
+# # Shift all series to the origin (first death)
+df = get_same_origin(df)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;# Ignore countries with less than 1M
+countries = [c for c in df.columns if c not in
+             df_pop[lambda df_: df_[&#39;2018&#39;] &amp;lt; 10**6].index]
+
+compute_lr_parallel = partial(compute_lr, df_covid=df[countries])
+
+with Pool(8) as pool:
+    results = {}
+    for res_dict in tqdm(pool.imap(compute_lr_parallel, enumerate(countries)),
+                         total=df.shape[0]):
+        results.update(res_dict)
+df_results = pd.DataFrame.from_dict(results, orient=&#39;index&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;144it [00:02, 50.77it/s]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1 id=&#34;plots&#34;&gt;Plots&lt;/h1&gt;
+&lt;h2 id=&#34;linear-regression-results&#34;&gt;Linear Regression Results&lt;/h2&gt;
+&lt;p&gt;The first set of figures shows the output for the linear regression, considering the number of deaths from Brazil as the response variable (y-axis) and each of the other countries as the dependent variable (x-axis).&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;df_brazil = df_results[lambda df: (df.index.get_level_values(1) == &#39;Brazil&#39;)].sort_values(&#39;r_score&#39;, ascending=False)
+fig1 = plot_candidates(df_brazil, over_days=False)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;covid_linear_reg_8_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;predictions&#34;&gt;Predictions&lt;/h2&gt;
+&lt;p&gt;The second set shows the prediction, for the number of deaths in Brazil, according to the line fitted to each of the other countries. The number of days in future is limited by the data available for the other country.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;fig2 = plot_candidates(df_, over_days=True)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;covid_linear_reg_10_0.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Visualizing the number of COVID-19 confirmed cases with Plotly</title>
@@ -445,23 +683,26 @@ import io
 from multiprocessing import Pool
 from tqdm import tqdm
 from lxml import etree
+import bz2
 from bz2 import BZ2Decompressor
 from typing import (
     List, Generator
 )
 
+VERSION = &#39;20200420&#39;
+
 # Path to the bz2 files with Wikipedia data
-path_articles = &#39;enwiki-20200201-pages-articles-multistream.xml.bz2&#39;
+path_articles = f&#39;enwiki-{VERSION}-pages-articles-multistream.xml.bz2&#39;
 # Path to the index list from Wikipedia
-path_index = &#39;enwiki-20200201-pages-articles-multistream-index.txt&#39;
+path_index = f&#39;enwiki-{VERSION}-pages-articles-multistream-index.txt.bz2&#39;
 # Path to our cached version (for offsets)
-path_index_clean = &#39;enwiki-20200201-pages-articles-multistream-index_clean.txt&#39;
+path_index_clean = f&#39;enwiki-{VERSION}-pages-articles-multistream-index_clean.txt&#39;
 # Path to the output parquet file
-path_wiki_parquet = &#39;wikipedia.parquet&#39;
+path_wiki_parquet = &#39;wiki_parquet/&#39;
 # Number of processors to be used during processing
 n_processors = 16
 # Number of blocks of pages to be processed per iteration per processor
-n_parallel_blocks = 15
+n_parallel_blocks = 20
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;The multistream dump file contains multiple bz2 &amp;lsquo;streams&amp;rsquo; (bz2 header, body, footer) concatenated together into one file, in contrast to the vanilla file which contains one stream. Each separate &amp;lsquo;stream&amp;rsquo; (or really, file) in the multistream dump contains 100 pages, except possibly the last one. The multistream file allows you to get an article from the archive without unpacking the whole thing.&lt;/p&gt;
 &lt;p&gt;The index file contains the full list of articles. The first field of this index is the number of bytes to seek into the compressed archive pages-articles-multistream.xml.bz2, the second is the article ID, the third the article title. A colon (&lt;code&gt;:&lt;/code&gt;) is used to separate fields.&lt;/p&gt;
@@ -477,6 +718,7 @@ n_parallel_blocks = 15
 
     Args:
         path_index (str): Path to the original index file provided by Wikipedia
+            (bz2 compressed version)
         path_index_clean (str): Path to our version, containing only offsets
 
     Returns:
@@ -489,9 +731,13 @@ n_parallel_blocks = 15
         # Read the byte offsets from the index file
         page_offset = []
         last_offset = None
-        with open(path_index, &#39;r&#39;) as f:
-            for line in tqdm(f):
-                offset = line.split(&#39;:&#39;, 1)[0]
+        with open(path_index, &#39;rb&#39;) as f:
+            b_data = bz2.decompress(f.read()).split(b&#39;\n&#39;)
+            # Drop the last line (empty)
+            if b_data[-1] == b&#39;&#39;:
+                b_data = b_data[:-1]
+            for line in tqdm(b_data):
+                offset = line.decode().split(&#39;:&#39;, 1)[0]
                 if last_offset != offset:
                     last_offset = offset
                     page_offset.append(int(offset))
@@ -559,10 +805,14 @@ n_parallel_blocks = 15
     col_title = _get_text(doc.xpath(&#39;*/title&#39;))
     col_article = _get_text(doc.xpath(&#39;*/revision/text&#39;))
 
-    return pd.DataFrame([col_title, col_article], columns=col_id, index=[&#39;title&#39;, &#39;article&#39;]).T
+    df = pd.DataFrame([col_id, col_title, col_article],
+                      index=[&#39;index&#39;, &#39;title&#39;, &#39;article&#39;]).T
+    df[&#39;index&#39;] = df[&#39;index&#39;].astype(np.int32)
+    return df
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h2 id=&#34;reading-and-storing-in-parquet-files&#34;&gt;Reading and storing in parquet files&lt;/h2&gt;
 &lt;p&gt;We read the blocks of the bz2 file, extract the data and write to parquet files. In order to speed up the process we use a queue to store the blocks of bytes that are processed in parallel.&lt;/p&gt;
+&lt;p&gt;I was having problems to load the index using &lt;strong&gt;dask&lt;/strong&gt;, so I decided to store it as a column and drop the pd.DataFrame index.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def chunks(input_list: List, chunk_size: int) -&amp;gt; Generator[List, None, None]:
     &amp;quot;&amp;quot;&amp;quot;Split a list into chunks of size `chunk_size`
 
@@ -588,18 +838,18 @@ def _process_parallel(list_bytes: List[bytes]) -&amp;gt; None:
         list_bytes (List[bytes]): List of byte strings (chunks from the
             original file)
     &amp;quot;&amp;quot;&amp;quot;
-
     df = pd.concat([get_articles(article) for article in list_bytes])
+    output_path = (
+        os.path
+        .join(path_wiki_parquet,
+              &#39;{:08d}.parquet&#39;.format(df[&#39;index&#39;].values[0]))
+    )
 
-    # Create a parquet table from your dataframe
-    table = pa.Table.from_pandas(df)
-
-    # Write direct to your parquet file
-    pq.write_to_dataset(table, root_path=path_wiki_parquet, compression=&#39;BROTLI&#39;)
+    # Save the index as a column and ignore the df index
+    df.to_parquet(output_path, compression=&#39;snappy&#39;, index=False)
 
     # Clear the data tables
     del df
-    del table
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;The code bellow stores each block of 100 articles in a new parquet file. It allows you to load a subset of the full dump or work using 
 &lt;a href=&#34;https://github.com/dask/dask&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Dask&lt;/a&gt;
@@ -609,10 +859,10 @@ def _process_parallel(list_bytes: List[bytes]) -&amp;gt; None:
 &lt;a href=&#34;https://spark.apache.org/docs/latest/api/python/index.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;pySpark&lt;/a&gt;
 .&lt;/p&gt;
 &lt;p&gt;I am using 
-&lt;a href=&#34;https://github.com/google/brotli&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;BROTLI&lt;/a&gt;
+&lt;a href=&#34;https://en.wikipedia.org/wiki/Snappy_%28compression%29&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Snappy&lt;/a&gt;
  to reduce the amount of space used by the extracted data.&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Brotli is a generic-purpose lossless compression algorithm that compresses data using a combination of a modern variant of the LZ77 algorithm, Huffman coding and 2nd order context modeling, with a compression ratio comparable to the best currently available general-purpose compression methods.&lt;/p&gt;
+&lt;p&gt;Snappy (previously known as Zippy) is a fast data compression and decompression library written in C++ by Google based on ideas from LZ77 and open-sourced in 2011. It does not aim for maximum compression, or compatibility with any other compression library; instead, it aims for very high speeds and reasonable compression.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;queue = []
 page_offset = get_page_offsets(path_index, path_index_clean)
