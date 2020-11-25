@@ -1,13 +1,19 @@
-<!DOCTYPE html>
-<html lang="en-us">
+<!DOCTYPE html><html lang="en-us" >
 
 <head>
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.7.0">
+  
+  
+  
+  <meta name="generator" content="Wowchemy 5.0.0-beta.0 for Hugo">
+  
 
+  
+
+  
   
 
   
@@ -21,7 +27,7 @@
   
   
 
-  <meta name="author" content="Luiz Otavio Vilas Boas Oliveira">
+  
 
   
   
@@ -35,6 +41,21 @@
 
   
 
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
 
   
   
@@ -50,8 +71,10 @@
   
   
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-1/css/all.min.css" integrity="sha256-4w9DunooKSr3MFXHXWyFER38WmPdm361bQS/2KUWZbU=" crossorigin="anonymous">
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css" integrity="sha512-W4yqoT1+8NLkinBLBZko+dFB2ZbHsYLDdr50VElllRcNt2Q4/GSs6u71UHKxB7S6JEMCp5Ve4xjh3eGQl/HRvg==" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
 
     
@@ -62,25 +85,18 @@
     
       
       
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/a11y-dark.min.css" crossorigin="anonymous" title="hl-light">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/a11y-dark.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/a11y-dark.min.css" crossorigin="anonymous" title="hl-light">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/a11y-dark.min.css" crossorigin="anonymous" title="hl-dark" disabled>
       
     
 
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css" integrity="sha256-SHMGCYmST46SoyGgo4YR/9AlK1vf3ff84Aq9yK4hdqM=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.css" integrity="sha512-1xoFisiGdy9nvho8EgXuXvnpR5GAMSjFwp40gSRE3NwdUdIMIKuPa7bqoUhLD0O/5tPNhteAsE5XyyMi5reQVA==" crossorigin="anonymous">
     
 
     
 
     
-    
-      
-
-      
-      
-
-      
     
       
 
@@ -151,7 +167,21 @@
       
 
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js" integrity="sha256-Md1qLToewPeKjfAHU1zyPwOutccPAm5tahnaw7Osw0A=" crossorigin="anonymous" async></script>
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.2.2/lazysizes.min.js" integrity="sha512-TmDwFLhg3UA4ZG0Eb4MIyT1O1Mb+Oww5kFG0uHqXsdbyZz9DcvYQhKpGgNkamAI6h2lGGZq2X8ftOJvF/XjTUg==" crossorigin="anonymous" async></script>
       
     
       
@@ -184,20 +214,31 @@
 
       
     
+      
+
+      
+      
+
+      
+    
 
   
 
   
   
   
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
+    
+      
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
+    
   
 
   
   
   
   
-  <link rel="stylesheet" href="/css/academic.css">
+  <link rel="stylesheet" href="/css/wowchemy.css">
 
   
 
@@ -213,13 +254,42 @@
       dataLayer.push(arguments);
   }
 
+  function trackOutboundLink(url, target) {
+    gtag('event', 'click', {
+         'event_category': 'outbound',
+         'event_label': url,
+         'transport_type': 'beacon',
+         'event_callback': function () {
+           if (target !== '_blank') {
+             document.location = url;
+           }
+         }
+    });
+    console.debug("Outbound link clicked: " + url);
+  }
+
+  function onClickCallback(event) {
+    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
+      return;
+    }
+    trackOutboundLink(event.target, event.target.getAttribute('target'));  
+  }
+
   gtag('js', new Date());
-  gtag('config', 'UA-135928539-1');
+  gtag('config', 'UA-135928539-1', {});
+
+  
+  document.addEventListener('click', onClickCallback, false);
 </script>
 
 
   
 
+  
+
+
+  
+  
 
   
   <link rel="alternate" href="/publication/index.xml" type="application/rss+xml" title="Luiz Otavio Vilas Boas Oliveira">
@@ -236,6 +306,8 @@
   
   
   
+  
+  
     
     
   
@@ -245,10 +317,10 @@
   <meta property="og:site_name" content="Luiz Otavio Vilas Boas Oliveira">
   <meta property="og:url" content="https://luizvbo.github.io/publication/">
   <meta property="og:title" content="Publications | Luiz Otavio Vilas Boas Oliveira">
-  <meta property="og:description" content="Data Scientist"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
-  <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="en-us">
+  <meta property="og:description" content="Data Scientist"><meta property="og:image" content="https://luizvbo.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png">
+  <meta property="twitter:image" content="https://luizvbo.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="en-us">
   
-    <meta property="og:updated_time" content="2018-07-01T00:00:00&#43;00:00">
+    <meta property="og:updated_time" content="2020-01-01T00:00:00&#43;00:00">
   
 
   
@@ -269,7 +341,15 @@
 
 </head>
 
-<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper  ">
+
+  
+  
+  
+  
+  
+  <script src="/js/wowchemy-init.js"></script>
 
   <aside class="search-results" id="search">
   <div class="container">
@@ -287,7 +367,7 @@
       <div id="search-box">
         
         <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
-        autocomplete="off" autocorrect="off" spellcheck="false" type="search">
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control">
         
       </div>
 
@@ -303,7 +383,13 @@
 </aside>
 
 
-  
+  <div class="page-header">
+    
+
+
+
+
+
 
 
 
@@ -350,16 +436,24 @@
         
 
         
+
         
         
         
         
+
         
           
+            
+            
           
           
             
-          
+            
+            
+              
+            
+            
           
         
 
@@ -379,16 +473,24 @@
         
 
         
+
         
         
         
         
+
         
           
+            
+            
           
           
             
-          
+            
+            
+              
+            
+            
           
         
 
@@ -408,16 +510,24 @@
         
 
         
+
         
         
         
         
+
         
           
+            
+            
           
           
             
-          
+            
+            
+              
+            
+            
           
         
 
@@ -437,16 +547,24 @@
         
 
         
+
         
         
         
         
+
         
           
+            
+            
           
           
             
-          
+            
+            
+              
+            
+            
           
         
 
@@ -466,16 +584,24 @@
         
 
         
+
         
         
         
         
+
         
           
+            
+            
           
           
             
-          
+            
+            
+              
+            
+            
           
         
 
@@ -495,16 +621,24 @@
         
 
         
+
         
         
         
         
+
         
           
+            
+            
           
           
             
-          
+            
+            
+              
+            
+            
           
         
 
@@ -523,14 +657,29 @@
 
     <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
       
+      
       <li class="nav-item">
-        <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+        <a class="nav-link js-search" href="#" aria-label="Search"><i class="fas fa-search" aria-hidden="true"></i></a>
       </li>
       
 
       
-      <li class="nav-item">
-        <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+      
+      <li class="nav-item dropdown theme-dropdown">
+        <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-label="Display preferences">
+          <i class="fas fa-moon" aria-hidden="true"></i>
+        </a>
+        <div class="dropdown-menu">
+          <a href="#" class="dropdown-item js-set-theme-light">
+            <span>Light</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-dark">
+            <span>Dark</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-auto">
+            <span>Automatic</span>
+          </a>
+        </div>
       </li>
       
 
@@ -542,7 +691,10 @@
 </nav>
 
 
-  
+  </div>
+
+  <div class="page-body">
+    
 
 
 
@@ -631,6 +783,9 @@
         
         
       
+        
+        
+      
 
       <div class="form-row mb-4">
         <div class="col-auto">
@@ -661,6 +816,10 @@
             <option value="*">Date</option>
             
             
+            
+            <option value=".year-2020">
+              2020
+            </option>
             
             <option value=".year-2018">
               2018
@@ -706,6 +865,76 @@
           
         
 
+        <div class="grid-sizer col-lg-12 isotope-item pubtype-1 year-2020">
+          
+            <div class="pub-list-item" style="margin-bottom: 1rem">
+  <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
+
+  
+  
+
+  <span class="article-metadata li-cite-author">
+    
+
+  
+  <span ><a href="/author/luis-fernando-miranda/">Luis Fernando Miranda</a></span>, <span ><a href="/author/vb-oliveira-luiz-otavio/">VB Oliveira Luiz Otavio</a></span>, <span ><a href="/author/bs-martins-joao-francisco/">BS Martins Joao Francisco</a></span>, <span ><a href="/author/gisele-l-pappa/">Gisele L Pappa</a></span>
+  </span>
+  (2020).
+  <a href="/publication/miranda-2020-instance/">Instance Selection for Geometric Semantic Genetic Programming</a>.
+  <em>2020 IEEE Congress on Evolutionary Computation (CEC)</em>.
+  
+  <p>
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+<button type="button" class="btn btn-outline-primary my-1 mr-1 btn-sm js-cite-modal"
+        data-filename="/publication/miranda-2020-instance/cite.bib">
+  Cite
+</button>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://doi.org/10.1109/CEC48606.2020.9185867" target="_blank" rel="noopener">
+  DOI
+</a>
+
+
+</p>
+
+  
+  
+</div>
+
+          
+        </div>
+
+        
+
+        
+          
+        
+
         <div class="grid-sizer col-lg-12 isotope-item pubtype-1 year-2018">
           
             <div class="pub-list-item" style="margin-bottom: 1rem">
@@ -717,11 +946,8 @@
   <span class="article-metadata li-cite-author">
     
 
-
-
   
-  <span>Joao Francisco B. S. Martins</span>, <span>Luiz Otavio V. B. Oliveira</span>, <span>Luis F. Miranda</span>, <span><a href="/authors/felipe-casadei/">Felipe Casadei</a></span>, <span>Gisele L. Pappa</span>
-
+  <span ><a href="/author/joao-francisco-b.-s.-martins/">Joao Francisco B. S. Martins</a></span>, <span ><a href="/author/luiz-otavio-v.-b.-oliveira/">Luiz Otavio V. B. Oliveira</a></span>, <span ><a href="/author/luis-f.-miranda/">Luis F. Miranda</a></span>, <span ><a href="/author/felipe-casadei/">Felipe Casadei</a></span>, <span ><a href="/author/gisele-l.-pappa/">Gisele L. Pappa</a></span>
   </span>
   (2018).
   <a href="/publication/martins-2018-solving/">Solving the Exponential Growth of Symbolic Regression Trees in Geometric Semantic Genetic Programming</a>.
@@ -792,11 +1018,8 @@
   <span class="article-metadata li-cite-author">
     
 
-
-
   
-  <span>Luiz Otavio V. B. Oliveira</span>, <span>Joao Francisco B. S. Martins</span>, <span>Luis F. Miranda</span>, <span>Gisele L. Pappa</span>
-
+  <span ><a href="/author/luiz-otavio-v.-b.-oliveira/">Luiz Otavio V. B. Oliveira</a></span>, <span ><a href="/author/joao-francisco-b.-s.-martins/">Joao Francisco B. S. Martins</a></span>, <span ><a href="/author/luis-f.-miranda/">Luis F. Miranda</a></span>, <span ><a href="/author/gisele-l.-pappa/">Gisele L. Pappa</a></span>
   </span>
   (2018).
   <a href="/publication/oliveira-2018-analysing/">Analysing Symbolic Regression Benchmarks under a Meta-Learning Approach</a>.
@@ -871,11 +1094,8 @@
   <span class="article-metadata li-cite-author">
     
 
-
-
   
-  <span>Luiz Otavio V. B. Oliveira</span>, <span><a href="/authors/felipe-casadei/">Felipe Casadei</a></span>, <span>Gisele L. Pappa</span>
-
+  <span ><a href="/author/luiz-otavio-v.-b.-oliveira/">Luiz Otavio V. B. Oliveira</a></span>, <span ><a href="/author/felipe-casadei/">Felipe Casadei</a></span>, <span ><a href="/author/gisele-l.-pappa/">Gisele L. Pappa</a></span>
   </span>
   (2017).
   <a href="/publication/oliveira-2017-strategies/">Strategies for Improving the Distribution of Random Function Outputs in GSGP</a>.
@@ -950,11 +1170,8 @@
   <span class="article-metadata li-cite-author">
     
 
-
-
   
-  <span>Alex G. C. de Sá</span>, <span>Walter José G. S. Pinto</span>, <span>Luiz Otavio V. B. Oliveira</span>, <span>Gisele L. Pappa</span>
-
+  <span ><a href="/author/alex-g.-c.-de-sa/">Alex G. C. de Sá</a></span>, <span ><a href="/author/walter-jose-g.-s.-pinto/">Walter José G. S. Pinto</a></span>, <span ><a href="/author/luiz-otavio-v.-b.-oliveira/">Luiz Otavio V. B. Oliveira</a></span>, <span ><a href="/author/gisele-l.-pappa/">Gisele L. Pappa</a></span>
   </span>
   (2017).
   <a href="/publication/desa-2017-recipe/">RECIPE: A Grammar-Based Framework for Automatically Evolving Classification Pipelines</a>.
@@ -1029,11 +1246,8 @@
   <span class="article-metadata li-cite-author">
     
 
-
-
   
-  <span>Luis F. Miranda</span>, <span>Luiz Otavio V. B. Oliveira</span>, <span>Joao F. B. S. Martins</span>, <span>Gisele L. Pappa</span>
-
+  <span ><a href="/author/luis-f.-miranda/">Luis F. Miranda</a></span>, <span ><a href="/author/luiz-otavio-v.-b.-oliveira/">Luiz Otavio V. B. Oliveira</a></span>, <span ><a href="/author/joao-f.-b.-s.-martins/">Joao F. B. S. Martins</a></span>, <span ><a href="/author/gisele-l.-pappa/">Gisele L. Pappa</a></span>
   </span>
   (2017).
   <a href="/publication/miranda-2017-hownoisy/">How Noisy Data Affects Geometric Semantic Genetic Programming</a>.
@@ -1108,11 +1322,8 @@
   <span class="article-metadata li-cite-author">
     
 
-
-
   
-  <span>Luiz Otavio V. B. Oliveira</span>, <span>Fernando E. B. Otero</span>, <span>Gisele L. Pappa</span>
-
+  <span ><a href="/author/luiz-otavio-v.-b.-oliveira/">Luiz Otavio V. B. Oliveira</a></span>, <span ><a href="/author/fernando-e.-b.-otero/">Fernando E. B. Otero</a></span>, <span ><a href="/author/gisele-l.-pappa/">Gisele L. Pappa</a></span>
   </span>
   (2017).
   <a href="/publication/oliveira-2017-generic/">A Generic Framework for Building Dispersion Operators in the Semantic Space</a>.
@@ -1183,11 +1394,8 @@
   <span class="article-metadata li-cite-author">
     
 
-
-
   
-  <span>L. O. V. B. Oliveira</span>
-
+  <span ><a href="/author/l.-o.-v.-b.-oliveira/">L. O. V. B. Oliveira</a></span>
   </span>
   (2016).
   <a href="/publication/oliveira-2016-improving/">Improving Search in Geometric Semantic Genetic Programming</a>.
@@ -1251,11 +1459,8 @@
   <span class="article-metadata li-cite-author">
     
 
-
-
   
-  <span>Luiz Otavio V. B. Oliveira</span>, <span>Fernando E. B. Otero</span>, <span>Luis F. Miranda</span>, <span>Gisele L. Pappa</span>
-
+  <span ><a href="/author/luiz-otavio-v.-b.-oliveira/">Luiz Otavio V. B. Oliveira</a></span>, <span ><a href="/author/fernando-e.-b.-otero/">Fernando E. B. Otero</a></span>, <span ><a href="/author/luis-f.-miranda/">Luis F. Miranda</a></span>, <span ><a href="/author/gisele-l.-pappa/">Gisele L. Pappa</a></span>
   </span>
   (2016).
   <a href="/publication/oliveira-2016-revisiting/">Revisiting the Sequential Symbolic Regression Genetic Programming</a>.
@@ -1330,11 +1535,8 @@
   <span class="article-metadata li-cite-author">
     
 
-
-
   
-  <span>Luiz Otavio V. B. Oliveira</span>, <span>Luis F. Miranda</span>, <span>Gisele L. Pappa</span>, <span>Fernando E. B. Otero</span>, <span>Ricardo H. C. Takahashi</span>
-
+  <span ><a href="/author/luiz-otavio-v.-b.-oliveira/">Luiz Otavio V. B. Oliveira</a></span>, <span ><a href="/author/luis-f.-miranda/">Luis F. Miranda</a></span>, <span ><a href="/author/gisele-l.-pappa/">Gisele L. Pappa</a></span>, <span ><a href="/author/fernando-e.-b.-otero/">Fernando E. B. Otero</a></span>, <span ><a href="/author/ricardo-h.-c.-takahashi/">Ricardo H. C. Takahashi</a></span>
   </span>
   (2016).
   <a href="/publication/oliveira-2016-reducing/">Reducing Dimensionality to Improve Search in Semantic Genetic Programming</a>.
@@ -1409,11 +1611,8 @@
   <span class="article-metadata li-cite-author">
     
 
-
-
   
-  <span>Luiz Otavio V. B. Oliveira</span>, <span>Fernando E. B. Otero</span>, <span>Gisele L. Pappa</span>
-
+  <span ><a href="/author/luiz-otavio-v.-b.-oliveira/">Luiz Otavio V. B. Oliveira</a></span>, <span ><a href="/author/fernando-e.-b.-otero/">Fernando E. B. Otero</a></span>, <span ><a href="/author/gisele-l.-pappa/">Gisele L. Pappa</a></span>
   </span>
   (2016).
   <a href="/publication/oliveira-2016-dispersion/">A Dispersion Operator for Geometric Semantic Genetic Programming</a>.
@@ -1488,11 +1687,8 @@
   <span class="article-metadata li-cite-author">
     
 
-
-
   
-  <span><a href="/authors/julio-albinati/">Julio Albinati</a></span>, <span>Gisele L. Pappa</span>, <span>Fernando E. B. Otero</span>, <span>Luiz Otavio V. B. Oliveira</span>
-
+  <span ><a href="/author/julio-albinati/">Julio Albinati</a></span>, <span ><a href="/author/gisele-l.-pappa/">Gisele L. Pappa</a></span>, <span ><a href="/author/fernando-e.-b.-otero/">Fernando E. B. Otero</a></span>, <span ><a href="/author/luiz-otavio-v.-b.-oliveira/">Luiz Otavio V. B. Oliveira</a></span>
   </span>
   (2015).
   <a href="/publication/albinati-2015-effect/">The Effect of Distinct Geometric Semantic Crossover Operators in Regression Problems</a>.
@@ -1567,11 +1763,8 @@
   <span class="article-metadata li-cite-author">
     
 
-
-
   
-  <span>Luiz Otavio V. B. Oliveira</span>, <span>Fernando E. B. Otero</span>, <span>Gisele L. Pappa</span>, <span><a href="/authors/julio-albinati/">Julio Albinati</a></span>
-
+  <span ><a href="/author/luiz-otavio-v.-b.-oliveira/">Luiz Otavio V. B. Oliveira</a></span>, <span ><a href="/author/fernando-e.-b.-otero/">Fernando E. B. Otero</a></span>, <span ><a href="/author/gisele-l.-pappa/">Gisele L. Pappa</a></span>, <span ><a href="/author/julio-albinati/">Julio Albinati</a></span>
   </span>
   (2015).
   <a href="/publication/oliveira-2015-sequential/">Sequential Symbolic Regression with Genetic Programming</a>.
@@ -1646,11 +1839,8 @@
   <span class="article-metadata li-cite-author">
     
 
-
-
   
-  <span>Luiz Otavio V. B. Oliveira</span>, <span><a href="/authors/isabela-neves-drummond/">Isabela Neves Drummond</a></span>, <span><a href="/authors/gisele-lobo-pappa/">Gisele Lobo Pappa</a></span>
-
+  <span ><a href="/author/luiz-otavio-v.-b.-oliveira/">Luiz Otavio V. B. Oliveira</a></span>, <span ><a href="/author/isabela-neves-drummond/">Isabela Neves Drummond</a></span>, <span ><a href="/author/gisele-lobo-pappa/">Gisele Lobo Pappa</a></span>
   </span>
   (2013).
   <a href="/publication/oliveira-2013-new/">A new representation for instance-based clonal selection algorithms</a>.
@@ -1725,11 +1915,8 @@
   <span class="article-metadata li-cite-author">
     
 
-
-
   
-  <span>Luiz Otavio V. B. Oliveira</span>
-
+  <span ><a href="/author/luiz-otavio-v.-b.-oliveira/">Luiz Otavio V. B. Oliveira</a></span>
   </span>
   (2012).
   <a href="/publication/oliveira-2012-cscdr/">CSCDR: Um Classificador Baseado em Seleção Clonal com Redução de Células de Memória.</a>.
@@ -1744,8 +1931,14 @@
 
 
   
+    
+  
 
 
+
+<a class="btn btn-outline-primary my-1 mr-1 btn-sm" href="https://lume.ufrgs.br/handle/10183/56853" target="_blank" rel="noopener">
+  PDF
+</a>
 
 
 
@@ -1793,11 +1986,8 @@
   <span class="article-metadata li-cite-author">
     
 
-
-
   
-  <span>Luiz Otavio V. B. Oliveira</span>, <span><a href="/authors/rodrigo-luiz-mendes-mota/">Rodrigo Luiz Mendes Mota</a></span>, <span><a href="/authors/dante-augusto-couto-barone/">Dante Augusto Couto Barone</a></span>
-
+  <span ><a href="/author/luiz-otavio-v.-b.-oliveira/">Luiz Otavio V. B. Oliveira</a></span>, <span ><a href="/author/rodrigo-luiz-mendes-mota/">Rodrigo Luiz Mendes Mota</a></span>, <span ><a href="/author/dante-augusto-couto-barone/">Dante Augusto Couto Barone</a></span>
   </span>
   (2012).
   <a href="/publication/oliveira-2012-clonal/">Clonal selection classifier with data reduction: Classification as an optimization task</a>.
@@ -1872,11 +2062,8 @@
   <span class="article-metadata li-cite-author">
     
 
-
-
   
-  <span>Luiz Otavio V. B. Oliveira</span>, <span><a href="/authors/isabela-neves-drummond/">Isabela Neves Drummond</a></span>
-
+  <span ><a href="/author/luiz-otavio-v.-b.-oliveira/">Luiz Otavio V. B. Oliveira</a></span>, <span ><a href="/author/isabela-neves-drummond/">Isabela Neves Drummond</a></span>
   </span>
   (2011).
   <a href="/publication/oliveira-2011-real/">Real-Valued Negative Selection (RNS) for MR Brain Image Classification</a>.
@@ -1947,11 +2134,8 @@
   <span class="article-metadata li-cite-author">
     
 
-
-
   
-  <span>Luiz Otavio V. B. Oliveira</span>, <span><a href="/authors/isabela-neves-drummond/">Isabela Neves Drummond</a></span>
-
+  <span ><a href="/author/luiz-otavio-v.-b.-oliveira/">Luiz Otavio V. B. Oliveira</a></span>, <span ><a href="/author/isabela-neves-drummond/">Isabela Neves Drummond</a></span>
   </span>
   (2010).
   <a href="/publication/oliveira-2010-real/">Real-Valued Negative Selection (RNS) for Classification Task</a>.
@@ -2015,24 +2199,92 @@
     </div>
   </div>
 </div>
+  </div>
+
+  <div class="page-footer">
+    
+    
+    <div class="container">
+      <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    
+  </p>
+
+  
+  
+
+
+
+
+
+
+  <p class="powered-by">
+    
+    
+    
+    Published with
+    <a href="https://wowchemy.com" target="_blank" rel="noopener">Wowchemy</a>  —
+    the free, <a href="https://github.com/wowchemy/wowchemy-hugo-modules" target="_blank" rel="noopener">
+    open source</a> website builder that empowers creators.
+    
+  </p>
+</footer>
+
+    </div>
+    
+  </div>
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
 
       
 
     
     
     
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+      
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      
+
       <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin="anonymous"></script>
 
       
 
       
         
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js" integrity="sha256-1zu+3BnLYV9LdiY85uXMzii3bdrkelyp37e0ZyTAQh0=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js" integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin="anonymous"></script>
         
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/python.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/python.min.js"></script>
         
       
 
@@ -2040,7 +2292,7 @@
 
     
     
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.js" integrity="sha256-EErZamuLefUnbMBQbsEqu1USa+btR2oIlCpBJbyD4/g=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.js" integrity="sha512-SeiQaaDh73yrb56sTW/RgVdi/mMqNeM2oBwubFHagc5BkixSpP1fvqF47mKzPGWYSSy4RwbBunrJBQ4Co8fRWA==" crossorigin="anonymous"></script>
     
 
     
@@ -2061,7 +2313,8 @@
         'post': "Posts",
         'project': "Projects",
         'publication' : "Publications",
-        'talk' : "Talks"
+        'talk' : "Talks",
+        'slides' : "Slides"
         };
     </script>
     
@@ -2095,6 +2348,13 @@
 
     
     
+    
+
+    
+    
+
+    
+    
     <script id="dsq-count-scr" src="https://luizvbo.disqus.com/count.js" async></script>
     
 
@@ -2112,7 +2372,7 @@
     
     
     
-    <script src="/js/academic.min.0630fec5958cb075a5a38f042b3ddde6.js"></script>
+    <script src="/js/wowchemy.min.59419d2c9809de125013c581da371866.js"></script>
 
     
 
@@ -2120,60 +2380,6 @@
 
 
 
-
-  
-  
-  <div class="container">
-    <footer class="site-footer">
-  
-
-  <p class="powered-by">
-    
-
-    Powered by the
-    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
-    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
-
-    
-    <span class="float-right" aria-hidden="true">
-      <a href="#" class="back-to-top">
-        <span class="button_icon">
-          <i class="fas fa-chevron-up fa-2x"></i>
-        </span>
-      </a>
-    </span>
-    
-  </p>
-</footer>
-
-  </div>
-  
-
-  
-<div id="modal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Cite</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <pre><code class="tex hljs"></code></pre>
-      </div>
-      <div class="modal-footer">
-        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
-          <i class="fas fa-copy"></i> Copy
-        </a>
-        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
-          <i class="fas fa-download"></i> Download
-        </a>
-        <div id="modal-error"></div>
-      </div>
-    </div>
-  </div>
-</div>
 
 </body>
 </html>

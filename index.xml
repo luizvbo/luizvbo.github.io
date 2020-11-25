@@ -5,9 +5,9 @@
     <link>https://luizvbo.github.io/</link>
       <atom:link href="https://luizvbo.github.io/index.xml" rel="self" type="application/rss+xml" />
     <description>Luiz Otavio Vilas Boas Oliveira</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Mon, 11 May 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Mon, 11 May 2020 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>img/map[gravatar:%!s(bool=false) shape:circle]</url>
+      <url>https://luizvbo.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
       <title>Luiz Otavio Vilas Boas Oliveira</title>
       <link>https://luizvbo.github.io/</link>
     </image>
@@ -22,12 +22,8 @@
 &lt;p&gt;Considering the number of deaths by COVID-19 registered, we can align the data for all countries, such that the day the first death by COVID-19 was registered for each country coincides with the origin.&lt;/p&gt;
 &lt;p&gt;With the data shifted, we can compute the correlation between each pair of countries and then find those pairs with high correlation. We can fit a linear regression to each of these pairs considering the country with more data as the independent variable and the one with fewer data as the response variable.&lt;/p&gt;
 &lt;p&gt;We can then use the data for the country with more data to predict the number of deaths for the other country. For, instance, for Brazil, the 8 highest correlated countries are Canada, USA, Egypt, Japan, Argentina, UK, Italy and Iran (all of them with correlation &amp;gt; 0.95).&lt;/p&gt;
-&lt;p&gt;I used the data provided by the Johns Hopkins University Center for Systems Science and Engineering (JHU CSSE) in their 
-&lt;a href=&#34;https://github.com/CSSEGISandData/COVID-19&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub repository&lt;/a&gt;
-.&lt;/p&gt;
-&lt;p&gt;The code for this notebook can be downloaded from 
-&lt;a href=&#34;https://github.com/luizvbo/notebooks/blob/master/covid_linear_reg.py&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;
-.&lt;/p&gt;
+&lt;p&gt;I used the data provided by the Johns Hopkins University Center for Systems Science and Engineering (JHU CSSE) in their &lt;a href=&#34;https://github.com/CSSEGISandData/COVID-19&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub repository&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The code for this notebook can be downloaded from &lt;a href=&#34;https://github.com/luizvbo/notebooks/blob/master/covid_linear_reg.py&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from typing import Tuple, Dict
 import pandas as pd
 import numpy as np
@@ -256,28 +252,16 @@ fig1 = plot_candidates(df_brazil, over_days=False)
       <pubDate>Sat, 21 Mar 2020 00:00:00 +0000</pubDate>
       <guid>https://luizvbo.github.io/post/coronavirus-confirmed/</guid>
       <description>&lt;p&gt;I would like to see: &lt;strong&gt;The evolution over time of the number of cases/deaths/recovery patients per country&lt;/strong&gt;. Assuming that others are also interested in this information, I am sharing the plots I made with &lt;code&gt;plotly&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;The Johns Hopkins University Center for Systems Science and Engineering (JHU CSSE) maintain a 
-&lt;a href=&#34;https://github.com/CSSEGISandData/COVID-19&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub repository with daily updated information about the Corona Virus&lt;/a&gt;
-. They also provide a dashboard to interact with the data (however, even their dashboard doesn’t provide the plot I was looking for).&lt;/p&gt;
-&lt;p&gt;You are more than welcome to modify the notebook to predict the number of cases and do other types of analysis. The notebook can be found in my &lt;strong&gt;
-&lt;a href=&#34;https://github.com/luizvbo/notebooks/blob/master/corona-plots-plotly.ipynb&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub repository&lt;/a&gt;
-&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;The Johns Hopkins University Center for Systems Science and Engineering (JHU CSSE) maintain a &lt;a href=&#34;https://github.com/CSSEGISandData/COVID-19&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub repository with daily updated information about the Corona Virus&lt;/a&gt;. They also provide a dashboard to interact with the data (however, even their dashboard doesn’t provide the plot I was looking for).&lt;/p&gt;
+&lt;p&gt;You are more than welcome to modify the notebook to predict the number of cases and do other types of analysis. The notebook can be found in my &lt;strong&gt;&lt;a href=&#34;https://github.com/luizvbo/notebooks/blob/master/corona-plots-plotly.ipynb&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub repository&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;The data is split into three plots:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;
-&lt;a href=&#34;../coronavirus-confirmed&#34;&gt;COVID-19 confirmed cases&lt;/a&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;a href=&#34;../coronavirus-death&#34;&gt;COVID-19 deaths&lt;/a&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;a href=&#34;../coronavirus-recovered&#34;&gt;COVID-19 recovered cases&lt;/a&gt;
-&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../coronavirus-confirmed&#34;&gt;COVID-19 confirmed cases&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../coronavirus-death&#34;&gt;COVID-19 deaths&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../coronavirus-recovered&#34;&gt;COVID-19 recovered cases&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Bellow, you can see the data for all the &lt;strong&gt;confirmed cases&lt;/strong&gt; (total and per day).&lt;/p&gt;
-&lt;p&gt;You can select countries to compare the data. If you are having problems to visualise the plot, you can try the 
-&lt;a href=&#34;../coronavirus-confirmed/plot-confirmed.html&#34;&gt;clean html version from this link&lt;/a&gt;
-&lt;/p&gt;
+&lt;p&gt;You can select countries to compare the data. If you are having problems to visualise the plot, you can try the &lt;a href=&#34;../coronavirus-confirmed/plot-confirmed.html&#34;&gt;clean html version from this link&lt;/a&gt;&lt;/p&gt;
 &lt;iframe id=&#34;igraph&#34; scrolling=&#34;no&#34; style=&#34;border:none;&#34;
         seamless=&#34;seamless&#34; src=&#34;plot-confirmed.html&#34; height=&#34;800px&#34; width=&#34;100%&#34;&gt;
 &lt;/iframe&gt;&#39;
@@ -295,28 +279,16 @@ fig1 = plot_candidates(df_brazil, over_days=False)
       <pubDate>Sat, 21 Mar 2020 00:00:00 +0000</pubDate>
       <guid>https://luizvbo.github.io/post/coronavirus-death/</guid>
       <description>&lt;p&gt;I would like to see: &lt;strong&gt;The evolution over time of the number of cases/deaths/recovery patients per country&lt;/strong&gt;. Assuming that others are also interested in this information, I am sharing the plots I made with &lt;code&gt;plotly&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;The Johns Hopkins University Center for Systems Science and Engineering (JHU CSSE) maintain a 
-&lt;a href=&#34;https://github.com/CSSEGISandData/COVID-19&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub repository with daily updated information about the Corona Virus&lt;/a&gt;
-. They also provide a dashboard to interact with the data (however, even their dashboard doesn’t provide the plot I was looking for).&lt;/p&gt;
-&lt;p&gt;You are more than welcome to modify the notebook to predict the number of cases and do other types of analysis. The notebook can be found in my &lt;strong&gt;
-&lt;a href=&#34;https://github.com/luizvbo/notebooks/blob/master/corona-plots-plotly.ipynb&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub repository&lt;/a&gt;
-&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;The Johns Hopkins University Center for Systems Science and Engineering (JHU CSSE) maintain a &lt;a href=&#34;https://github.com/CSSEGISandData/COVID-19&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub repository with daily updated information about the Corona Virus&lt;/a&gt;. They also provide a dashboard to interact with the data (however, even their dashboard doesn’t provide the plot I was looking for).&lt;/p&gt;
+&lt;p&gt;You are more than welcome to modify the notebook to predict the number of cases and do other types of analysis. The notebook can be found in my &lt;strong&gt;&lt;a href=&#34;https://github.com/luizvbo/notebooks/blob/master/corona-plots-plotly.ipynb&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub repository&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;The data is split into three plots:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;
-&lt;a href=&#34;../coronavirus-confirmed&#34;&gt;COVID-19 confirmed cases&lt;/a&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;a href=&#34;../coronavirus-death&#34;&gt;COVID-19 deaths&lt;/a&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;a href=&#34;../coronavirus-recovered&#34;&gt;COVID-19 recovered cases&lt;/a&gt;
-&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../coronavirus-confirmed&#34;&gt;COVID-19 confirmed cases&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../coronavirus-death&#34;&gt;COVID-19 deaths&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../coronavirus-recovered&#34;&gt;COVID-19 recovered cases&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Bellow, you can see the data for the &lt;strong&gt;deaths&lt;/strong&gt; caused by COVID-19 (total and per day).&lt;/p&gt;
-&lt;p&gt;You can select countries to compare the data. If you are having problems to visualise the plot, you can try the 
-&lt;a href=&#34;../coronavirus-death/plot-death.html&#34;&gt;clean html version from this link&lt;/a&gt;
-&lt;/p&gt;
+&lt;p&gt;You can select countries to compare the data. If you are having problems to visualise the plot, you can try the &lt;a href=&#34;../coronavirus-death/plot-death.html&#34;&gt;clean html version from this link&lt;/a&gt;&lt;/p&gt;
 &lt;iframe id=&#34;igraph&#34; scrolling=&#34;no&#34; style=&#34;border:none;&#34;
         seamless=&#34;seamless&#34; src=&#34;plot-death.html&#34; height=&#34;800px&#34; width=&#34;100%&#34;&gt;
 &lt;/iframe&gt;&#39;
@@ -334,29 +306,17 @@ fig1 = plot_candidates(df_brazil, over_days=False)
       <pubDate>Sat, 21 Mar 2020 00:00:00 +0000</pubDate>
       <guid>https://luizvbo.github.io/post/coronavirus-recovered/</guid>
       <description>&lt;p&gt;I would like to see: &lt;strong&gt;The evolution over time of the number of cases/deaths/recovery patients per country&lt;/strong&gt;. Assuming that others are also interested in this information, I am sharing the plots I made with &lt;code&gt;plotly&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;The Johns Hopkins University Center for Systems Science and Engineering (JHU CSSE) maintain a 
-&lt;a href=&#34;https://github.com/CSSEGISandData/COVID-19&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub repository with daily updated information about the Corona Virus&lt;/a&gt;
-. They also provide a dashboard to interact with the data (however, even their dashboard doesn’t provide the plot I was looking for).&lt;/p&gt;
-&lt;p&gt;You are more than welcome to modify the notebook to predict the number of cases and do other types of analysis. The notebook can be found in my &lt;strong&gt;
-&lt;a href=&#34;https://github.com/luizvbo/notebooks/blob/master/corona-plots-plotly.ipynb&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub repository&lt;/a&gt;
-&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;The Johns Hopkins University Center for Systems Science and Engineering (JHU CSSE) maintain a &lt;a href=&#34;https://github.com/CSSEGISandData/COVID-19&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub repository with daily updated information about the Corona Virus&lt;/a&gt;. They also provide a dashboard to interact with the data (however, even their dashboard doesn’t provide the plot I was looking for).&lt;/p&gt;
+&lt;p&gt;You are more than welcome to modify the notebook to predict the number of cases and do other types of analysis. The notebook can be found in my &lt;strong&gt;&lt;a href=&#34;https://github.com/luizvbo/notebooks/blob/master/corona-plots-plotly.ipynb&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub repository&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;The data is split into three plots:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;
-&lt;a href=&#34;../coronavirus-confirmed&#34;&gt;COVID-19 confirmed cases&lt;/a&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;a href=&#34;../coronavirus-death&#34;&gt;COVID-19 deaths&lt;/a&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;a href=&#34;../coronavirus-recovered&#34;&gt;COVID-19 recovered cases&lt;/a&gt;
-&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../coronavirus-confirmed&#34;&gt;COVID-19 confirmed cases&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../coronavirus-death&#34;&gt;COVID-19 deaths&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;../coronavirus-recovered&#34;&gt;COVID-19 recovered cases&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Bellow, you can see the data for all the &lt;strong&gt;recovered cases&lt;/strong&gt; (total and per day).&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;NOTE&lt;/strong&gt;: Starting from 25/03/2020, the JHU CSSE is not updating the number of recovered cases anymore. Thus, the plot bellow will not be updated anymore.&lt;/p&gt;
-&lt;p&gt;You can select countries to compare the data. If you are having problems to visualise the plot, you can try the 
-&lt;a href=&#34;../coronavirus-recovered/plot-recovered.html&#34;&gt;clean html version from this link&lt;/a&gt;
-&lt;/p&gt;
+&lt;p&gt;You can select countries to compare the data. If you are having problems to visualise the plot, you can try the &lt;a href=&#34;../coronavirus-recovered/plot-recovered.html&#34;&gt;clean html version from this link&lt;/a&gt;&lt;/p&gt;
 &lt;iframe id=&#34;igraph&#34; scrolling=&#34;no&#34; style=&#34;border:none;&#34;
         seamless=&#34;seamless&#34; src=&#34;plot-recovered.html&#34; height=&#34;800px&#34; width=&#34;100%&#34;&gt;
 &lt;/iframe&gt;&#39;
@@ -369,19 +329,13 @@ fig1 = plot_candidates(df_brazil, over_days=False)
       <pubDate>Thu, 12 Mar 2020 00:00:00 +0000</pubDate>
       <guid>https://luizvbo.github.io/post/coronavirus-visualization/</guid>
       <description>&lt;h1 id=&#34;exploring-covid-19&#34;&gt;Exploring COVID-19&lt;/h1&gt;
-&lt;p&gt;The Johns Hopkins University Center for Systems Science and Engineering (JHU CSSE) maintain a 
-&lt;a href=&#34;https://github.com/CSSEGISandData/COVID-19&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub repository with daily updated information about the Corona Virus&lt;/a&gt;
-. They also provide a dashboard to interact with the data.&lt;/p&gt;
+&lt;p&gt;The Johns Hopkins University Center for Systems Science and Engineering (JHU CSSE) maintain a &lt;a href=&#34;https://github.com/CSSEGISandData/COVID-19&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub repository with daily updated information about the Corona Virus&lt;/a&gt;. They also provide a dashboard to interact with the data.&lt;/p&gt;
 &lt;p&gt;However, even their dashboard doesn’t provide the information I would like to see: &lt;strong&gt;The evolution over time of the number of cases/deaths/recovery patients per country&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;Thus, the idea of this notebook is to create interactive plots that we can use to monitor the evolution of the disease.&lt;/p&gt;
-&lt;p&gt;You are more than welcome to modify the notebook to predict the number of cases and do other types of analysis. The notebook can be found in my &lt;strong&gt;
-&lt;a href=&#34;https://github.com/luizvbo/notebooks/blob/master/corona-plots.ipynb&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub repository&lt;/a&gt;
-&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;You are more than welcome to modify the notebook to predict the number of cases and do other types of analysis. The notebook can be found in my &lt;strong&gt;&lt;a href=&#34;https://github.com/luizvbo/notebooks/blob/master/corona-plots.ipynb&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub repository&lt;/a&gt;&lt;/strong&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;imports&#34;&gt;Imports&lt;/h2&gt;
 &lt;p&gt;I am using Pandas + cufflinks to plot our data using Plotly.&lt;/p&gt;
-&lt;p&gt;I am also using ipywidgets to interact with the plots. If you are using Jupyterlab, you may need to refer to the 
-&lt;a href=&#34;https://ipywidgets.readthedocs.io/en/latest/user_install.html#installing-the-jupyterlab-extension&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;installation documention&lt;/a&gt;
-.&lt;/p&gt;
+&lt;p&gt;I am also using ipywidgets to interact with the plots. If you are using Jupyterlab, you may need to refer to the &lt;a href=&#34;https://ipywidgets.readthedocs.io/en/latest/user_install.html#installing-the-jupyterlab-extension&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;installation documention&lt;/a&gt;.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;import pandas as pd
 from IPython.display import Markdown, display
 from ipywidgets import interact
@@ -568,7 +522,10 @@ for type_, df in df_dict.items():
 
 
 
-&lt;figure&gt;
+
+
+
+&lt;figure &gt;
 
 
   &lt;a data-fancybox=&#34;&#34; href=&#34;2020-03-13-corona-new-cases.png&#34; &gt;
@@ -598,7 +555,10 @@ for type_, df in df_dict.items():
 
 
 
-&lt;figure&gt;
+
+
+
+&lt;figure &gt;
 
 
   &lt;a data-fancybox=&#34;&#34; href=&#34;2020-03-13-corona-deaths.png&#34; &gt;
@@ -628,7 +588,10 @@ for type_, df in df_dict.items():
 
 
 
-&lt;figure&gt;
+
+
+
+&lt;figure &gt;
 
 
   &lt;a data-fancybox=&#34;&#34; href=&#34;2020-03-13-corona-recovered.png&#34; &gt;
@@ -650,21 +613,15 @@ for type_, df in df_dict.items():
       <pubDate>Wed, 04 Mar 2020 00:00:00 +0000</pubDate>
       <guid>https://luizvbo.github.io/post/loading-wikipedia-data-with-python/</guid>
       <description>&lt;p&gt;Wikipedia is the largest and most popular general reference work on the World Wide Web, and is one of the most popular websites ranked by Alexa as of January 2020.&lt;/p&gt;
-&lt;p&gt;As of February 2020, there are 6,016,720 articles in the English Wikipedia containing over 3.5 billion words. There are a lot of information about the amount of data in Wikipedia that can be found in 
-&lt;a href=&#34;https://en.wikipedia.org/wiki/Wikipedia:Size_of_Wikipedia&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;this article&lt;/a&gt;
-.&lt;/p&gt;
+&lt;p&gt;As of February 2020, there are 6,016,720 articles in the English Wikipedia containing over 3.5 billion words. There are a lot of information about the amount of data in Wikipedia that can be found in &lt;a href=&#34;https://en.wikipedia.org/wiki/Wikipedia:Size_of_Wikipedia&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;this article&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;https://upload.wikimedia.org/wikipedia/commons/1/19/Size_of_English_Wikipedia_graph_2019-03-01.png&#34; alt=&#34;Content page count of the English-language Wikipedia from the beginning to 2019-03-21&#34;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Content page count of the English-language Wikipedia from the beginning to 2019-03-21&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;strong&gt;This article is going to show you how to download the whole Wikipedia (in English) and load the data in Python.&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;You can dowload the original Notebook from my 
-&lt;a href=&#34;https://github.com/luizvbo/wikidata/blob/master/wikipedia_store.ipynb&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub repository&lt;/a&gt;
-.&lt;/p&gt;
+&lt;p&gt;You can dowload the original Notebook from my &lt;a href=&#34;https://github.com/luizvbo/wikidata/blob/master/wikipedia_store.ipynb&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub repository&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;downloading-the-data&#34;&gt;Downloading the Data&lt;/h2&gt;
-&lt;p&gt;The fastest way of getting Wikipedia is though torrent. Download the last version of the data dump from this 
-&lt;a href=&#34;https://meta.wikimedia.org/wiki/Data_dump_torrents#English_Wikipedia&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;page&lt;/a&gt;
-. You should download the newest version of the file &lt;code&gt;enwiki-YYYYMMDD-pages-articles-multistream.xml.bz2&lt;/code&gt;, where &lt;code&gt;YYYYMMDD&lt;/code&gt; is the date of the dump.&lt;/p&gt;
+&lt;p&gt;The fastest way of getting Wikipedia is though torrent. Download the last version of the data dump from this &lt;a href=&#34;https://meta.wikimedia.org/wiki/Data_dump_torrents#English_Wikipedia&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;page&lt;/a&gt;. You should download the newest version of the file &lt;code&gt;enwiki-YYYYMMDD-pages-articles-multistream.xml.bz2&lt;/code&gt;, where &lt;code&gt;YYYYMMDD&lt;/code&gt; is the date of the dump.&lt;/p&gt;
 &lt;p&gt;The MD5 for the file can be found in the link &lt;a href=&#34;http://ftp.acc.umu.se/mirror/wikimedia.org/dumps/enwiki/YYYYMMDD/md5sums-enwiki-YYYYMMDD-pages-articles-multistream.xml.bz2.txt&#34;&gt;http://ftp.acc.umu.se/mirror/wikimedia.org/dumps/enwiki/YYYYMMDD/md5sums-enwiki-YYYYMMDD-pages-articles-multistream.xml.bz2.txt&lt;/a&gt; where &lt;code&gt;YYYYMMDD&lt;/code&gt; should be replace by the date of the dump.&lt;/p&gt;
 &lt;p&gt;After downloading the articles &lt;strong&gt;bz2&lt;/strong&gt; file, we need to download the list on indices for the articles from &lt;a href=&#34;http://ftp.acc.umu.se/mirror/wikimedia.org/dumps/enwiki/YYYYMMDD/enwiki-YYYYMMDD-pages-articles-multistream-index.txt.bz2&#34;&gt;http://ftp.acc.umu.se/mirror/wikimedia.org/dumps/enwiki/YYYYMMDD/enwiki-YYYYMMDD-pages-articles-multistream-index.txt.bz2&lt;/a&gt;. Again, replace &lt;code&gt;YYYYMMDD&lt;/code&gt; by the date of the dump.&lt;/p&gt;
 &lt;p&gt;After downloading the files you should extract &lt;strong&gt;only the index&lt;/strong&gt; file. On Linux, we can use &lt;code&gt;lbzip2&lt;/code&gt; to uncompress the file using multiple CPUs, speeding up the process. In the terminal, in the file folder type:&lt;/p&gt;
@@ -753,9 +710,7 @@ n_parallel_blocks = 20
 &lt;h2 id=&#34;parsing-the-data&#34;&gt;Parsing the data&lt;/h2&gt;
 &lt;p&gt;In order to parse the files, we need to open the bz2 file containing the articles, read blocks of bytes, according to the offsets defined above, and then uncompress these blocks.&lt;/p&gt;
 &lt;p&gt;The generator &lt;code&gt;get_bz2_byte_str&lt;/code&gt; reads the blocks sequentially, following the list of offsets. And the function &lt;code&gt;get_articles&lt;/code&gt; is used to convert each byte string into a pandas data frame containing the index, title and content of the article.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: The XML structure can be found on this 
-&lt;a href=&#34;https://meta.wikimedia.org/wiki/Data_dumps/Dump_format&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;page&lt;/a&gt;
-.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: The XML structure can be found on this &lt;a href=&#34;https://meta.wikimedia.org/wiki/Data_dumps/Dump_format&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;page&lt;/a&gt;.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;def get_bz2_byte_str(path_articles: str,
                      offset_list: List[int]) -&amp;gt; Generator[bytes, None, None]:
     &amp;quot;&amp;quot;&amp;quot;Read the multistream bz2 file using the offset list
@@ -851,16 +806,8 @@ def _process_parallel(list_bytes: List[bytes]) -&amp;gt; None:
     # Clear the data tables
     del df
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;The code bellow stores each block of 100 articles in a new parquet file. It allows you to load a subset of the full dump or work using 
-&lt;a href=&#34;https://github.com/dask/dask&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Dask&lt;/a&gt;
-, 
-&lt;a href=&#34;https://github.com/modin-project/modin&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Modin&lt;/a&gt;
- or 
-&lt;a href=&#34;https://spark.apache.org/docs/latest/api/python/index.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;pySpark&lt;/a&gt;
-.&lt;/p&gt;
-&lt;p&gt;I am using 
-&lt;a href=&#34;https://en.wikipedia.org/wiki/Snappy_%28compression%29&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Snappy&lt;/a&gt;
- to reduce the amount of space used by the extracted data.&lt;/p&gt;
+&lt;p&gt;The code bellow stores each block of 100 articles in a new parquet file. It allows you to load a subset of the full dump or work using &lt;a href=&#34;https://github.com/dask/dask&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Dask&lt;/a&gt;, &lt;a href=&#34;https://github.com/modin-project/modin&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Modin&lt;/a&gt; or &lt;a href=&#34;https://spark.apache.org/docs/latest/api/python/index.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;pySpark&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I am using &lt;a href=&#34;https://en.wikipedia.org/wiki/Snappy_%28compression%29&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Snappy&lt;/a&gt; to reduce the amount of space used by the extracted data.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Snappy (previously known as Zippy) is a fast data compression and decompression library written in C++ by Google based on ideas from LZ77 and open-sourced in 2011. It does not aim for maximum compression, or compatibility with any other compression library; instead, it aims for very high speeds and reasonable compression.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -892,6 +839,14 @@ queue.clear()
 &lt;p&gt;Done! Now, we can load the data from parquet.&lt;/p&gt;
 &lt;p&gt;However, we still have to parse the data from the articles, since there are some markups used to Wikipedia for citations, info boxes, categories and so on. We will deal with these in the next artile.&lt;/p&gt;
 </description>
+    </item>
+    
+    <item>
+      <title>Instance Selection for Geometric Semantic Genetic Programming</title>
+      <link>https://luizvbo.github.io/publication/miranda-2020-instance/</link>
+      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>https://luizvbo.github.io/publication/miranda-2020-instance/</guid>
+      <description></description>
     </item>
     
     <item>

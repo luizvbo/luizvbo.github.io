@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>1 | Luiz Otavio Vilas Boas Oliveira</title>
+    <link>https://luizvbo.github.io/publication-type/1/</link>
+      <atom:link href="https://luizvbo.github.io/publication-type/1/index.xml" rel="self" type="application/rss+xml" />
+    <description>1</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Wed, 01 Jan 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://luizvbo.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <title>1</title>
+      <link>https://luizvbo.github.io/publication-type/1/</link>
+    </image>
+    
+    <item>
+      <title>Instance Selection for Geometric Semantic Genetic Programming</title>
+      <link>https://luizvbo.github.io/publication/miranda-2020-instance/</link>
+      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>https://luizvbo.github.io/publication/miranda-2020-instance/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Analysing Symbolic Regression Benchmarks under a Meta-Learning Approach</title>
+      <link>https://luizvbo.github.io/publication/oliveira-2018-analysing/</link>
+      <pubDate>Sun, 01 Jul 2018 00:00:00 +0000</pubDate>
+      <guid>https://luizvbo.github.io/publication/oliveira-2018-analysing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Solving the Exponential Growth of Symbolic Regression Trees in Geometric Semantic Genetic Programming</title>
+      <link>https://luizvbo.github.io/publication/martins-2018-solving/</link>
+      <pubDate>Sun, 01 Jul 2018 00:00:00 +0000</pubDate>
+      <guid>https://luizvbo.github.io/publication/martins-2018-solving/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>How Noisy Data Affects Geometric Semantic Genetic Programming</title>
+      <link>https://luizvbo.github.io/publication/miranda-2017-hownoisy/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>https://luizvbo.github.io/publication/miranda-2017-hownoisy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>RECIPE: A Grammar-Based Framework for Automatically Evolving Classification Pipelines</title>
+      <link>https://luizvbo.github.io/publication/desa-2017-recipe/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>https://luizvbo.github.io/publication/desa-2017-recipe/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Strategies for Improving the Distribution of Random Function Outputs in GSGP</title>
+      <link>https://luizvbo.github.io/publication/oliveira-2017-strategies/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>https://luizvbo.github.io/publication/oliveira-2017-strategies/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A Dispersion Operator for Geometric Semantic Genetic Programming</title>
+      <link>https://luizvbo.github.io/publication/oliveira-2016-dispersion/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>https://luizvbo.github.io/publication/oliveira-2016-dispersion/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Reducing Dimensionality to Improve Search in Semantic Genetic Programming</title>
+      <link>https://luizvbo.github.io/publication/oliveira-2016-reducing/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>https://luizvbo.github.io/publication/oliveira-2016-reducing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Revisiting the Sequential Symbolic Regression Genetic Programming</title>
+      <link>https://luizvbo.github.io/publication/oliveira-2016-revisiting/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>https://luizvbo.github.io/publication/oliveira-2016-revisiting/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The Effect of Distinct Geometric Semantic Crossover Operators in Regression Problems</title>
+      <link>https://luizvbo.github.io/publication/albinati-2015-effect/</link>
+      <pubDate>Thu, 01 Jan 2015 00:00:00 +0000</pubDate>
+      <guid>https://luizvbo.github.io/publication/albinati-2015-effect/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A new representation for instance-based clonal selection algorithms</title>
+      <link>https://luizvbo.github.io/publication/oliveira-2013-new/</link>
+      <pubDate>Tue, 01 Jan 2013 00:00:00 +0000</pubDate>
+      <guid>https://luizvbo.github.io/publication/oliveira-2013-new/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Clonal selection classifier with data reduction: Classification as an optimization task</title>
+      <link>https://luizvbo.github.io/publication/oliveira-2012-clonal/</link>
+      <pubDate>Sun, 01 Jan 2012 00:00:00 +0000</pubDate>
+      <guid>https://luizvbo.github.io/publication/oliveira-2012-clonal/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Real-Valued Negative Selection (RNS) for MR Brain Image Classification</title>
+      <link>https://luizvbo.github.io/publication/oliveira-2011-real/</link>
+      <pubDate>Sat, 01 Jan 2011 00:00:00 +0000</pubDate>
+      <guid>https://luizvbo.github.io/publication/oliveira-2011-real/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Real-Valued Negative Selection (RNS) for Classification Task</title>
+      <link>https://luizvbo.github.io/publication/oliveira-2010-real/</link>
+      <pubDate>Fri, 01 Jan 2010 00:00:00 +0000</pubDate>
+      <guid>https://luizvbo.github.io/publication/oliveira-2010-real/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

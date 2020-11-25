@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Isabela Neves Drummond | Luiz Otavio Vilas Boas Oliveira</title>
+    <link>https://luizvbo.github.io/author/isabela-neves-drummond/</link>
+      <atom:link href="https://luizvbo.github.io/author/isabela-neves-drummond/index.xml" rel="self" type="application/rss+xml" />
+    <description>Isabela Neves Drummond</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Tue, 01 Jan 2013 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://luizvbo.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <title>Isabela Neves Drummond</title>
+      <link>https://luizvbo.github.io/author/isabela-neves-drummond/</link>
+    </image>
+    
+    <item>
+      <title>A new representation for instance-based clonal selection algorithms</title>
+      <link>https://luizvbo.github.io/publication/oliveira-2013-new/</link>
+      <pubDate>Tue, 01 Jan 2013 00:00:00 +0000</pubDate>
+      <guid>https://luizvbo.github.io/publication/oliveira-2013-new/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Real-Valued Negative Selection (RNS) for MR Brain Image Classification</title>
+      <link>https://luizvbo.github.io/publication/oliveira-2011-real/</link>
+      <pubDate>Sat, 01 Jan 2011 00:00:00 +0000</pubDate>
+      <guid>https://luizvbo.github.io/publication/oliveira-2011-real/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Real-Valued Negative Selection (RNS) for Classification Task</title>
+      <link>https://luizvbo.github.io/publication/oliveira-2010-real/</link>
+      <pubDate>Fri, 01 Jan 2010 00:00:00 +0000</pubDate>
+      <guid>https://luizvbo.github.io/publication/oliveira-2010-real/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

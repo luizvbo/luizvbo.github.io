@@ -1,13 +1,19 @@
-<!DOCTYPE html>
-<html lang="en-us">
+<!DOCTYPE html><html lang="en-us" >
 
 <head>
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic 4.7.0">
+  
+  
+  
+  <meta name="generator" content="Wowchemy 5.0.0-beta.0 for Hugo">
+  
 
+  
+
+  
   
 
   
@@ -21,22 +27,35 @@
   
   
 
-  <meta name="author" content="Luiz Otavio Vilas Boas Oliveira">
+  
 
   
   
   
     
   
-  <meta name="description" content="Wikipedia is the largest and most popular general reference work on the World Wide Web, and is one of the most popular websites ranked by Alexa as of January 2020.
-As of February 2020, there are 6,016,720 articles in the English Wikipedia containing over 3.5 billion words. There are a lot of information about the amount of data in Wikipedia that can be found in this article .
- Content page count of the English-language Wikipedia from the beginning to 2019-03-21">
+  <meta name="description" content="Wikipedia is the largest and most popular general reference work on the World Wide Web, and is one of the most popular websites ranked by Alexa as of January 2020.">
 
   
   <link rel="alternate" hreflang="en-us" href="https://luizvbo.github.io/post/loading-wikipedia-data-with-python/">
 
   
 
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
 
   
   
@@ -52,8 +71,10 @@ As of February 2020, there are 6,016,720 articles in the English Wikipedia conta
   
   
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-1/css/all.min.css" integrity="sha256-4w9DunooKSr3MFXHXWyFER38WmPdm361bQS/2KUWZbU=" crossorigin="anonymous">
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css" integrity="sha512-W4yqoT1+8NLkinBLBZko+dFB2ZbHsYLDdr50VElllRcNt2Q4/GSs6u71UHKxB7S6JEMCp5Ve4xjh3eGQl/HRvg==" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
 
     
@@ -64,25 +85,18 @@ As of February 2020, there are 6,016,720 articles in the English Wikipedia conta
     
       
       
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/a11y-dark.min.css" crossorigin="anonymous" title="hl-light">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/a11y-dark.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/a11y-dark.min.css" crossorigin="anonymous" title="hl-light">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/a11y-dark.min.css" crossorigin="anonymous" title="hl-dark" disabled>
       
     
 
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css" integrity="sha256-SHMGCYmST46SoyGgo4YR/9AlK1vf3ff84Aq9yK4hdqM=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.css" integrity="sha512-1xoFisiGdy9nvho8EgXuXvnpR5GAMSjFwp40gSRE3NwdUdIMIKuPa7bqoUhLD0O/5tPNhteAsE5XyyMi5reQVA==" crossorigin="anonymous">
     
 
     
 
     
-    
-      
-
-      
-      
-
-      
     
       
 
@@ -153,7 +167,21 @@ As of February 2020, there are 6,016,720 articles in the English Wikipedia conta
       
 
       
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js" integrity="sha256-Md1qLToewPeKjfAHU1zyPwOutccPAm5tahnaw7Osw0A=" crossorigin="anonymous" async></script>
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.2.2/lazysizes.min.js" integrity="sha512-TmDwFLhg3UA4ZG0Eb4MIyT1O1Mb+Oww5kFG0uHqXsdbyZz9DcvYQhKpGgNkamAI6h2lGGZq2X8ftOJvF/XjTUg==" crossorigin="anonymous" async></script>
       
     
       
@@ -186,20 +214,31 @@ As of February 2020, there are 6,016,720 articles in the English Wikipedia conta
 
       
     
+      
+
+      
+      
+
+      
+    
 
   
 
   
   
   
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
+    
+      
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
+    
   
 
   
   
   
   
-  <link rel="stylesheet" href="/css/academic.css">
+  <link rel="stylesheet" href="/css/wowchemy.css">
 
   
 
@@ -215,13 +254,42 @@ As of February 2020, there are 6,016,720 articles in the English Wikipedia conta
       dataLayer.push(arguments);
   }
 
+  function trackOutboundLink(url, target) {
+    gtag('event', 'click', {
+         'event_category': 'outbound',
+         'event_label': url,
+         'transport_type': 'beacon',
+         'event_callback': function () {
+           if (target !== '_blank') {
+             document.location = url;
+           }
+         }
+    });
+    console.debug("Outbound link clicked: " + url);
+  }
+
+  function onClickCallback(event) {
+    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
+      return;
+    }
+    trackOutboundLink(event.target, event.target.getAttribute('target'));  
+  }
+
   gtag('js', new Date());
-  gtag('config', 'UA-135928539-1');
+  gtag('config', 'UA-135928539-1', {});
+
+  
+  document.addEventListener('click', onClickCallback, false);
 </script>
 
 
   
 
+  
+
+
+  
+  
 
   
 
@@ -236,6 +304,8 @@ As of February 2020, there are 6,016,720 articles in the English Wikipedia conta
   
   
   
+  
+  
     
     
   
@@ -245,10 +315,8 @@ As of February 2020, there are 6,016,720 articles in the English Wikipedia conta
   <meta property="og:site_name" content="Luiz Otavio Vilas Boas Oliveira">
   <meta property="og:url" content="https://luizvbo.github.io/post/loading-wikipedia-data-with-python/">
   <meta property="og:title" content="Loading Wikipedia articles (EN) with Python | Luiz Otavio Vilas Boas Oliveira">
-  <meta property="og:description" content="Wikipedia is the largest and most popular general reference work on the World Wide Web, and is one of the most popular websites ranked by Alexa as of January 2020.
-As of February 2020, there are 6,016,720 articles in the English Wikipedia containing over 3.5 billion words. There are a lot of information about the amount of data in Wikipedia that can be found in this article .
- Content page count of the English-language Wikipedia from the beginning to 2019-03-21"><meta property="og:image" content="img/map[gravatar:%!s(bool=false) shape:circle]">
-  <meta property="twitter:image" content="img/map[gravatar:%!s(bool=false) shape:circle]"><meta property="og:locale" content="en-us">
+  <meta property="og:description" content="Wikipedia is the largest and most popular general reference work on the World Wide Web, and is one of the most popular websites ranked by Alexa as of January 2020."><meta property="og:image" content="https://luizvbo.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png">
+  <meta property="twitter:image" content="https://luizvbo.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="en-us">
   
     
       <meta property="article:published_time" content="2020-03-04T00:00:00&#43;00:00">
@@ -271,8 +339,6 @@ As of February 2020, there are 6,016,720 articles in the English Wikipedia conta
 
 
 
-
-
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -286,20 +352,15 @@ As of February 2020, there are 6,016,720 articles in the English Wikipedia conta
   "datePublished": "2020-03-04T00:00:00Z",
   "dateModified": "2020-03-04T00:00:00Z",
   
-  "author": {
-    "@type": "Person",
-    "name": "Luiz Otavio Vilas Boas Oliveira"
-  },
-  
   "publisher": {
     "@type": "Organization",
     "name": "Luiz Otavio Vilas Boas Oliveira",
     "logo": {
       "@type": "ImageObject",
-      "url": "img/https://luizvbo.github.io/"
+      "url": "https://luizvbo.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png"
     }
   },
-  "description": "Wikipedia is the largest and most popular general reference work on the World Wide Web, and is one of the most popular websites ranked by Alexa as of January 2020.\nAs of February 2020, there are 6,016,720 articles in the English Wikipedia containing over 3.5 billion words. There are a lot of information about the amount of data in Wikipedia that can be found in this article .\n Content page count of the English-language Wikipedia from the beginning to 2019-03-21"
+  "description": "Wikipedia is the largest and most popular general reference work on the World Wide Web, and is one of the most popular websites ranked by Alexa as of January 2020."
 }
 </script>
 
@@ -321,7 +382,15 @@ As of February 2020, there are 6,016,720 articles in the English Wikipedia conta
 
 </head>
 
-<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper  ">
+
+  
+  
+  
+  
+  
+  <script src="/js/wowchemy-init.js"></script>
 
   <aside class="search-results" id="search">
   <div class="container">
@@ -339,7 +408,7 @@ As of February 2020, there are 6,016,720 articles in the English Wikipedia conta
       <div id="search-box">
         
         <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
-        autocomplete="off" autocorrect="off" spellcheck="false" type="search">
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control">
         
       </div>
 
@@ -355,7 +424,13 @@ As of February 2020, there are 6,016,720 articles in the English Wikipedia conta
 </aside>
 
 
-  
+  <div class="page-header">
+    
+
+
+
+
+
 
 
 
@@ -402,16 +477,24 @@ As of February 2020, there are 6,016,720 articles in the English Wikipedia conta
         
 
         
+
         
         
         
         
+
         
           
+            
+            
           
           
             
-          
+            
+            
+              
+            
+            
           
         
 
@@ -431,16 +514,24 @@ As of February 2020, there are 6,016,720 articles in the English Wikipedia conta
         
 
         
+
         
         
         
         
+
         
           
+            
+            
           
           
             
-          
+            
+            
+              
+            
+            
           
         
 
@@ -460,16 +551,24 @@ As of February 2020, there are 6,016,720 articles in the English Wikipedia conta
         
 
         
+
         
         
         
         
+
         
           
+            
+            
           
           
             
-          
+            
+            
+              
+            
+            
           
         
 
@@ -489,16 +588,24 @@ As of February 2020, there are 6,016,720 articles in the English Wikipedia conta
         
 
         
+
         
         
         
         
+
         
           
+            
+            
           
           
             
-          
+            
+            
+              
+            
+            
           
         
 
@@ -518,16 +625,24 @@ As of February 2020, there are 6,016,720 articles in the English Wikipedia conta
         
 
         
+
         
         
         
         
+
         
           
+            
+            
           
           
             
-          
+            
+            
+              
+            
+            
           
         
 
@@ -547,16 +662,24 @@ As of February 2020, there are 6,016,720 articles in the English Wikipedia conta
         
 
         
+
         
         
         
         
+
         
           
+            
+            
           
           
             
-          
+            
+            
+              
+            
+            
           
         
 
@@ -575,14 +698,29 @@ As of February 2020, there are 6,016,720 articles in the English Wikipedia conta
 
     <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
       
+      
       <li class="nav-item">
-        <a class="nav-link js-search" href="#"><i class="fas fa-search" aria-hidden="true"></i></a>
+        <a class="nav-link js-search" href="#" aria-label="Search"><i class="fas fa-search" aria-hidden="true"></i></a>
       </li>
       
 
       
-      <li class="nav-item">
-        <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+      
+      <li class="nav-item dropdown theme-dropdown">
+        <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-label="Display preferences">
+          <i class="fas fa-moon" aria-hidden="true"></i>
+        </a>
+        <div class="dropdown-menu">
+          <a href="#" class="dropdown-item js-set-theme-light">
+            <span>Light</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-dark">
+            <span>Dark</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-auto">
+            <span>Automatic</span>
+          </a>
+        </div>
       </li>
       
 
@@ -594,7 +732,10 @@ As of February 2020, there are 6,016,720 articles in the English Wikipedia conta
 </nav>
 
 
-  <article class="article">
+  </div>
+
+  <div class="page-body">
+    <article class="article">
 
   
 
@@ -650,6 +791,8 @@ As of February 2020, there are 6,016,720 articles in the English Wikipedia conta
   
   
   
+  
+  
   <span class="middot-divider"></span>
   <a href="/post/loading-wikipedia-data-with-python/#disqus_thread"></a>
   
@@ -683,21 +826,15 @@ As of February 2020, there are 6,016,720 articles in the English Wikipedia conta
 
     <div class="article-style">
       <p>Wikipedia is the largest and most popular general reference work on the World Wide Web, and is one of the most popular websites ranked by Alexa as of January 2020.</p>
-<p>As of February 2020, there are 6,016,720 articles in the English Wikipedia containing over 3.5 billion words. There are a lot of information about the amount of data in Wikipedia that can be found in 
-<a href="https://en.wikipedia.org/wiki/Wikipedia:Size_of_Wikipedia" target="_blank" rel="noopener">this article</a>
-.</p>
+<p>As of February 2020, there are 6,016,720 articles in the English Wikipedia containing over 3.5 billion words. There are a lot of information about the amount of data in Wikipedia that can be found in <a href="https://en.wikipedia.org/wiki/Wikipedia:Size_of_Wikipedia" target="_blank" rel="noopener">this article</a>.</p>
 <p><img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Size_of_English_Wikipedia_graph_2019-03-01.png" alt="Content page count of the English-language Wikipedia from the beginning to 2019-03-21"></p>
 <blockquote>
 <p>Content page count of the English-language Wikipedia from the beginning to 2019-03-21</p>
 </blockquote>
 <p><strong>This article is going to show you how to download the whole Wikipedia (in English) and load the data in Python.</strong></p>
-<p>You can dowload the original Notebook from my 
-<a href="https://github.com/luizvbo/wikidata/blob/master/wikipedia_store.ipynb" target="_blank" rel="noopener">GitHub repository</a>
-.</p>
+<p>You can dowload the original Notebook from my <a href="https://github.com/luizvbo/wikidata/blob/master/wikipedia_store.ipynb" target="_blank" rel="noopener">GitHub repository</a>.</p>
 <h2 id="downloading-the-data">Downloading the Data</h2>
-<p>The fastest way of getting Wikipedia is though torrent. Download the last version of the data dump from this 
-<a href="https://meta.wikimedia.org/wiki/Data_dump_torrents#English_Wikipedia" target="_blank" rel="noopener">page</a>
-. You should download the newest version of the file <code>enwiki-YYYYMMDD-pages-articles-multistream.xml.bz2</code>, where <code>YYYYMMDD</code> is the date of the dump.</p>
+<p>The fastest way of getting Wikipedia is though torrent. Download the last version of the data dump from this <a href="https://meta.wikimedia.org/wiki/Data_dump_torrents#English_Wikipedia" target="_blank" rel="noopener">page</a>. You should download the newest version of the file <code>enwiki-YYYYMMDD-pages-articles-multistream.xml.bz2</code>, where <code>YYYYMMDD</code> is the date of the dump.</p>
 <p>The MD5 for the file can be found in the link <a href="http://ftp.acc.umu.se/mirror/wikimedia.org/dumps/enwiki/YYYYMMDD/md5sums-enwiki-YYYYMMDD-pages-articles-multistream.xml.bz2.txt">http://ftp.acc.umu.se/mirror/wikimedia.org/dumps/enwiki/YYYYMMDD/md5sums-enwiki-YYYYMMDD-pages-articles-multistream.xml.bz2.txt</a> where <code>YYYYMMDD</code> should be replace by the date of the dump.</p>
 <p>After downloading the articles <strong>bz2</strong> file, we need to download the list on indices for the articles from <a href="http://ftp.acc.umu.se/mirror/wikimedia.org/dumps/enwiki/YYYYMMDD/enwiki-YYYYMMDD-pages-articles-multistream-index.txt.bz2">http://ftp.acc.umu.se/mirror/wikimedia.org/dumps/enwiki/YYYYMMDD/enwiki-YYYYMMDD-pages-articles-multistream-index.txt.bz2</a>. Again, replace <code>YYYYMMDD</code> by the date of the dump.</p>
 <p>After downloading the files you should extract <strong>only the index</strong> file. On Linux, we can use <code>lbzip2</code> to uncompress the file using multiple CPUs, speeding up the process. In the terminal, in the file folder type:</p>
@@ -786,9 +923,7 @@ n_parallel_blocks = 20
 <h2 id="parsing-the-data">Parsing the data</h2>
 <p>In order to parse the files, we need to open the bz2 file containing the articles, read blocks of bytes, according to the offsets defined above, and then uncompress these blocks.</p>
 <p>The generator <code>get_bz2_byte_str</code> reads the blocks sequentially, following the list of offsets. And the function <code>get_articles</code> is used to convert each byte string into a pandas data frame containing the index, title and content of the article.</p>
-<p><strong>Note</strong>: The XML structure can be found on this 
-<a href="https://meta.wikimedia.org/wiki/Data_dumps/Dump_format" target="_blank" rel="noopener">page</a>
-.</p>
+<p><strong>Note</strong>: The XML structure can be found on this <a href="https://meta.wikimedia.org/wiki/Data_dumps/Dump_format" target="_blank" rel="noopener">page</a>.</p>
 <pre><code class="language-python">def get_bz2_byte_str(path_articles: str,
                      offset_list: List[int]) -&gt; Generator[bytes, None, None]:
     &quot;&quot;&quot;Read the multistream bz2 file using the offset list
@@ -884,16 +1019,8 @@ def _process_parallel(list_bytes: List[bytes]) -&gt; None:
     # Clear the data tables
     del df
 </code></pre>
-<p>The code bellow stores each block of 100 articles in a new parquet file. It allows you to load a subset of the full dump or work using 
-<a href="https://github.com/dask/dask" target="_blank" rel="noopener">Dask</a>
-, 
-<a href="https://github.com/modin-project/modin" target="_blank" rel="noopener">Modin</a>
- or 
-<a href="https://spark.apache.org/docs/latest/api/python/index.html" target="_blank" rel="noopener">pySpark</a>
-.</p>
-<p>I am using 
-<a href="https://en.wikipedia.org/wiki/Snappy_%28compression%29" target="_blank" rel="noopener">Snappy</a>
- to reduce the amount of space used by the extracted data.</p>
+<p>The code bellow stores each block of 100 articles in a new parquet file. It allows you to load a subset of the full dump or work using <a href="https://github.com/dask/dask" target="_blank" rel="noopener">Dask</a>, <a href="https://github.com/modin-project/modin" target="_blank" rel="noopener">Modin</a> or <a href="https://spark.apache.org/docs/latest/api/python/index.html" target="_blank" rel="noopener">pySpark</a>.</p>
+<p>I am using <a href="https://en.wikipedia.org/wiki/Snappy_%28compression%29" target="_blank" rel="noopener">Snappy</a> to reduce the amount of space used by the extracted data.</p>
 <blockquote>
 <p>Snappy (previously known as Zippy) is a fast data compression and decompression library written in C++ by Google based on ideas from LZ77 and open-sourced in 2011. It does not aim for maximum compression, or compatibility with any other compression library; instead, it aims for very high speeds and reasonable compression.</p>
 </blockquote>
@@ -928,6 +1055,7 @@ queue.clear()
     </div>
 
     
+
 
 
 
@@ -998,7 +1126,7 @@ queue.clear()
       
       
       <li>
-        <a href="https://web.whatsapp.com/send?text=Loading%20Wikipedia%20articles%20%28EN%29%20with%20Python%20https://luizvbo.github.io/post/loading-wikipedia-data-with-python/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+        <a href="whatsapp://send?text=Loading%20Wikipedia%20articles%20%28EN%29%20with%20Python%20https://luizvbo.github.io/post/loading-wikipedia-data-with-python/" target="_blank" rel="noopener" class="share-btn-whatsapp">
           <i class="fab fa-whatsapp"></i>
         </a>
       </li>
@@ -1029,11 +1157,8 @@ queue.clear()
 
 
 
-
   
-
-
-
+  
 
 
 
@@ -1047,11 +1172,11 @@ queue.clear()
   <div class="media author-card content-widget-hr">
     
       
-      <img class="avatar mr-3 avatar-circle" src="/authors/admin/avatar_hua37112fd29e767f6dab39c2dbbc27d16_76892_270x270_fill_q90_lanczos_center.jpg" alt="Avatar">
+      <a href="https://luizvbo.github.io/"><img class="avatar mr-3 avatar-circle" src="/author/avatar_hua37112fd29e767f6dab39c2dbbc27d16_76892_270x270_fill_q75_lanczos_center.jpg" alt=""></a>
     
 
     <div class="media-body">
-      <h5 class="card-title"><a href="https://luizvbo.github.io/">Luiz Otavio Vilas Boas Oliveira</a></h5>
+      <h5 class="card-title"><a href="https://luizvbo.github.io/"></a></h5>
       <h6 class="card-subtitle">Data Scientist</h6>
       <p class="card-text">A Brazilian in the Netherlands solving problems using data.</p>
       <ul class="network-icon" aria-hidden="true">
@@ -1130,12 +1255,17 @@ queue.clear()
 
 
 
+
+
+
+
+
 <section id="comments">
   
     
 <div id="disqus_thread"></div>
 <script>
-  let disqus_config = function () {
+  var disqus_config = function () {
     
     
     
@@ -1163,31 +1293,103 @@ queue.clear()
 
 
 
+
+
   
   
+
+
 
 
 
   </div>
 </article>
+  </div>
+
+  <div class="page-footer">
+    
+    
+    <div class="container">
+      <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    
+  </p>
+
+  
+  
+
+
+
+
+
+
+  <p class="powered-by">
+    
+    
+    
+    Published with
+    <a href="https://wowchemy.com" target="_blank" rel="noopener">Wowchemy</a>  —
+    the free, <a href="https://github.com/wowchemy/wowchemy-hugo-modules" target="_blank" rel="noopener">
+    open source</a> website builder that empowers creators.
+    
+  </p>
+</footer>
+
+    </div>
+    
+  </div>
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
 
       
 
     
     
     
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+      
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      
+
       <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin="anonymous"></script>
 
       
 
       
         
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js" integrity="sha256-1zu+3BnLYV9LdiY85uXMzii3bdrkelyp37e0ZyTAQh0=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js" integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin="anonymous"></script>
         
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/python.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/python.min.js"></script>
         
       
 
@@ -1195,7 +1397,7 @@ queue.clear()
 
     
     
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.js" integrity="sha256-EErZamuLefUnbMBQbsEqu1USa+btR2oIlCpBJbyD4/g=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.min.js" integrity="sha512-SeiQaaDh73yrb56sTW/RgVdi/mMqNeM2oBwubFHagc5BkixSpP1fvqF47mKzPGWYSSy4RwbBunrJBQ4Co8fRWA==" crossorigin="anonymous"></script>
     
 
     
@@ -1216,7 +1418,8 @@ queue.clear()
         'post': "Posts",
         'project': "Projects",
         'publication' : "Publications",
-        'talk' : "Talks"
+        'talk' : "Talks",
+        'slides' : "Slides"
         };
     </script>
     
@@ -1250,6 +1453,13 @@ queue.clear()
 
     
     
+    
+
+    
+    
+
+    
+    
     <script id="dsq-count-scr" src="https://luizvbo.disqus.com/count.js" async></script>
     
 
@@ -1267,7 +1477,7 @@ queue.clear()
     
     
     
-    <script src="/js/academic.min.0630fec5958cb075a5a38f042b3ddde6.js"></script>
+    <script src="/js/wowchemy.min.59419d2c9809de125013c581da371866.js"></script>
 
     
 
@@ -1275,60 +1485,6 @@ queue.clear()
 
 
 
-
-  
-  
-  <div class="container">
-    <footer class="site-footer">
-  
-
-  <p class="powered-by">
-    
-
-    Powered by the
-    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
-    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
-
-    
-    <span class="float-right" aria-hidden="true">
-      <a href="#" class="back-to-top">
-        <span class="button_icon">
-          <i class="fas fa-chevron-up fa-2x"></i>
-        </span>
-      </a>
-    </span>
-    
-  </p>
-</footer>
-
-  </div>
-  
-
-  
-<div id="modal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Cite</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <pre><code class="tex hljs"></code></pre>
-      </div>
-      <div class="modal-footer">
-        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
-          <i class="fas fa-copy"></i> Copy
-        </a>
-        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
-          <i class="fas fa-download"></i> Download
-        </a>
-        <div id="modal-error"></div>
-      </div>
-    </div>
-  </div>
-</div>
 
 </body>
 </html>

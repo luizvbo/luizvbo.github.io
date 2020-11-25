@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Julio Albinati | Luiz Otavio Vilas Boas Oliveira</title>
+    <link>https://luizvbo.github.io/author/julio-albinati/</link>
+      <atom:link href="https://luizvbo.github.io/author/julio-albinati/index.xml" rel="self" type="application/rss+xml" />
+    <description>Julio Albinati</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Thu, 01 Jan 2015 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://luizvbo.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <title>Julio Albinati</title>
+      <link>https://luizvbo.github.io/author/julio-albinati/</link>
+    </image>
+    
+    <item>
+      <title>Sequential Symbolic Regression with Genetic Programming</title>
+      <link>https://luizvbo.github.io/publication/oliveira-2015-sequential/</link>
+      <pubDate>Thu, 01 Jan 2015 00:00:00 +0000</pubDate>
+      <guid>https://luizvbo.github.io/publication/oliveira-2015-sequential/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The Effect of Distinct Geometric Semantic Crossover Operators in Regression Problems</title>
+      <link>https://luizvbo.github.io/publication/albinati-2015-effect/</link>
+      <pubDate>Thu, 01 Jan 2015 00:00:00 +0000</pubDate>
+      <guid>https://luizvbo.github.io/publication/albinati-2015-effect/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

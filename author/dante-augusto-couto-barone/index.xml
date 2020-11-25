@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dante Augusto Couto Barone | Luiz Otavio Vilas Boas Oliveira</title>
+    <link>https://luizvbo.github.io/author/dante-augusto-couto-barone/</link>
+      <atom:link href="https://luizvbo.github.io/author/dante-augusto-couto-barone/index.xml" rel="self" type="application/rss+xml" />
+    <description>Dante Augusto Couto Barone</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sun, 01 Jan 2012 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://luizvbo.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <title>Dante Augusto Couto Barone</title>
+      <link>https://luizvbo.github.io/author/dante-augusto-couto-barone/</link>
+    </image>
+    
+    <item>
+      <title>Clonal selection classifier with data reduction: Classification as an optimization task</title>
+      <link>https://luizvbo.github.io/publication/oliveira-2012-clonal/</link>
+      <pubDate>Sun, 01 Jan 2012 00:00:00 +0000</pubDate>
+      <guid>https://luizvbo.github.io/publication/oliveira-2012-clonal/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
