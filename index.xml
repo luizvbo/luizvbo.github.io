@@ -5,12 +5,20 @@
     <link>https://luizvbo.github.io/</link>
       <atom:link href="https://luizvbo.github.io/index.xml" rel="self" type="application/rss+xml" />
     <description>Luiz Otavio Vilas Boas Oliveira</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Mon, 11 May 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Fri, 01 Jan 2021 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://luizvbo.github.io/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
       <title>Luiz Otavio Vilas Boas Oliveira</title>
       <link>https://luizvbo.github.io/</link>
     </image>
+    
+    <item>
+      <title>Active WeaSuL: Improving Weak Supervision with Active Learning</title>
+      <link>https://luizvbo.github.io/publication/biegel-2021-active-wea-su-l-improving/</link>
+      <pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate>
+      <guid>https://luizvbo.github.io/publication/biegel-2021-active-wea-su-l-improving/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Predicting COVID-19 Deaths by Similarity</title>

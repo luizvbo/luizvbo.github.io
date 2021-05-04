@@ -1,287 +1,182 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
-  <url>
-    <loc>https://luizvbo.github.io/</loc>
-    <lastmod>2020-11-25T21:52:01+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://luizvbo.github.io/post/</loc>
-    <lastmod>2020-05-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://luizvbo.github.io/post/corona-linear-regression/</loc>
-    <lastmod>2020-05-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://luizvbo.github.io/post/coronavirus-confirmed/</loc>
-    <lastmod>2020-03-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://luizvbo.github.io/post/coronavirus-death/</loc>
-    <lastmod>2020-03-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://luizvbo.github.io/post/coronavirus-recovered/</loc>
-    <lastmod>2020-03-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://luizvbo.github.io/post/coronavirus-visualization/</loc>
-    <lastmod>2020-03-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://luizvbo.github.io/post/loading-wikipedia-data-with-python/</loc>
-    <lastmod>2020-03-04T00:00:00+00:00</lastmod>
-  </url>
-  
   <url>
     <loc>https://luizvbo.github.io/publication-type/1/</loc>
-    <lastmod>2020-11-25T21:52:01+01:00</lastmod>
-  </url>
-  
-  <url>
+    <lastmod>2021-05-04T20:35:45+02:00</lastmod>
+  </url><url>
+    <loc>https://luizvbo.github.io/publication/biegel-2021-active-wea-su-l-improving/</loc>
+    <lastmod>2021-05-04T20:35:45+02:00</lastmod>
+  </url><url>
     <loc>https://luizvbo.github.io/authors/</loc>
+    <lastmod>2021-05-04T20:35:45+02:00</lastmod>
+  </url><url>
+    <loc>https://luizvbo.github.io/author/luiz-otavio-vilas-boas-oliveira/</loc>
+    <lastmod>2021-05-04T20:35:45+02:00</lastmod>
+  </url><url>
+    <loc>https://luizvbo.github.io/</loc>
+    <lastmod>2021-05-04T20:35:45+02:00</lastmod>
+  </url><url>
+    <loc>https://luizvbo.github.io/author/max-baak/</loc>
+    <lastmod>2021-05-04T20:35:45+02:00</lastmod>
+  </url><url>
+    <loc>https://luizvbo.github.io/author/nanne-aben/</loc>
+    <lastmod>2021-05-04T20:35:45+02:00</lastmod>
+  </url><url>
+    <loc>https://luizvbo.github.io/publication_types/</loc>
+    <lastmod>2021-05-04T20:35:45+02:00</lastmod>
+  </url><url>
+    <loc>https://luizvbo.github.io/publication/</loc>
+    <lastmod>2021-05-04T20:35:45+02:00</lastmod>
+  </url><url>
+    <loc>https://luizvbo.github.io/author/rafah-el-khatib/</loc>
+    <lastmod>2021-05-04T20:35:45+02:00</lastmod>
+  </url><url>
+    <loc>https://luizvbo.github.io/author/samantha-biegel/</loc>
+    <lastmod>2021-05-04T20:35:45+02:00</lastmod>
+  </url><url>
+    <loc>https://luizvbo.github.io/post/</loc>
+    <lastmod>2020-05-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://luizvbo.github.io/post/corona-linear-regression/</loc>
+    <lastmod>2020-05-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://luizvbo.github.io/post/coronavirus-confirmed/</loc>
+    <lastmod>2020-03-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://luizvbo.github.io/post/coronavirus-death/</loc>
+    <lastmod>2020-03-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://luizvbo.github.io/post/coronavirus-recovered/</loc>
+    <lastmod>2020-03-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://luizvbo.github.io/post/coronavirus-visualization/</loc>
+    <lastmod>2020-03-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://luizvbo.github.io/post/loading-wikipedia-data-with-python/</loc>
+    <lastmod>2020-03-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://luizvbo.github.io/author/gisele-l.-pappa/</loc>
     <lastmod>2020-11-25T21:52:01+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://luizvbo.github.io/author/bs-martins-joao-francisco/</loc>
-    <lastmod>2020-11-25T21:52:01+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://luizvbo.github.io/author/gisele-l-pappa/</loc>
-    <lastmod>2020-11-25T21:52:01+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://luizvbo.github.io/publication/miranda-2020-instance/</loc>
     <lastmod>2020-11-25T21:52:01+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>https://luizvbo.github.io/author/joao-francisco-b.-s.-martins/</loc>
+    <lastmod>2020-11-25T21:52:01+01:00</lastmod>
+  </url><url>
     <loc>https://luizvbo.github.io/author/luis-fernando-miranda/</loc>
     <lastmod>2020-11-25T21:52:01+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://luizvbo.github.io/publication_types/</loc>
-    <lastmod>2020-11-25T21:52:01+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://luizvbo.github.io/publication/</loc>
-    <lastmod>2020-11-25T21:52:01+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://luizvbo.github.io/author/vb-oliveira-luiz-otavio/</loc>
-    <lastmod>2020-11-25T21:52:01+01:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://luizvbo.github.io/publication/oliveira-2018-analysing/</loc>
     <lastmod>2018-07-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://luizvbo.github.io/author/felipe-casadei/</loc>
     <lastmod>2018-07-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://luizvbo.github.io/author/gisele-l.-pappa/</loc>
-    <lastmod>2018-07-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://luizvbo.github.io/author/joao-francisco-b.-s.-martins/</loc>
-    <lastmod>2018-07-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://luizvbo.github.io/author/luis-f.-miranda/</loc>
     <lastmod>2018-07-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://luizvbo.github.io/author/luiz-otavio-v.-b.-oliveira/</loc>
     <lastmod>2018-07-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://luizvbo.github.io/publication/martins-2018-solving/</loc>
     <lastmod>2018-07-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://luizvbo.github.io/publication-type/6/</loc>
     <lastmod>2017-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://luizvbo.github.io/publication/oliveira-2017-generic/</loc>
     <lastmod>2017-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://luizvbo.github.io/author/alex-g.-c.-de-sa/</loc>
     <lastmod>2017-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://luizvbo.github.io/author/fernando-e.-b.-otero/</loc>
     <lastmod>2017-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://luizvbo.github.io/publication/miranda-2017-hownoisy/</loc>
     <lastmod>2017-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://luizvbo.github.io/author/joao-f.-b.-s.-martins/</loc>
     <lastmod>2017-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://luizvbo.github.io/publication/desa-2017-recipe/</loc>
     <lastmod>2017-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://luizvbo.github.io/publication/oliveira-2017-strategies/</loc>
     <lastmod>2017-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://luizvbo.github.io/author/walter-jose-g.-s.-pinto/</loc>
     <lastmod>2017-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://luizvbo.github.io/publication-type/7/</loc>
     <lastmod>2016-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://luizvbo.github.io/publication/oliveira-2016-improving/</loc>
     <lastmod>2016-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://luizvbo.github.io/author/l.-o.-v.-b.-oliveira/</loc>
     <lastmod>2016-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://luizvbo.github.io/publication/oliveira-2016-dispersion/</loc>
     <lastmod>2016-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://luizvbo.github.io/publication/oliveira-2016-reducing/</loc>
     <lastmod>2016-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://luizvbo.github.io/publication/oliveira-2016-revisiting/</loc>
     <lastmod>2016-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://luizvbo.github.io/author/ricardo-h.-c.-takahashi/</loc>
     <lastmod>2016-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://luizvbo.github.io/tag/semantic-genetic-programming-crossover-crossover-mask-optimization/</loc>
     <lastmod>2015-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://luizvbo.github.io/author/julio-albinati/</loc>
     <lastmod>2015-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://luizvbo.github.io/publication/oliveira-2015-sequential/</loc>
     <lastmod>2015-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://luizvbo.github.io/tags/</loc>
     <lastmod>2015-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://luizvbo.github.io/publication/albinati-2015-effect/</loc>
     <lastmod>2015-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://luizvbo.github.io/publication/oliveira-2013-new/</loc>
     <lastmod>2013-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://luizvbo.github.io/author/gisele-lobo-pappa/</loc>
     <lastmod>2013-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://luizvbo.github.io/author/isabela-neves-drummond/</loc>
     <lastmod>2013-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://luizvbo.github.io/publication/oliveira-2012-cscdr/</loc>
     <lastmod>2012-09-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://luizvbo.github.io/publication/oliveira-2012-clonal/</loc>
     <lastmod>2012-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://luizvbo.github.io/author/dante-augusto-couto-barone/</loc>
     <lastmod>2012-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://luizvbo.github.io/author/rodrigo-luiz-mendes-mota/</loc>
     <lastmod>2012-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://luizvbo.github.io/publication/oliveira-2011-real/</loc>
     <lastmod>2011-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://luizvbo.github.io/publication/oliveira-2010-real/</loc>
     <lastmod>2010-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://luizvbo.github.io/author/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://luizvbo.github.io/categories/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://luizvbo.github.io/talk/</loc>
   </url>
-  
 </urlset>
