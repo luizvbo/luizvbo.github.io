@@ -5,6 +5,7 @@ description = "One Ibis expression, many engines. A small Dagster repo exploring
 
 [extra]
 mermaid = true
+toc = true
 +++
 
 # Portable data pipelines with Dagster + Ibis: making migrations less painful
