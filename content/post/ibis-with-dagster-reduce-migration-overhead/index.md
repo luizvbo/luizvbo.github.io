@@ -128,9 +128,6 @@ flowchart LR
 \* I will come back to `latest_event_per_user`. It became the most interesting
 part of the experiment.
 
-![Dagster asset lineage: external event and product sources feeding bronze,
-silver, and gold assets](img/global-asset-lineage.svg)
-
 Each deployment bundles an execution backend with its storage configuration.
 Selecting one takes a single environment variable:
 
@@ -142,6 +139,9 @@ DAGSTER_DEPLOYMENT_NAME=prod   uv run dagster dev   # pyspark + parquet "lake" s
 
 The asset graph, transformations, and checks stay the same. Deployment
 configuration chooses the engine and storage.
+
+
+![Dagster asset lineage: external event and product sources feeding bronze, silver, and gold assets](img/global-asset-lineage.svg)
 
 There is an important boundary already: a backend the repository does not
 implement yet, such as BigQuery, still needs a connection branch in
