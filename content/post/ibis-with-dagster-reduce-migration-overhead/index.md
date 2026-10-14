@@ -20,6 +20,8 @@ flowchart LR
         a["duckdb<br/>local csv files"] ~~~ b["polars<br/>same csv files"] ~~~ c["pyspark<br/>parquet lake"] ~~~ d["bigquery, trino, ...<br/>a new connection branch + config"]
     end
 {% </mermaid> %}
+
+<p class="diagram-caption">The same pipeline code, written once; the deployment config picks the backend.</p>
 <!-- prettier-ignore-end -->
 
 This experiment started with a question that had been on my mind for a while:
@@ -124,6 +126,8 @@ flowchart LR
     raw_products --> category_revenue
     cleaned_events --> latest_event_per_user
 {% </mermaid> %}
+
+<p class="diagram-caption">The demo pipeline: a deliberately ordinary bronze → silver → gold flow.</p>
 <!-- prettier-ignore-end -->
 
 \* I will come back to `latest_event_per_user`. It became the most interesting
@@ -142,7 +146,10 @@ The asset graph, transformations, and checks stay the same. Deployment
 configuration chooses the engine and storage.
 
 
-![Dagster asset lineage: external event and product sources feeding bronze, silver, and gold assets](img/global-asset-lineage.svg)
+<figure>
+    <img src="img/global-asset-lineage.svg" alt="Dagster asset lineage: external event and product sources feeding bronze, silver, and gold assets">
+    <figcaption>The asset graph in the Dagster UI: external sources feed bronze, silver, and gold assets.</figcaption>
+</figure>
 
 There is an important boundary already: a backend the repository does not
 implement yet, such as BigQuery, still needs a connection branch in
@@ -186,6 +193,29 @@ need to know where it will run.
 Dagster's I/O manager became the boundary between logical assets and physical
 storage. Assets declare inputs and outputs as `ir.Table`; `IbisIOManager`
 decides how those tables are read and written.
+
+<!-- prettier-ignore-start -->
+{% <mermaid> %}
+flowchart LR
+    subgraph assets["Asset code (backend-agnostic)"]
+        fn["transform fn<br/>ir.Table → ir.Table"]
+    end
+    subgraph io["IbisIOManager (the boundary)"]
+        li["load_input<br/>con.table · read_csv · read_parquet"]
+        ho["handle_output<br/>con.create_table(name, expr)"]
+    end
+    subgraph be["Deployment config picks"]
+        res["IbisResource<br/>backend connection"]
+        st["storage<br/>tables · csv · parquet"]
+    end
+    li --> fn --> ho
+    li --> res
+    ho --> res
+    res -->|reads / writes| st
+{% </mermaid> %}
+
+<p class="diagram-caption">The I/O manager sits between backend-agnostic assets and the deployment-specific connection and storage.</p>
+<!-- prettier-ignore-end -->
 
 - `load_input` uses `con.table(name)` for pipeline tables, or
   `con.read_csv(...)`, `con.read_parquet(...)`, and similar methods for
@@ -400,6 +430,8 @@ flowchart LR
     code -->|"engine: config"| eng["duckdb | polars | pyspark | ..."]
     code -->|"storage: config"| st["csv | parquet | warehouse tables"]
 {% </mermaid> %}
+
+<p class="diagram-caption">Engine and storage become configuration instead of a rewrite.</p>
 <!-- prettier-ignore-end -->
 
 I would not describe this as “write once, run anywhere.” That promise is too

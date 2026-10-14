@@ -136,6 +136,16 @@ dialog.lightbox {
     }
 }
 
+// --- Diagram captions ----------------------------------------------------------
+// figcaption styling for elements that can't live inside <figure> (mermaid
+// shortcodes break when wrapped in raw HTML blocks). Mirrors tabi's figcaption.
+.diagram-caption {
+    color: var(--meta-color);
+    font-size: 0.72rem;
+    font-family: var(--serif-font);
+    text-align: center;
+}
+
 // --- Click-to-reveal email ----------------------------------------------------
 details.email-reveal {
     margin-block: 0.4rem 1rem;
