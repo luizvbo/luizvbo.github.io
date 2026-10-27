@@ -1,90 +1,100 @@
 +++
 title = "Portable data pipelines with Dagster + Ibis: making migrations less painful"
 date = 2026-10-05
-description = "One Ibis expression, many engines. A small Dagster repo showing how engine migrations can become a config change instead of a rewrite."
+description = "One Ibis expression, many engines. A small Dagster repo exploring how future engine migrations could become configuration and integration work instead of another rewrite."
 
 [extra]
 mermaid = true
+toc = true
 +++
 
-# Portable data pipelines with Dagster + Ibis: making migrations less painful
+## Introduction 
 
+This experiment started with a question that had been on my mind for a while:
+**if a data pipeline has to move from one execution engine to another, how much
+of it should really need to be rewritten?**
+
+Imagine a typical PySpark codebase that eventually needs to be rewritten to run
+on a warehouse such as BigQuery. Every Spark DataFrame call, `spark.sql(...)`
+string, and `.toPandas()` escape may become migration work. After completing
+that rewrite, a future platform change could require much of the same work
+again.
+
+Of course, migrations are sometimes necessary. Platforms differ in capability,
+performance, and cost, but the decision is not always purely technical.
+Regulation, data-sovereignty requirements, and broader political changes can
+also influence where data and workloads are allowed to run. Recent European
+proposals aimed at reducing dependence on foreign cloud providers are one
+example of how those pressures can shape infrastructure choices
+([Reuters](https://www.reuters.com/business/eu-targets-big-tech-dependence-with-made-in-europe-drive-2026-06-03/)).
+
+What interested me was whether the transformation logic had to be so tightly
+coupled to choices that may change for reasons beyond the code itself.
+
+So I decided to explore a narrower question:
+
+> Can transformation logic be written so that switching execution engines
+> becomes mostly configuration and integration work, rather than another
+> rewrite?
+
+<!-- prettier-ignore-start -->
 {% <mermaid> %}
 flowchart LR
-    code["same pipeline code<br/>assets + ibis expressions<br/>(written once)"]
-    code -->|"deployment config<br/>swaps engine + storage"| dep
-    subgraph dep["pick a backend"]
+    code["Transformation<br/>logic<br/>(written once)"]
+    code -->|"Deployment<br/>configuration selects: <br/>- Engine<br/>- Storage"| dep
+    subgraph dep["Pick a backend"]
         direction TB
-        a["duckdb<br/>local csv files"] ~~~ b["polars<br/>same csv files"] ~~~ c["pyspark<br/>parquet lake"] ~~~ d["bigquery, trino, ...<br/>one more config entry"]
+        a["duckdb<br/>local csv files"] ~~~ b["polars<br/>same csv files"] ~~~ c["pyspark<br/>parquet lake"] ~~~ d["bigquery, trino, ...<br/>a new connection branch + config"]
     end
 {% </mermaid> %}
 
-There are a lot of companies moving from in-house hosting to cloud providers.
-And with that comes migrations...
+<p class="diagram-caption">The same pipeline code, written once; the deployment config picks the backend.</p>
+<!-- prettier-ignore-end -->
 
-For data pipelines, particularly, there's a question of whether the pipeline
-should also be migrated to use the data warehouse solution provided by the
-cloud provider. For instance, since our team is migrating to GCP, we had a
-discussion on whether we should migrate our pipelines running on PySpark to
-BigQuery or not. We considered multiple dimensions, like cost, effort, and
-maintainability.
+I built a small proof of concept to test that idea. While looking at possible
+approaches, I found **[Ibis](https://ibis-project.org)**, a dataframe-style
+expression API that compiles the same Python expressions for DuckDB, PySpark,
+BigQuery, Snowflake, Polars, and several other backends.
 
-This decision involves rewriting a substantial codebase, like Spark DataFrame
-calls, `spark.sql(...)` strings, `.toPandas()` escapes.
+Ibis minimizes the migration effort, but a translation layer alone doesn't
+run a pipeline. The experiment also needed structure and orchestration, the
+part teams often fill with an orchestrator plus in-house framework code.
+**[Dagster](https://dagster.io)** can provide that with many features provided
+out-of-the-box. It is an orchestrator built around software-defined assets, giving
+the structure dbt users are used to and more: models, lineage, tests, schedules.
 
-There is a lot of discussion in the European Union about moving away from US
-Companies (see [this article from
-Reuters](https://www.reuters.com/business/eu-targets-big-tech-dependence-with-made-in-europe-drive-2026-06-03/)
-for instance). There is no guarantee that our migration to GCP will be the
-last, and with that, no guarantee that we won't have to rewrite it all again.
+With this combination, you can **port your logic to Ibis once, and engine
+migrations become mostly config diffs.** Notice the port to Ibis is real work,
+but the transformation layer no longer needs a full rewrite on every engine
+change.
 
-That forced a question: _is there a way to write data transformations so that
-switching the execution engine is a configuration change, not a rewrite?_
-
-This post is about a small proof-of-concept repo I built to try to answer this
-question. While researching about alternatives, we found **[Ibis](https://ibis-project.org)**, a potential
-solution to minimize the migration effort. It is a dataframe-style expression
-API that compiles the same code to DuckDB SQL, Spark SQL, BigQuery SQL, Polars,
-and many other backends, totaling 20+ backends.
-
-Ibis minimizes the migration effort, but it's just a "translation layer". We
-needed structure and orchestration, which can be provided by a single tool,
-instead of using Airflow with an internal framework for structure.
-**[Dagster](https://dagster.io)** can solve that with many features provided
-out-of-the-box. It is an orchestrator built around software-defined assets, giving us
-the structure dbt users are used to: models, lineage, tests, schedules.
-
-The thesis: **port your logic to Ibis once, and engine migrations become config
-diffs.** Not "migrate to BigQuery for free this time" (the port to
-Ibis is real work), but "this is the last engine migration that ever requires a
-rewrite."
-
-Repo: <!-- TODO: link to the repo -->
+**You can check the repository in** [github.com/luizvbo/ibis-dagster-example](https://github.com/luizvbo/ibis-dagster-example)
 
 ## The demo
 
-A deliberately ordinary bronze → silver → gold pipeline:
+I deliberately kept the pipeline ordinary: bronze → silver → gold.
 
+<!-- prettier-ignore-start -->
 {% <mermaid full_width={true}> %}
 flowchart LR
-    subgraph sources["External sources:<br>- CSV locally<br>- Parquet/tables in production"]
-        events_csv
-        products_csv
+    subgraph sources["External sources:<br/>- CSV locally<br/>- Parquet/tables in production"]
+        events
+        products
     end
-    subgraph bronze["Bronze:<br>- Land sources into managed tables"]
+    subgraph bronze["Bronze:<br/>- Land sources into managed tables"]
         raw_events
         raw_products
     end
-    subgraph silver["Silver:<br>- Normalize types<br>- Trim/lower strings<br>- Dedupe<br>- Validate"]
+    subgraph silver["Silver:<br/>- Normalize types<br/>- Trim/lower strings<br/>- Dedupe<br/>- Validate"]
         cleaned_events
     end
     subgraph gold
         daily_active_users
         category_revenue
-        latest_event_per_user["latest_event_per_user*"]
+        latest_event_per_user["latest_event_<br/>per_user*"]
     end
-    events_csv --> raw_events
-    products_csv --> raw_products
+    events --> raw_events
+    products --> raw_products
     raw_events --> cleaned_events
     cleaned_events --> daily_active_users
     cleaned_events --> category_revenue
@@ -92,11 +102,14 @@ flowchart LR
     cleaned_events --> latest_event_per_user
 {% </mermaid> %}
 
-\* we'll come back to that asterisk (`latest_event_per_user`). It's the most interesting part.
+<p class="diagram-caption">The demo pipeline: a deliberately ordinary bronze → silver → gold flow.</p>
+<!-- prettier-ignore-end -->
 
-<!-- IMAGE: screenshot of the Dagster asset graph (lineage view) showing the external source nodes → bronze → silver → gold, with the three asset groups colored -->
+\* I will come back to `latest_event_per_user`. It became the most interesting
+part of the experiment.
 
-The entire engine/env selection is two environment variables:
+Each deployment bundles an execution backend with its storage configuration.
+Selecting one takes a single environment variable:
 
 ```bash
 DAGSTER_DEPLOYMENT_NAME=local  uv run dagster dev   # duckdb + local CSVs
@@ -104,104 +117,190 @@ DAGSTER_DEPLOYMENT_NAME=polars uv run dagster dev   # polars + same CSVs
 DAGSTER_DEPLOYMENT_NAME=prod   uv run dagster dev   # pyspark + parquet "lake" sources
 ```
 
-(The repo wraps these as `just dev <local|polars|prod>`; `dev prod` first
-seeds a local parquet lake under `data/lake/` from the CSVs (`just
-seed-lake`), and prod also needs the `pyspark` extra plus a JDK. Note that
-ibis currently pins `pyspark<4.1`, which doesn't run on Java 25; a future
-ibis release should allow Spark 4.2, the version that adds Java 25 support.)
+The asset graph, transformations, and checks stay the same. Deployment
+configuration chooses the engine and storage. Regardless of the selected
+deployment, Dagster presents the same logical asset graph:
 
-Same code. Same asset graph. Same checks. Different engine and different storage, selected by deployment config, the documented Dagster pattern (`resources_by_deployment`, keyed on `DAGSTER_DEPLOYMENT_NAME`; Dagster+ sets it automatically, and on a self-hosted OSS deployment it's just another env var on your code location).
+<figure>
+    <img src="img/global-asset-lineage.svg" alt="Dagster asset lineage: external event and product sources feeding bronze, silver, and gold assets">
+    <figcaption>The asset graph in the Dagster UI: external sources feed bronze, silver, and gold assets.</figcaption>
+</figure>
+
+There is an important boundary already: a backend the repository does not
+implement yet, such as BigQuery, still needs a connection branch in
+`IbisResource` and its own storage configuration. The claim is not that adding
+an engine requires no work. It is that the transformation functions should not
+need to be rewritten with BigQuery-specific APIs.
 
 ## The three pieces
 
-### 1. Transforms are pure Ibis expressions
+### 1. Transformations are pure Ibis expressions
 
 ```python
-# transforms.py: no imports from any engine, just ibis
+# transforms.py: no engine-specific imports, only ibis
 def clean_events(raw_events: ir.Table) -> ir.Table:
     normalized = raw_events.mutate(
         ts=_.ts.cast("timestamp"),
         amount=_.amount.cast("float64"),
         event_type=_.event_type.lower().strip(),
     )
+
     return (
         normalized.mutate(
-            amount=_.amount.fill_null(0.0), date=_.ts.truncate("D")
+            amount=_.amount.fill_null(0.0),
+            date=_.ts.truncate("D"),
         )
         .filter(_.event_id.notnull(), _.user_id.notnull())
         .distinct()
     )
 ```
 
-No `duckdb.`, no `spark.`, no `pl.` anywhere. These functions are pure `Table -> Table` expressions. They don't even know which backend they'll run on until Dagster binds a connection at runtime.
+There is no `duckdb.`, `spark.`, or `pl.` in these functions. They take an Ibis
+table expression and return another one. They build a lazy expression tree;
+execution happens later, when the I/O manager asks the selected backend to
+materialize the result.
 
-### 2. An IO manager owns all data I/O
+That separation is the heart of the experiment. The transformation does not
+need to know where it will run.
 
-This is the Dagster-native answer to dbt's "where does this model land" or Kedro's catalog. Assets declare inputs/outputs as `ir.Table`; `IbisIOManager` (a `ConfigurableIOManager`) handles persistence:
+### 2. An I/O manager owns data access and persistence
 
-- `load_input` → `con.table(name)` for pipeline tables, or `con.read_csv/read_parquet/...` for external sources configured per deployment
-- `handle_output` → `con.create_table(asset_name, expr, overwrite=True)` plus metadata (row count, preview, **the compiled SQL**)
+Dagster's I/O manager became the boundary between logical assets and physical
+storage. Assets declare inputs and outputs as `ir.Table`; `IbisIOManager`
+decides how those tables are read and written.
 
-So "the same pipeline, but sources are parquet in a lake in prod" is literally just:
+<!-- prettier-ignore-start -->
+{% <mermaid> %}
+flowchart LR
+    subgraph assets["Asset code (backend-agnostic)"]
+        fn["transform fn<br/>ir.Table → ir.Table"]
+    end
+    subgraph io["IbisIOManager (the boundary)"]
+        li["load_input"]
+        ho["handle_output:<br/>con.create_table"]
+    end
+    subgraph be["Deployment config picks"]
+        res["IbisResource<br/>backend conn."]
+        st["storage:<br/>- tables<br/>- csv<br/>- parquet"]
+    end
+    li --> fn --> ho
+    li --> res
+    ho --> res
+    res -->|reads / writes| st
+{% </mermaid> %}
+
+<p class="diagram-caption">The I/O manager sits between backend-agnostic assets and the deployment-specific connection and storage.</p>
+<!-- prettier-ignore-end -->
+
+- `load_input` uses `con.table(name)` for pipeline tables, or
+  `con.read_csv(...)`, `con.read_parquet(...)`, and similar methods for
+  configured external sources.
+- `handle_output` uses `con.create_table(asset_name, expr, overwrite=True)` and
+  records useful metadata such as row count, a preview, and compiled SQL when the
+  backend produces SQL.
+
+This means that changing the physical source from a local CSV to Parquet in a
+lake is configuration:
 
 ```python
-# resources_by_deployment: same logical source, different physical read
+# Same logical source, different physical reads
 "local": IbisIOManager(
-    sources={"events_csv": {"format": "csv",     "path": "data/raw_events.csv"}}, ...),
+    sources={"events": {"format": "csv",     "path": "data/raw_events.csv"}}, ...),
 "prod":  IbisIOManager(
-    sources={"events_csv": {"format": "parquet", "path": "${DATA_LAKE}/landing/events/"}}, ...),
+    sources={"events": {"format": "parquet", "path": "${DATA_LAKE}/landing/events/"}}, ...),
 ```
 
-### 3. Quality gates are portable too
+This is also where the proof of concept is intentionally simple. Asset keys are
+flattened to table names, writes are full refreshes, and production concerns
+such as catalog/schema mapping, incremental loads, partitioning, and merge
+behavior would require more design.
 
-The thing dbt users ask about first is `dbt test`. Dagster's `@asset_check` is the direct analog, and because _the checks themselves are Ibis expressions_, they're portable as well:
+### 3. Quality gates use the same abstraction
+
+One of my first questions was whether portability would survive contact with
+data-quality checks. In this example, it does: the checks are also Ibis
+expressions evaluated by the selected backend.
 
 ```python
 @dg.asset_check(asset=cleaned_events, blocking=True)
-def cleaned_events_no_null_user_ids(ibis: IbisResource) -> dg.AssetCheckResult:
+def cleaned_events_no_null_user_ids(
+    ibis: IbisResource,
+) -> dg.AssetCheckResult:
     n = _violations(ibis, "cleaned_events", _.user_id.isnull())
-    return dg.AssetCheckResult(passed=n == 0, metadata={"null_user_ids": n})
+    return dg.AssetCheckResult(
+        passed=n == 0,
+        metadata={"null_user_ids": n},
+    )
 ```
 
-(`_violations` is a small helper: `int(con.table(table).filter(predicate).count().execute())` on the run's backend.)
+The repository includes equivalents of the usual dbt generic tests: `not_null`,
+`unique`, `accepted_values`, and `relationships`, plus a few custom checks. A
+blocking check prevents downstream materialization when it fails.
 
-<!-- IMAGE: screenshot of the Checks tab / a run showing the 8 asset checks green -->
+Dagster also provides scheduling, so the example includes a daily schedule for
+the full job. It is stopped by default and can be enabled from the UI.
 
-We implemented the usual dbt generic tests `not_null`, `unique`, `accepted_values`, `relationships` (an anti-join), plus a couple of custom checks. Marking the not-null check `blocking=True` reproduces `dbt build` semantics: if it fails, downstream assets don't materialize.
+## The moment it clicked: one expression, three dialects
 
-And since Dagster is an orchestrator, scheduling is native too: the repo ships a `daily_schedule` (`0 6 * * *`) covering the whole job, stopped by default so it can be toggled on from the UI.
+This was the part of the experiment that made the idea feel concrete.
 
-## The "aha": one expression, three dialects
-
-This is the part that sells it. The same `daily_active_users(clean_events(raw_events))` expression is compiled offline. **No engine, no credentials, no JVM**:
+The same `daily_active_users(clean_events(raw_events))` expression can be
+compiled for multiple targets without running an engine, providing credentials,
+or starting a JVM. The relevant backend packages still need to be installed,
+but no live connection is required.
 
 ```sql
--- duckdb
-... DATE_TRUNC('DAY', "t0"."ts") AS "date" ... TRIM(LOWER("t0"."event_type"), ' ')
--- pyspark
-... DATE_TRUNC('day', `t0`.`ts`) AS `date` ... TRIM(' ' FROM LOWER(`t0`.`event_type`))
--- bigquery
-... TIMESTAMP_TRUNC(`t0`.`ts`, DAY) AS `date` ... TRIM(LOWER(`t0`.`event_type`), ' ')
+-- DuckDB
+... DATE_TRUNC('DAY', "t0"."ts") AS "date"
+... TRIM(LOWER("t0"."event_type"), ' ')
+
+-- PySpark
+... DATE_TRUNC('day', `t0`.`ts`) AS `date`
+... TRIM(' ' FROM LOWER(`t0`.`event_type`))
+
+-- BigQuery
+... TIMESTAMP_TRUNC(`t0`.`ts`, DAY) AS `date`
+... TRIM(LOWER(`t0`.`event_type`), ' ')
 ```
 
-`DATE_TRUNC` vs `TIMESTAMP_TRUNC`, double quotes vs backticks, `TRIM(x)` vs `TRIM(' ' FROM x)`: all the dialect trivia you never want to hand-maintain, generated from one expression.
+`DATE_TRUNC` versus `TIMESTAMP_TRUNC`, double quotes versus backticks, and
+different `TRIM` syntax are exactly the details I would rather not maintain by
+hand in three versions of the same pipeline.
 
-<!-- IMAGE (optional): screenshot of a materialization's metadata tab showing the compiled SQL recorded on the run -->
+The repository turns this into a CI check. A parametrized test compiles every
+transform for each target dialect. If someone introduces an operation that a
+target compiler cannot express, the test fails before deployment. Runtime tests
+still matter because successful compilation does not prove identical behavior,
+connector compatibility, or performance, but compilation is a useful first
+guardrail.
 
-This isn't just a demo trick. `ibis.<backend>.compile()` works without connecting, so a `pytest` file that compiles every transform against every target dialect is a **CI guardrail**. If someone adds an operation your production engine can't express, it fails before deployment, not after. The repo wires this in concretely: a `prek` pre-push hook runs lint (ruff), type-checking (ty), and that test suite on every push.
+A `prek` pre-push hook runs Ruff, ty, and the test suite before code is pushed.
 
 ## The honest part: portability has edges
 
-Here's where we keep the demo honest, because the claim above deserves an asterisk: **"backend-agnostic" means portable across the operations each backend can express, not that every expression runs everywhere.**
+This is where the experiment became more valuable to me. It did not simply
+confirm the idea; it found the edge.
 
-The repo deliberately includes `latest_event_per_user`, built on a window function:
+“Backend-agnostic” means portable across the operations that each backend can
+express. It does **not** mean every Ibis expression works on every backend.
+
+The repository deliberately includes `latest_event_per_user`, implemented with
+a window function:
 
 ```python
-events.mutate(rn=ibis.row_number().over(
-    ibis.window(group_by="user_id", order_by=_.ts.desc()))).filter(_.rn == 0)
+events.mutate(
+    rn=ibis.row_number().over(
+        ibis.window(
+            group_by="user_id",
+            order_by=[_.ts.desc(), _.event_id.desc()],
+        )
+    )
+).filter(_.rn == 0)
 ```
 
-Ibis's Polars backend has _no_ window-function translation (Polars natively has `.over()`, but Ibis doesn't map to it yet). When we materialize the graph on Polars we get:
+At the time of this experiment, Ibis's Polars backend did not translate this
+window operation. Materializing that asset on Polars therefore fails with an
+`OperationNotDefinedError`.
 
 ```
 latest_event_per_user FAILED:
@@ -209,58 +308,102 @@ ibis.common.exceptions.OperationNotDefinedError:
     No translation rule for WindowFunction
 ```
 
-<!-- IMAGE: screenshot of the Dagster run on the polars deployment: all steps green except latest_event_per_user red, with the OperationNotDefinedError visible in the logs pane -->
+I actually like that failure. It is early, deterministic, and explicit about
+the unsupported operation. It is much easier to reason about than a pipeline
+that runs and quietly returns different results.
 
-Two things make this acceptable, even good:
+The repository demonstrates three possible responses:
 
-1. **It fails loudly and early.** The error fires at translate time, before any data is processed, names the exact operation, and is deterministic. No silent wrong answers at 3:00 AM.
-2. **The mitigations are boring** (in a good way):
-   - _Rewrite portably_: "latest per group" is `group_by` + `join`
-     (`latest_event_per_user_portable` in the repo). Clunkier, but runs
-     everywhere.
-   - _Localize a backend branch_: `ibis.get_backend(t).name` inside a transform
-     tells you which engine you're bound to. It's ugly, but contained to one
-     function
-   - _Engine-scope the asset_: accept that a given deployment can't materialize it
+1. **Rewrite the operation portably.** The example also implements “latest per
+   group” using `group_by` and joins. It is more verbose, but works across the
+   tested backends.
+2. **Localize a backend-specific branch.** A transform can inspect its bound
+   backend and contain the exception in one function. This is not elegant, but
+   it is still better than letting backend-specific code spread through the
+   pipeline.
+3. **Scope the asset to supported engines.** Sometimes the honest answer is
+   that a deployment cannot materialize a particular asset.
 
-A more subtle gotcha we found the hard way: `ibis.row_number()` is **zero-based**. It compiles to `ROW_NUMBER() - 1`. `rn == 1` silently gives you the _second_-latest row. Abstraction means portable _syntax_; you still need to learn the portable _semantics_.
+I also found a subtler trap: `ibis.row_number()` is zero-based. It compiles to
+`ROW_NUMBER() - 1`, so filtering on `rn == 1` would return the second row
+rather than the first. That was a useful reminder that an abstraction can give
+us portable syntax, but it does not remove the need to understand its
+semantics.
 
-Before betting a codebase on a portability claim, check Ibis's [per-backend operations support matrix](https://ibis-project.org/backends/support/matrix).
+Before relying on a portability claim, check Ibis's [per-backend operation
+support matrix](https://ibis-project.org/backends/support/matrix), then test
+the exact expressions and data types your pipeline uses.
 
-## Okay, but why not just dbt?
+## Why not just dbt?
 
-Fair question. dbt solves a big chunk of this. The honest comparison:
+This is a fair question, especially because dbt already solves a large part of the portability and testing problem for SQL-centric teams.
 
-|                                       | dbt (+ adapters)                        | Dagster + Ibis                   |
-| ------------------------------------- | --------------------------------------- | -------------------------------- |
-| Transform language                    | SQL                                     | Python expressions → SQL/plans   |
-| Engine portability                    | per-adapter SQL macros                  | one expression → many dialects   |
-| Non-SQL engines                       | no                                      | yes (Polars, DataFusion…)        |
-| Python-native logic (ML, APIs, files) | bolted on                               | first-class (the same graph)     |
-| Tests                                 | `dbt test`                              | `@asset_check`                   |
-| Scheduling                            | needs dbt Cloud / external orchestrator | native (schedules, sensors)      |
-| Incremental models                    | `dbt run` incremental                   | partitions + automation policies |
-| Ecosystem maturity                    | bigger                                  | younger                          |
+|                                                | dbt (+ adapters)                      | Dagster + Ibis                                     |
+| ---------------------------------------------- | ------------------------------------- | -------------------------------------------------- |
+| Transform language                             | SQL                                   | Python expressions compiled to SQL/plans           |
+| Engine portability                             | Adapter-aware SQL and macros          | One expression API across backends                 |
+| Non-SQL engines                                | Limited                               | Polars, DataFusion, and others                     |
+| Python-native work such as ML, APIs, and files | Separate or adapter-dependent         | Can live in the same asset graph                   |
+| Tests                                          | `dbt test`                            | `@asset_check`                                     |
+| Scheduling                                     | dbt Cloud or an external orchestrator | Native schedules and sensors                       |
+| Incremental models                             | Mature built-in model                 | Requires partitions and backend-aware write design |
+| Ecosystem maturity                             | Larger and battle-tested              | Younger combination with more custom plumbing      |
 
-If your transforms are pure SQL and your targets are SQL warehouses, dbt is simpler and battle-tested and you should consider it. The Dagster + Ibis combo wins when: your logic outgrows SQL, you want one lineage graph spanning tables _and_ non-table work, or (our case) you're tired of paying a rewrite tax on every engine migration.
+If your transformations are SQL and your targets are SQL warehouses, dbt is likely the simpler and more mature choice.
 
-## Caveats worth stating
+Dagster + Ibis becomes interesting when the work extends beyond SQL, when you
+want one lineage graph across tables and non-table assets, or when engine
+portability is a deliberate architectural goal. The question I wanted to
+explore was this: if a codebase already needs to be rewritten to move to a
+different platform/engine, could choosing a portable abstraction make the
+_next_ migration smaller?
 
-- **The port isn't free.** Existing `spark.sql`/DataFrame/UDF code must be rewritten as Ibis expressions. The payoff is that it's potentially the last port.
-- **Semantics differ subtly per backend** (see the zero-based `row_number` story). Also type inference on file reads (we added portable casts to absorb that).
-- **Performance isn't portable.** One expression compiles to all engines, but partitioning, clustering, broadcast hints, etc. are still per-engine work.
-- **Some plumbing is real**: e.g., Polars tables live per-connection and DuckDB files allow one writer, so the demo uses the in-process executor and a cached connection.
+## Caveats I would keep in mind
 
-## Takeaways
+- **The initial port is not free.** Existing Spark SQL, DataFrame, and UDF code
+  must be rewritten as Ibis expressions. The potential payoff comes later.
+- **Compilation is not semantic equivalence.** Backends can differ in null
+  handling, timestamp behavior, floating-point behavior, type inference, and
+  other details. Cross-backend result tests are still necessary.
+- **Performance is not portable.** A shared expression may compile everywhere,
+  but partitioning, clustering, storage layout, statistics, broadcast behavior,
+  and tuning remain engine-specific.
+- **Some operations simply are not supported everywhere.** The support matrix
+  is a starting point, not a substitute for testing your workload.
+- **The I/O layer needs production hardening.** The demo uses full-refresh
+  writes and simplified naming. Incremental loads, retries, idempotency, schemas,
+  transactions, observability, and access control need explicit design.
+- **The demo's execution model is constrained.** Polars tables live per
+  connection, and DuckDB files allow one writer, so the example uses an
+  in-process executor and a process-scoped cached connection.
 
-- **Ibis gives you a portability contract for transformation logic**: same expressions, engine as config. Parametrized tests that run every transform on every backend turn "portable" from a claim into a checked property.
-- **Dagster supplies the dbt-shaped structure**: assets as models, `deps` as `ref()`, `@asset_check` as tests, schedules instead of cron.
-- **The boundary is visible and fails safely**: unsupported ops raise `OperationNotDefinedError` at translate time, and the repo shows three ways to handle it.
-- **The real pitch isn't "write once, run anywhere"**, it's "port once, never rewrite again," plus knowing exactly where "anywhere" ends.
+## What I took away from the experiment
 
-{% <mermaid> %}
-flowchart LR
-    code["pipeline code<br/>(write once)"]
-    code -->|"engine: config"| eng["duckdb | polars | pyspark | ..."]
-    code -->|"storage: config"| st["csv | parquet | warehouse tables"]
-{% </mermaid> %}
+I started this experiment because I wanted to understand whether pipeline
+portability could be more than an architectural aspiration. In particular, I
+wanted to see how much transformation logic could genuinely survive a change of
+execution engine, and where the abstraction would begin to leak.
+
+The answer is not a universal “yes,” but it is more encouraging than I expected:
+
+- **Ibis can provide a useful portability contract for transformation logic.**
+  The contract becomes credible when expressions are compiled and tested against
+  every backend you care about.
+- **Dagster provides the missing pipeline structure.** Assets, lineage, checks,
+  resources, and schedules give the expressions an operational home.
+- **The boundaries are visible.** Unsupported operations can be detected in CI
+  or at translation time, and exceptions can be isolated instead of leaking
+  through the whole codebase.
+- **The real opportunity is not zero migration work.** It is moving future work
+  away from rewriting business transformations and toward the smaller set of
+  integration points that genuinely depend on the platform.
+
+I would not describe this as “write once, run anywhere.” That promise is too
+broad, and the experiment itself disproves it. A more honest summary is:
+
+> **Port the transformation logic once, test the portability boundary
+> continuously, and make the next migration about configuration and explicit
+> integration work rather than rewriting the business logic from scratch.**
+
+For anyone curious about reducing the coupling between transformation logic and
+its execution engine, I think it is an approach worth exploring.

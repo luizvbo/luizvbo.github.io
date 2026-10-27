@@ -45,6 +45,107 @@ header {
     scroll-margin-top: 5rem;
 }
 
+// --- Image lightbox (native <dialog>, see static/js/lightbox.js) --------------
+article img:not(.u-photo):not(.no-lightbox) {
+    cursor: zoom-in;
+}
+
+dialog.lightbox {
+    padding: 0;
+    border: none;
+    background: transparent;
+    max-width: 95vw;
+    max-width: 95dvw;
+    max-height: 95vh;
+    max-height: 95dvh;
+    overflow: hidden;
+
+    &::backdrop {
+        background: rgba(0, 0, 0, 0.85);
+    }
+
+    img {
+        display: block;
+        max-width: 95vw;
+        max-width: 95dvw;
+        max-height: 90vh;
+        max-height: 90dvh;
+        object-fit: contain;
+        cursor: zoom-out;
+    }
+
+    // Pinned to the viewport corner so it stays reachable while panning.
+    button.lightbox-close {
+        position: fixed;
+        top: calc(0.9rem + env(safe-area-inset-top));
+        right: calc(0.9rem + env(safe-area-inset-right));
+        z-index: 1;
+        width: 2.6rem;
+        height: 2.6rem;
+        padding: 0;
+        display: grid;
+        place-items: center;
+        border: none;
+        border-radius: 50%;
+        background: rgba(0, 0, 0, 0.55);
+        color: #fff;
+        cursor: pointer;
+
+        &:hover {
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        &:focus-visible {
+            outline: 2px solid #fff;
+            outline-offset: 2px;
+        }
+
+        svg {
+            display: block;
+        }
+    }
+
+    // JS marks the dialog .zoomable when the image renders smaller than its
+    // natural size, i.e. there is more detail to reveal.
+    &.zoomable img {
+        cursor: zoom-in;
+    }
+
+    // Zoomed state: fill the viewport and let it scroll; wheel/trackpad and
+    // touch pan natively, pointer dragging is handled in JS.
+    &.zoomed {
+        inset: 0;
+        margin: 0;
+        max-width: none;
+        max-height: none;
+        width: auto;
+        height: auto;
+        overflow: auto;
+        overscroll-behavior: contain;
+
+        img {
+            max-width: none;
+            max-height: none;
+            cursor: grab;
+            user-select: none;
+
+            &:active {
+                cursor: grabbing;
+            }
+        }
+    }
+}
+
+// --- Diagram captions ----------------------------------------------------------
+// figcaption styling for elements that can't live inside <figure> (mermaid
+// shortcodes break when wrapped in raw HTML blocks). Mirrors tabi's figcaption.
+.diagram-caption {
+    color: var(--meta-color);
+    font-size: 0.72rem;
+    font-family: var(--serif-font);
+    text-align: center;
+}
+
 // --- Click-to-reveal email ----------------------------------------------------
 details.email-reveal {
     margin-block: 0.4rem 1rem;
