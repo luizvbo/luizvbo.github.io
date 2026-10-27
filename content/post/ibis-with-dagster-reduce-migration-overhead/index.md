@@ -56,31 +56,6 @@ approaches, I found **[Ibis](https://ibis-project.org)**, a dataframe-style
 expression API that compiles the same Python expressions for DuckDB, PySpark,
 BigQuery, Snowflake, Polars, and several other backends.
 
-Data-platform migrations rarely stop at infrastructure. A team moving to a
-new cloud provider eventually faces a harder question: keep the pipelines on
-their current engine, or rewrite them for the destination warehouse?
-
-Take a typical PySpark codebase aimed at a warehouse like BigQuery: every Spark
-DataFrame call, `spark.sql(...)` string, and `.toPandas()` escape becomes
-something that may need to be rewritten. Whether that rewrite is worthwhile
-comes down to cost, effort, and long-term maintainability.
-
-Platform choices also keep moving for reasons outside engineering: cost,
-capability, regulation, data-sovereignty debates (see [this Reuters
-article](https://www.reuters.com/business/eu-targets-big-tech-dependence-with-made-in-europe-drive-2026-06-03/)
-for wider industry context). Today's carefully chosen destination can be
-tomorrow's starting point for the next migration.
-
-That raises the question this post attacks: _can transformation logic be
-written so that switching the execution engine is mostly configuration and
-integration work, not a rewrite?_
-
-This post is about a small proof-of-concept repo I built to try to answer this
-question. While evaluating alternatives, I found **[Ibis](https://ibis-project.org)**, a potential
-solution to minimize the migration effort. It is a dataframe-style expression
-API that compiles the same code to DuckDB, Spark SQL, BigQuery, Snowflake,
-Polars, and many other backends.
-
 Ibis minimizes the migration effort, but a translation layer alone doesn't
 run a pipeline. The experiment also needed structure and orchestration, the
 part teams often fill with an orchestrator plus in-house framework code.
