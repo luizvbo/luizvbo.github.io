@@ -8,21 +8,7 @@ mermaid = true
 toc = true
 +++
 
-# Portable data pipelines with Dagster + Ibis: making migrations less painful
-
-<!-- prettier-ignore-start -->
-{% <mermaid> %}
-flowchart LR
-    code["same pipeline code<br/>assets + ibis expressions<br/>(written once)"]
-    code -->|"deployment config<br/>swaps engine + storage"| dep
-    subgraph dep["pick a backend"]
-        direction TB
-        a["duckdb<br/>local csv files"] ~~~ b["polars<br/>same csv files"] ~~~ c["pyspark<br/>parquet lake"] ~~~ d["bigquery, trino, ...<br/>a new connection branch + config"]
-    end
-{% </mermaid> %}
-
-<p class="diagram-caption">The same pipeline code, written once; the deployment config picks the backend.</p>
-<!-- prettier-ignore-end -->
+## Introduction 
 
 This experiment started with a question that had been on my mind for a while:
 **if a data pipeline has to move from one execution engine to another, how much
@@ -51,6 +37,20 @@ So I decided to explore a narrower question:
 > becomes mostly configuration and integration work, rather than another
 > rewrite?
 
+<!-- prettier-ignore-start -->
+{% <mermaid> %}
+flowchart LR
+    code["Transformation<br/>logic<br/>(written once)"]
+    code -->|"Deployment<br/>configuration selects: <br/>- Engine<br/>- Storage"| dep
+    subgraph dep["Pick a backend"]
+        direction TB
+        a["duckdb<br/>local csv files"] ~~~ b["polars<br/>same csv files"] ~~~ c["pyspark<br/>parquet lake"] ~~~ d["bigquery, trino, ...<br/>a new connection branch + config"]
+    end
+{% </mermaid> %}
+
+<p class="diagram-caption">The same pipeline code, written once; the deployment config picks the backend.</p>
+<!-- prettier-ignore-end -->
+
 I built a small proof of concept to test that idea. While looking at possible
 approaches, I found **[Ibis](https://ibis-project.org)**, a dataframe-style
 expression API that compiles the same Python expressions for DuckDB, PySpark,
@@ -77,21 +77,21 @@ I deliberately kept the pipeline ordinary: bronze → silver → gold.
 <!-- prettier-ignore-start -->
 {% <mermaid full_width={true}> %}
 flowchart LR
-    subgraph sources["External sources:<br>- CSV locally<br>- Parquet/tables in production"]
+    subgraph sources["External sources:<br/>- CSV locally<br/>- Parquet/tables in production"]
         events
         products
     end
-    subgraph bronze["Bronze:<br>- Land sources into managed tables"]
+    subgraph bronze["Bronze:<br/>- Land sources into managed tables"]
         raw_events
         raw_products
     end
-    subgraph silver["Silver:<br>- Normalize types<br>- Trim/lower strings<br>- Dedupe<br>- Validate"]
+    subgraph silver["Silver:<br/>- Normalize types<br/>- Trim/lower strings<br/>- Dedupe<br/>- Validate"]
         cleaned_events
     end
     subgraph gold
         daily_active_users
         category_revenue
-        latest_event_per_user["latest_event_per_user*"]
+        latest_event_per_user["latest_event_<br/>per_user*"]
     end
     events --> raw_events
     products --> raw_products
@@ -118,8 +118,8 @@ DAGSTER_DEPLOYMENT_NAME=prod   uv run dagster dev   # pyspark + parquet "lake" s
 ```
 
 The asset graph, transformations, and checks stay the same. Deployment
-configuration chooses the engine and storage.
-
+configuration chooses the engine and storage. Regardless of the selected
+deployment, Dagster presents the same logical asset graph:
 
 <figure>
     <img src="img/global-asset-lineage.svg" alt="Dagster asset lineage: external event and product sources feeding bronze, silver, and gold assets">
@@ -176,12 +176,12 @@ flowchart LR
         fn["transform fn<br/>ir.Table → ir.Table"]
     end
     subgraph io["IbisIOManager (the boundary)"]
-        li["load_input<br/>con.table · read_csv · read_parquet"]
-        ho["handle_output<br/>con.create_table(name, expr)"]
+        li["load_input"]
+        ho["handle_output:<br/>con.create_table"]
     end
     subgraph be["Deployment config picks"]
-        res["IbisResource<br/>backend connection"]
-        st["storage<br/>tables · csv · parquet"]
+        res["IbisResource<br/>backend conn."]
+        st["storage:<br/>- tables<br/>- csv<br/>- parquet"]
     end
     li --> fn --> ho
     li --> res
@@ -397,17 +397,6 @@ The answer is not a universal “yes,” but it is more encouraging than I expec
 - **The real opportunity is not zero migration work.** It is moving future work
   away from rewriting business transformations and toward the smaller set of
   integration points that genuinely depend on the platform.
-
-<!-- prettier-ignore-start -->
-{% <mermaid> %}
-flowchart LR
-    code["pipeline code<br/>(write once)"]
-    code -->|"engine: config"| eng["duckdb | polars | pyspark | ..."]
-    code -->|"storage: config"| st["csv | parquet | warehouse tables"]
-{% </mermaid> %}
-
-<p class="diagram-caption">Engine and storage become configuration instead of a rewrite.</p>
-<!-- prettier-ignore-end -->
 
 I would not describe this as “write once, run anywhere.” That promise is too
 broad, and the experiment itself disproves it. A more honest summary is:
