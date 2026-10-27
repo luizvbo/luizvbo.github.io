@@ -1,6 +1,6 @@
 +++
 title = "Portable data pipelines with Dagster + Ibis: making migrations less painful"
-date = 2026-10-05
+date = 2026-10-27
 description = "One Ibis expression, many engines. A small Dagster repo exploring how future engine migrations could become configuration and integration work instead of another rewrite."
 
 [extra]
